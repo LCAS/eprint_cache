@@ -60,7 +60,14 @@ shortcode_pattern=(
 def pubs_year_url(year, staff):
     return url_pattern % ('%2C+'.join(quote_names(staff)), str(year))
 
+
+
 years.reverse()
+
+print('<p>Download the <a href="%s" target="_blank">BibTeX file of all L-CAS publications</a></p>' % (
+    pubs_year_url('', staff)
+))
+
 for year in years:
     print("<h2>%s</h2>" % str(year))
     print(shortcode_pattern % (
