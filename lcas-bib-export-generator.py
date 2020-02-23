@@ -12,6 +12,7 @@ staff = [
     'Elgeneidy',
     'Esfahani',
     'Bosilj',
+    'Goher', 
     'Millard, Alan',
     'Yue, Shigang',
     'Neumann, Gerhard',
@@ -20,7 +21,10 @@ staff = [
     'Cielniak, Grzegorz',
     'Cuayahuitl, Heriberto',
     'Fox, Charles',
-    'Kucukyilmaz, Ayse'
+    'Kucukyilmaz, Ayse',
+    'Parsons, Simon',
+    'Pearson, Simon',
+    'Bochtis'
 ]
 
 # recent
