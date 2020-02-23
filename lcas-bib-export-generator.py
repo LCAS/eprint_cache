@@ -11,10 +11,10 @@ staff = [
     'Saaj',
     'Elgeneidy',
     'Esfahani',
+    'Bosilj',
     'Millard, Alan',
     'Yue, Shigang',
     'Neumann, Gerhard',
-    'Hanheide, Marc',
     'Bellotto, Nicola',
     'Baxter, Paul',
     'Cielniak, Grzegorz',
@@ -24,8 +24,7 @@ staff = [
 ]
 
 # recent
-year = '2010-2030'
-year = '2019'
+years = range(2012,2021)
 
 def quote_name(n):
     return '%%22%s%%22' % n.replace(',','%2C').replace(' ','+')
@@ -39,4 +38,29 @@ def quote_names(ns):
 
 url_pattern='http://eprints.lincoln.ac.uk/cgi/search/archive/advanced/export_lirolem_BibTeX.bib?screen=Search&dataset=archive&_action_export=1&output=BibTeX&exp=0%%7C1%%7C-%%7Ccreators_name%%3Acreators_name%%3AANY%%3AIN%%3A%s%%7Cdate%%3Adate%%3AALL%%3AEQ%%3A%s'
 
-print url_pattern % ('%2C+'.join(quote_names(staff)), year)
+def highlight_names(names):
+    ret = ''
+    filtered = [s.split(', ')[0] for s in names]
+    return '|'.join(filtered)
+
+shortcode_pattern=(
+    '[bibfilter group="firstauthor" group_order="desc" format="ieee" order=asc limit=1000 '
+    'file="%s" '
+    'highlight="%s" '
+    'sortauthors=1 '
+    'allow="incollection,mastersthesis,article,conference,techreport,inproceedings" '
+    'author="%s"'
+    ']'
+)
+
+def pubs_year_url(year, staff):
+    return url_pattern % ('%2C+'.join(quote_names(staff)), str(year))
+
+years.reverse()
+for year in years:
+    print("<h2>%s</h2>" % str(year))
+    print(shortcode_pattern % (
+        pubs_year_url(year, staff),
+        highlight_names(staff),
+        highlight_names(staff)
+    ))
