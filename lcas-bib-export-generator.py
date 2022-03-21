@@ -13,6 +13,13 @@ staff = [
     'Esfahani',
     'Bosilj',
     'Goher', 
+    'Calisti',
+    'Das, Gautham',
+    'Gao, Junfeng',
+    'Ghafoor, Mubeen',
+    'Maleki, Sepehr',
+    'Al-Khafajiy',
+    'Polydoros', 
     'Millard, Alan',
     'Yue, Shigang',
     'Neumann, Gerhard',
@@ -28,7 +35,7 @@ staff = [
 ]
 
 # recent
-years = range(2012,2021)
+years = range(2012,2023)
 
 def quote_name(n):
     return '%%22%s%%22' % n.replace(',','%2C').replace(' ','+')
@@ -41,6 +48,12 @@ def quote_names(ns):
 #http://eprints.lincoln.ac.uk/cgi/search/archive/advanced/export_lincoln_BibTeX.bib?screen=Search&dataset=archive&_action_export=1&output=BibTeX&exp=0%7C1%7C-date%2Fcreators_name%2Ftitle%7Carchive%7C-%7Ccreators_name%3Acreators_name%3AANY%3AEQ%3AHanheide+Duckett+Saaj+Sklar+Yue+Bellotto+Baxter%7Cdate%3Adate%3AALL%3AEQ%3A2019-%7C-%7Ceprint_status%3Aeprint_status%3AANY%3AEQ%3Aarchive%7Cmetadata_visibility%3Ametadata_visibility%3AANY%3AEQ%3Ashow&n=&cache=11353462
 
 url_pattern='http://eprints.lincoln.ac.uk/cgi/search/archive/advanced/export_lirolem_BibTeX.bib?screen=Search&dataset=archive&_action_export=1&output=BibTeX&exp=0%%7C1%%7C-%%7Ccreators_name%%3Acreators_name%%3AANY%%3AIN%%3A%s%%7Cdate%%3Adate%%3AALL%%3AEQ%%3A%s'
+
+
+'https://eprints.lincoln.ac.uk/cgi/search/archive/advanced/export_lincoln_AllRSS.rss?screen=Search&amp;dataset=archive&amp;_action_export=1&amp;output=AllRSS&amp;exp=0%7C1%7C-date%2Fcreators_name%2Ftitle%7Carchive%7C-%7Ccreators_name%3Acreators_name%3AALL%3AEQ%3AHanheide'
+
+rss_url_pattern='http://eprints.lincoln.ac.uk/cgi/search/archive/advanced/export_lincoln_RSS2.xml?screen=Search&dataset=archive&_action_export=1&output=RSS2&exp=0%%7C1%%7C-%%7Ccreators_name%%3Acreators_name%%3AANY%%3AIN%%3A%s'
+
 
 def highlight_names(names):
     ret = ''
@@ -60,6 +73,9 @@ shortcode_pattern=(
 def pubs_year_url(year, staff):
     return url_pattern % ('%2C+'.join(quote_names(staff)), str(year))
 
+def rss_url(staff):
+    return rss_url_pattern % ('%2C+'.join(quote_names(staff)))
+
 
 
 years.reverse()
@@ -75,3 +91,7 @@ for year in years:
         highlight_names(staff),
         highlight_names(staff)
     ))
+
+
+print('-------------------------------')
+print(rss_url(staff))
