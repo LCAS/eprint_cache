@@ -89,6 +89,10 @@ with open('wordpress.html','w') as html_file:
         pubs_year_url('', staff)
     ), file=html_file)
 
+    with open('lcas.bib', 'w') as all_bib:
+        bibtex = get_file(pubs_year_url('', staff))
+        all_bib.write(bibtex)
+
     for year in years:
         print("<h2>%s</h2>" % str(year), file=html_file)
         bibtex_url = pubs_year_url(year, staff)
