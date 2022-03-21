@@ -22,6 +22,7 @@ staff = [
     'Maleki, Sepehr',
     'Al-Khafajiy',
     'Polydoros', 
+    'Galvez Trigo', 
     'Millard, Alan',
     'Yue, Shigang',
     'Neumann, Gerhard',
