@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/">
+    <channel>
+
+    <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", ",,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
+    <link>https://eprints.lincoln.ac.uk/</link>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://eprints.lincoln.ac.uk/cgi/search/archive/advanced/export_lincoln_RSS2.xml?screen=Search&amp;dataset=archive&amp;_action_export=1&amp;output=RSS2&amp;exp=0%7C1%7C-%7Ccreators_name%3Acreators_name%3AANY%3AIN%3A%22Hanheide%2C+Marc%22%2C+%22Duckett%2C+Tom%22%2C+%22Sklar%2C+Elizabeth%22%2C+%22Saaj%22%2C+%22Elgeneidy%22%2C+%22Esfahani%22%2C+%22Bosilj%22%2C+%22Goher%22%2C+%22Calisti%22%2C+%22Das%2C+Gautham%22%2C+%22Gao%2C+Junfeng%22%2C+%22Ghafoor%2C+Mubeen%22%2C+%22Maleki%2C+Sepehr%22%2C+%22Al-Khafajiy%22%2C+%22Polydoros%22%2C+%22Millard%2C+Alan%22%2C+%22Yue%2C+Shigang%22%2C+%22Neumann%2C+Gerhard%22%2C+%22Bellotto%2C+Nicola%22%2C+%22Baxter%2C+Paul%22%2C+%22Cielniak%2C+Grzegorz%22%2C+%22Cuayahuitl%2C+Heriberto%22%2C+%22Fox%2C+Charles%22%2C+%22Kucukyilmaz%2C+Ayse%22%2C+%22Parsons%2C+Simon%22%2C+%22Pearson%2C+Simon%22%2C+%22Bochtis%22" type="application/rss+xml"></atom:link>
+    <description></description><image>
+        <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
+        <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", ",,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
+        <link>https://eprints.lincoln.ac.uk/</link></image>
+    <pubDate>Mon, 21 Mar 2022 16:47:09 +0000</pubDate>
+    <lastBuildDate>Mon, 21 Mar 2022 16:47:09 +0000</lastBuildDate>
+    <language>en</language>
+    <copyright></copyright>
+<item>
+  <pubDate>Sun, 01 May 2022 00:00:00 +0100</pubDate>
+  <title> Tea chrysanthemum detection under unstructured environments using the TC-YOLO model </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/47700/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/47700/</guid>
+  <type>article</type>
+  <description>  Qi, Chao, Gao, Junfeng, Pearson, Simon, Harman, Helen, Chen, Kunjie and Shu, Lei  (2022) Tea chrysanthemum detection under unstructured environments using the TC-YOLO model.  Expert Systems with Applications, 193 .       ISSN 0957-4174  </description></item>
+<item>
+  <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+  <title> Tea Chrysanthemum Detection by Leveraging Generative Adversarial Networks and Edge Computing </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/48499/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/48499/</guid>
+  <type>article</type>
+  <description>  Qi, Chao, Gao, Junfeng, Chen, Kunjie, Shu, Lei and Pearson, Simon  (2022) Tea Chrysanthemum Detection by Leveraging Generative Adversarial Networks and Edge Computing.  Frontiers in plant science .       ISSN 1664-462X  </description></item>
+<item>
+  <pubDate>Mon, 21 Feb 2022 00:00:00 +0000</pubDate>
+  <title> A Robust Visual System for Looming Cue Detection Against Translating Motion </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/48358/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/48358/</guid>
+  <type>article</type>
+  <description>  Lei, Fang, Peng, Zhiping, Liu, Mei, Peng, Jigen, Cutsuridis, Vassilis and Yue, Shigang  (2022) A Robust Visual System for Looming Cue Detection Against Translating Motion.  IEEE Transactions on Neural Networks and Learning Systems .   pp. 1-15.     ISSN 2162-237X  </description></item>
+<item>
+  <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate>
+  <title> Deep Movement Primitives: toward Breast Cancer Examination Robot </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/47605/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/47605/</guid>
+  <type>conference_item</type>
+  <description>  Sanni, Oluwatoin, Bonvicini, Giorgio, Khan, Muhammad Arshad, Lo ́pez-Custodio, Pablo C., Nazari, Kiyanoush and Ghalamzan Esfahani, Amir  (2021) Deep Movement Primitives: toward Breast Cancer Examination Robot.  In: AAAI Conference on Artificial Intelligence 2022.  </description></item>
+<item>
+  <pubDate>Mon, 21 Jun 2021 00:00:00 +0100</pubDate>
+  <title> Intelligent Control and Security of Fog Resources in Healthcare Systems via a Cognitive Fog Model </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/47555/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/47555/</guid>
+  <type>article</type>
+  <description>  Al-Khafajiy, Mohammed, Otoum, Safa, Baker, Thar, Asim, Muhammad, Maamar, Zakaria, Aloqaily, Moayad, Taylor, Mark and Randles, Martin  (2021) Intelligent Control and Security of Fog Resources in Healthcare Systems via a Cognitive Fog Model.  ACM Transactions on Internet Technology, 21  (3).   pp. 1-23.     ISSN 1533-5399  </description></item>
+<item>
+  <pubDate>Mon, 08 Apr 2019 00:00:00 +0100</pubDate>
+  <title> Towards a seamless coordination of cloud and fog: illustration through the internet-of-things </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/47566/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/47566/</guid>
+  <type>conference_item</type>
+  <description>  Maamar, Zakaria, Baker, Thar, Faci, Noura, Ugljanin, Emir, Al-Khafajiy, Mohammed and Burégio, Vanilson  (2019) Towards a seamless coordination of cloud and fog: illustration through the internet-of-things.  In: 34th ACM/SIGAPP Symposium on Applied Computing.  </description></item>
+<item>
+  <pubDate>Fri, 15 May 2020 00:00:00 +0100</pubDate>
+  <title> Downsizing an orbital space robot: A dynamic system based evaluation </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/48337/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/48337/</guid>
+  <type>article</type>
+  <description>  Jackson, Lucy, Saaj, Chakravarthini M., Seddaoui, Asma, Whiting, Calem, Eckersley, Steve and Hadfield, Simon  (2020) Downsizing an orbital space robot: A dynamic system based evaluation.  Advances in Space Research, 65  (10).   pp. 2247-2262.     ISSN https://doi.org/10.1016/j.asr.2020.03.004  </description></item>
+<item>
+  <pubDate>Wed, 29 Jul 2020 00:00:00 +0100</pubDate>
+  <title> Linear controllers for free-flying and controlled-floating space robots: a new perspective </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/48336/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/48336/</guid>
+  <type>article</type>
+  <description>  Mohamed, Amr, Saaj, Chakravarthini, Seddaoui, Asma and Nair, Manu  (2020) Linear controllers for free-flying and controlled-floating space robots: a new perspective.  Aeronautics and Aerospace Open Access Journal, 4  (3).   pp. 97-114.     ISSN 2576-4500  </description></item>
+<item>
+  <pubDate>Fri, 24 Dec 2021 00:00:00 +0000</pubDate>
+  <title> Modeling a Controlled-Floating Space Robot for In-Space Services: A Beginner’s Tutorial </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/48335/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/48335/</guid>
+  <type>article</type>
+  <description>  Seddaoui, Asma, Saaj, Chakravarthini Mini and Nair, Manu Harikrishnan  (2021) Modeling a Controlled-Floating Space Robot for In-Space Services: A Beginner’s Tutorial.  Frontiers in Robotics and AI, 8 .       ISSN 2296-9144  </description></item>
+<item>
+  <pubDate>Thu, 23 Apr 2020 00:00:00 +0100</pubDate>
+  <title> A Holistic Study on Emerging IoT Networking Paradigms </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/47565/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/47565/</guid>
+  <type>conference_item</type>
+  <description>  Al-Khafajiy, Mohammed, Ghareeb, Shatha, Al-Jumeily, Rawaa, Almurshedi, Rusul, Hussien, Aseel, Baker, Thar and Jararweh, Yaser  (2020) A Holistic Study on Emerging IoT Networking Paradigms.  In: International Conference on Developments in eSystems Engineering (DESE), 7-10 Oct. 2019, Kazan, Russia.  </description></item>
+<item>
+  <pubDate>Fri, 26 Oct 2018 00:00:00 +0100</pubDate>
+  <title> Thing Federation as a Service: Foundations and Demonstration </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/47571/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/47571/</guid>
+  <type>conference_item</type>
+  <description>  Maamar, Zakaria, Boukadi, Khouloud, Ugljanin, Emir, Baker, Thar, Asim, Muhammad, Al-Khafajiy, Mohammed, Benslimane, Djamal and El Alaoui El Abdallaoui, Hasna  (2018) Thing Federation as a Service: Foundations and Demonstration.  In: International Conference on Model and Data Engineering.  </description></item>
+<item>
+  <pubDate>Thu, 10 Jan 2019 00:00:00 +0000</pubDate>
+  <title> IoT-Fog Optimal Workload via Fog Offloading </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/47567/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/47567/</guid>
+  <type>conference_item</type>
+  <description>  Al-Khafajiy, Mohammed, Baker, Thar, Waraich, Atif, Al-Jumeily, Dhiya and Hussain, Abir  (2019) IoT-Fog Optimal Workload via Fog Offloading.  In: IEEE/ACM International Conference on Utility and Cloud Computing Companion.  </description></item>
+<item>
+  <pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate>
+  <title> Cloud-edge coupling to mitigate execution failures </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/47575/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/47575/</guid>
+  <type>conference_item</type>
+  <description>  Maamar, Zakaria and Al-Khafajiy, Mohammed  (2021) Cloud-edge coupling to mitigate execution failures.  In: 36th Annual ACM Symposium on Applied Computing, March 22 - 26, 2021, Republic of Korea.  </description></item>
+<item>
+  <pubDate>Tue, 21 Apr 2020 00:00:00 +0100</pubDate>
+  <title> UAV and Fog Computing for IoE-Based Systems: A Case Study on Environment Disasters Prediction and Recovery Plans </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/47572/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/47572/</guid>
+  <type>book_section</type>
+  <description>  Al-Khafajiy, Mohammed, Baker, Thar, Hussien, Aseel and Cotgrave, Alison  (2020) UAV and Fog Computing for IoE-Based Systems: A Case Study on Environment Disasters Prediction and Recovery Plans.   In:  Unmanned Aerial Vehicles in Smart Cities.   Springer, pp. 133-152.  ISBN 978-3-030-38712-9  </description></item>
+<item>
+  <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
+  <title> Fog Computing Framework for Internet of Things Applications </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/47568/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/47568/</guid>
+  <type>conference_item</type>
+  <description>  Al-Khafajiy, Mohammed, Baker, Thar, Al-Libawy, Hilal, Waraich, Atif, Chalmers, Carl and Alfandi, Omar  (2019) Fog Computing Framework for Internet of Things Applications.  In: International Conference on Developments in eSystems Engineering (DESE), 2-5 Sept. 2018, Cambridge, UK.  </description></item>
+<item>
+  <pubDate>Sat, 28 Jul 2018 00:00:00 +0100</pubDate>
+  <title> Cognitive Computing Meets the Internet of Things </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/47570/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/47570/</guid>
+  <type>conference_item</type>
+  <description>  Sellami, Mohamed, Al-Khafajiy, Mohammed, Atif, Yacine, Ugljanin, Emir, Faci, Noura, Baker, Thar and Maamar, Zakaria  (2018) Cognitive Computing Meets the Internet of Things.  In: 13th International Conference on Software Technologies.  </description></item>
+<item>
+  <pubDate>Tue, 26 Jun 2018 00:00:00 +0100</pubDate>
+  <title> Towards fog driven IoT healthcare: challenges and framework of fog computing in healthcare </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/47569/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/47569/</guid>
+  <type>conference_item</type>
+  <description>  Al-Khafajiy, Mohammed, Webster, Lee, Baker, Thar and Waraich, Atif  (2018) Towards fog driven IoT healthcare: challenges and framework of fog computing in healthcare.  In: International Conference on Future Networks and Distributed Systems.  </description></item>
+<item>
+  <pubDate>Wed, 30 Jun 2021 00:00:00 +0100</pubDate>
+  <title> AgroSupportAnalytics: A Cloud-based Complaints Management and Decision Support System for Sustainable Farming in Egypt </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/47917/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/47917/</guid>
+  <type>article</type>
+  <description>  Munir, Kamran, Ghafoor, Mubeen, Khafagy, Mohamed and Ihshaish, Hisham  (2021) AgroSupportAnalytics: A Cloud-based Complaints Management and Decision Support System for Sustainable Farming in Egypt.  Egyptian Informatics Journal .       ISSN 1110-8665  </description></item>
+<item>
+  <pubDate>Mon, 27 Dec 2021 00:00:00 +0000</pubDate>
+  <title> Application of region-based video surveillance in smart cities using deep learning </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/47914/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/47914/</guid>
+  <type>article</type>
+  <description>  Zahra, Asma, Ghafoor, Mubeen, Munir, Kamran, Ullah, Ata and Ul Abideen, Zain  (2021) Application of region-based video surveillance in smart cities using deep learning.  Multimedia Tools and Applications .       ISSN 1573-7721  </description></item>
+<item>
+  <pubDate>Fri, 17 Sep 2021 00:00:00 +0100</pubDate>
+  <title> Multi-view Convolutional Recurrent Neural Networks for Lung Cancer Nodule Identification </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/47918/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/47918/</guid>
+  <type>article</type>
+  <description>  Abid, Mian Muhammad Naeem, Zia, Tehseen, Ghafoor, Mubeen and Windridge, David  (2021) Multi-view Convolutional Recurrent Neural Networks for Lung Cancer Nodule Identification.  Neurocomputing, 453 .   pp. 299-311.     ISSN 0925-2312  </description></item>
+    </channel>
+</rss>
