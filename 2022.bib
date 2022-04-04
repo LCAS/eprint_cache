@@ -7,7 +7,7 @@
          journal = {Expert Systems with Applications},
              doi = {10.1016/j.eswa.2021.116473},
             year = {2022},
-        keywords = {ARRAY(0x5585d7c7e568)},
+        keywords = {ARRAY(0x5585d8062c88)},
              url = {https://eprints.lincoln.ac.uk/id/eprint/47700/},
         abstract = {Tea chrysanthemum detection at its flowering stage is one of the key components for selective chrysanthemum harvesting robot development. However, it is a challenge to detect flowering chrysanthemums under unstructured field environments given variations on illumination, occlusion and object scale. In this context, we propose a highly fused and lightweight deep learning architecture based on YOLO for tea chrysanthemum detection (TC-YOLO). First, in the backbone component and neck component, the method uses the Cross-Stage Partially Dense network (CSPDenseNet) and the Cross-Stage Partial ResNeXt network (CSPResNeXt) as the main networks, respectively, and embeds custom feature fusion modules to guide the gradient flow. In the final head component, the method combines the recursive feature pyramid (RFP) multiscale fusion reflow structure and the Atrous Spatial Pyramid Pool (ASPP) module with cavity convolution to achieve the detection task. The resulting model was tested on 300 field images using a data enhancement strategy combining flipping and rotation, showing that under the NVIDIA Tesla P100 GPU environment, if the inference speed is 47.23 FPS for each image (416 {$\times$} 416), TC-YOLO can achieve the average precision (AP) of 92.49\% on our own tea chrysanthemum dataset. Through further validation, it was found that overlap had the least effect on tea chrysanthemum detection, and illumination had the greatest effect on tea chrysanthemum detection. In addition, this method (13.6 M) can be deployed on a single mobile GPU, and it could be further developed as a perception system for a selective chrysanthemum harvesting robot in the future.}
 }
@@ -18,11 +18,22 @@
            title = {Self-supervised Representation Learning for Reliable Robotic Monitoring of Fruit Anomalies},
           author = {Taeyeong Choi and Owen Would and Adrian Salazar-Gomez and Grzegorz Cielniak},
             year = {2022},
-        keywords = {ARRAY(0x5585d7c7e7a8)},
+        keywords = {ARRAY(0x5585d8032888)},
              url = {https://eprints.lincoln.ac.uk/id/eprint/46584/},
         abstract = {Data augmentation can be a simple yet powerful tool for autonomous robots to fully utilise available data for self-supervised identification of atypical scenes or objects. State-of-the-art augmentation methods arbitrarily embed structural peculiarity in focal objects on typical images so that classifying these artefacts can provide guidance for learning representations for the detection of anomalous visual inputs. In this paper, however, we argue that learning such structure-sensitive representations can be a suboptimal approach to some classes of anomaly (e.g., unhealthy fruits) which are better recognised by a different type of visual element such as ?colour?. We thus propose Channel Randomisation as a novel data augmentation method for restricting neural network models to learn encoding
 of ?colour irregularity? whilst predicting channel-randomised images to ultimately build reliable fruit-monitoring robots
 identifying atypical fruit qualities. Our experiments show that (1) the colour-based alternative can better learn representations for consistently accurate identification of fruit anomalies in various fruit species, and (2) validation accuracy can be monitored for early stopping of training due to positive correlation between the colour-learning task and fruit anomaly detection. Moreover, the proposed approach is evaluated on a new anomaly dataset Riseholme-2021, consisting of 3:5K strawberry images collected from a mobile robot, which we share with the community to encourage active agri-robotics research.}
+}
+
+@inproceedings{lincoln48675,
+       booktitle = {AAAI - AI for Agriculture and Food Systems},
+           month = {February},
+           title = {Multiple broccoli head detection and tracking in 3D point clouds for autonomous harvesting},
+          author = {Hector A. Montes and Grzegorz Cielniak},
+            year = {2022},
+        keywords = {ARRAY(0x5585d82559e0)},
+             url = {https://eprints.lincoln.ac.uk/id/eprint/48675/},
+        abstract = {This paper explores a tracking method of broccoli heads that combine a Particle Filter and 3D features detectors to track multiple crops in a sequence of 3D data frames. The tracking accuracy is verified based on a data association method that matches detections with tracks over each frame. The particle filter incorporates a simple motion model to produce the posterior particle distribution, and a similarity model as probability function to measure the tracking accuracy. The method is tested with datasets of two broccoli varieties collected in planted fields from two different countries. Our evaluation shows the tracking method reduces the number of false negatives produced by the detectors on their own. In addition, the method accurately detects and tracks the 3D locations of broccoli heads relative to the vehicle at high frame rates}
 }
 
 @article{lincoln48358,
@@ -34,7 +45,7 @@ identifying atypical fruit qualities. Our experiments show that (1) the colour-b
              doi = {10.1109/TNNLS.2022.3149832},
            pages = {1--15},
             year = {2022},
-        keywords = {ARRAY(0x5585d7c7e790)},
+        keywords = {ARRAY(0x5585d83d9948)},
              url = {https://eprints.lincoln.ac.uk/id/eprint/48358/},
         abstract = {Collision detection is critical for autonomous vehicles or robots to serve human society safely. Detecting looming objects robustly and timely plays an important role in collision avoidance systems. The locust lobula giant movement detector (LGMD1) is specifically selective to looming objects which are on a direct collision course. However, the existing LGMD1 models can not distinguish a looming object from a near and fast translatory moving object, because the latter can evoke a large amount of excitation that can lead to false LGMD1 spikes. This paper presents a new visual neural system model (LGMD1) that applies a neural competition mechanism within a framework of separated ON and OFF pathways to shut off the translating response. The competition-based approach responds vigorously to monotonous ON/OFF responses resulting from a looming object. However, it does not respond to paired ON-OFF responses that result from a translating object, thereby enhancing collision selectivity. Moreover, a complementary denoising mechanism ensures reliable collision detection. To verify the effectiveness of the model, we have conducted systematic comparative experiments on synthetic and real datasets. The results show that our method exhibits more accurate discrimination between looming and translational events -- the looming motion can be correctly detected. It also demonstrates that the proposed model is more robust than comparative models.}
 }
@@ -46,9 +57,22 @@ identifying atypical fruit qualities. Our experiments show that (1) the colour-b
           author = {James Heselden and Gautham Das},
        publisher = {Springer International Publishing},
             year = {2022},
-        keywords = {ARRAY(0x5585d7c7ea00)},
+        keywords = {ARRAY(0x5585d8331908)},
              url = {https://eprints.lincoln.ac.uk/id/eprint/46453/},
         abstract = {Multi-robot system is an ever growing tool which is able to be applied to a wide range of industries to improve productivity and robustness, especially when tasks are distributed in space, time and functionality. Recent works have shown the benefits of multi-robot systems in fields such as warehouse automation, entertainment and agriculture. The work presented in this paper tackles the deadlock problem in multi-robot navigation, in which robots within a common work-space, are caught in situations where they are unable to navigate to their targets, being blocked by one another. This problem can be mitigated by efficient multi-robot path planning. Our work focused around the development of a scalable rescheduling algorithm named Conflict Resolution Heuristic A* (CRH*) for decoupled prioritised planning. Extensive experimental evaluation of CRH* was carried out in discrete event simulations of a fleet of autonomous agricultural robots. The results from these experiments proved that the algorithm was both scalable and deadlock-free. Additionally, novel customisation options were included to test further optimisations in system performance. Continuous Assignment and Dynamic Scoring showed to reduce the make-span of the routing whilst Combinatorial Heuristics showed to reduce the impact of outliers on priority orderings.}
+}
+
+@inproceedings{lincoln48676,
+       booktitle = {AI for Agriculture and Food Systems},
+           month = {January},
+           title = {Channel Randomisation with Domain Control for Effective Representation Learning of Visual Anomalies in Strawberries},
+          author = {Taeyeong Choi and Grzegorz Cielniak},
+            year = {2022},
+        keywords = {ARRAY(0x5585d83c1168)},
+             url = {https://eprints.lincoln.ac.uk/id/eprint/48676/},
+        abstract = {Channel Randomisation (CH-Rand) has appeared as a key data augmentation technique for anomaly detection on fruit
+images because neural networks can learn useful representations of colour irregularity whilst classifying the samples
+from the augmented "domain". Our previous study has revealed its success with significantly more reliable performance than other state-of-the-art methods, largely specialised for identifying structural implausibility on non-agricultural objects (e.g., screws). In this paper, we further enhance CH-Rand with additional guidance to generate more informative data for representation learning of anomalies in fruits as most of its fundamental designs are still maintained. To be specific, we first control the "colour space" on which CH-Rand is executed to investigate whether a particular model{--}e.g., HSV , YCbCr, or L*a*b* {--}can better help synthesise realistic anomalies than the RGB, suggested in the original design. In addition, we develop a learning "curriculum" in which CH-Rand shifts its augmented domain to gradually increase the difficulty of the examples for neural networks to classify. To the best of our best knowledge, we are the first to connect the concept of curriculum to self-supervised representation learning for anomaly detection. Lastly, we perform evaluations with the Riseholme-2021 dataset, which contains {\ensuremath{>}} 3.5K real strawberry images at various growth levels along with anomalous examples. Our experimental results show that the trained models with the proposed strategies can achieve over 16\% higher scores of AUC-PR with more than three times less variability than the naive CH-Rand whilst using the same deep networks and data.}
 }
 
 @inproceedings{lincoln48515,
@@ -56,7 +80,7 @@ identifying atypical fruit qualities. Our experiments show that (1) the colour-b
            title = {From Human Perception and Action Recognition to Causal Understanding of Human-Robot Interaction in Industrial Environments},
           author = {Stefano Ghidoni and Matteo Terreran and Daniele Evangelista and Emanuele Menegatti and Christian Eitzinger and Enrico Villagrossi and Nicola Pedrocchi and Nicola Castaman and Marcin Malecha and Sariah Mghames and Luca Castri and Marc Hanheide and Nicola Bellotto},
             year = {2022},
-        keywords = {ARRAY(0x5585d7c7e9d0)},
+        keywords = {ARRAY(0x5585d821e9f8)},
              url = {https://eprints.lincoln.ac.uk/id/eprint/48515/},
         abstract = {Human-robot collaboration is migrating from lightweight robots in laboratory environments to industrial applications, where heavy tasks and powerful robots are more common. In this scenario, a reliable perception of the humans involved in the process and related intentions and behaviors is fundamental. This paper presents two projects investigating the use of robots in relevant industrial scenarios, providing an overview of how industrial human-robot collaborative tasks can be successfully addressed.}
 }
@@ -67,7 +91,7 @@ identifying atypical fruit qualities. Our experiments show that (1) the colour-b
        publisher = {Frontiers Media},
             year = {2022},
          journal = {Frontiers in plant science},
-        keywords = {ARRAY(0x5585d7c7e880)},
+        keywords = {ARRAY(0x5585d8075980)},
              url = {https://eprints.lincoln.ac.uk/id/eprint/48499/},
         abstract = {A high resolution dataset is one of the prerequisites for tea chrysanthemum detection with deep learning algorithms. This is crucial for further developing a selective chrysanthemum harvesting robot. However, generating high resolution datasets of the tea chrysanthemum with complex unstructured environments is a challenge. In this context, we propose a novel generative adversarial network (TC-GAN) that attempts to deal with this challenge. First, we designed a non-linear mapping network for untangling the features of the underlying code. Then, a customized regularisation method was used to provide fine-grained control over the image details. Finally, a gradient diversion design with multi-scale feature extraction capability was adopted to optimize the training process. The proposed TC-GAN was compared with 12 state-of-the-art generative adversarial networks, showing that an optimal average precision (AP) of 90.09\% was achieved with the generated images (512*512) on the developed TC-YOLO object detection model under the NVIDIA Tesla P100 GPU environment. Moreover, the detection model was deployed into the embedded NVIDIA Jetson TX2 platform with 0.1s inference time, and this edge computing device could be further developed into a perception system for selective chrysanthemum picking robots in the future.}
 }

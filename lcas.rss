@@ -9,10 +9,31 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", ",,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 28 Mar 2022 03:52:32 +0100</pubDate>
-    <lastBuildDate>Mon, 28 Mar 2022 03:52:32 +0100</lastBuildDate>
+    <pubDate>Mon, 04 Apr 2022 03:57:40 +0100</pubDate>
+    <lastBuildDate>Mon, 04 Apr 2022 03:57:40 +0100</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Mon, 22 Nov 2021 00:00:00 +0000</pubDate>
+  <title> Gaussian map predictions for 3D surface feature localisation and counting </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/48667/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/48667/</guid>
+  <type>conference_item</type>
+  <description>  Le Louedec, Justin and Cielniak, Grzegorz  (2021) Gaussian map predictions for 3D surface feature localisation and counting.  In: BMVC.  </description></item>
+<item>
+  <pubDate>Wed, 23 Feb 2022 00:00:00 +0000</pubDate>
+  <title> Multiple broccoli head detection and tracking in 3D point clouds for autonomous harvesting </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/48675/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/48675/</guid>
+  <type>conference_item</type>
+  <description>  Montes, Hector A. and Cielniak, Grzegorz  (2022) Multiple broccoli head detection and tracking in 3D point clouds for autonomous harvesting.  In: AAAI - AI for Agriculture and Food Systems.  </description></item>
+<item>
+  <pubDate>Tue, 25 Jan 2022 00:00:00 +0000</pubDate>
+  <title> Channel Randomisation with Domain Control for Effective Representation Learning of Visual Anomalies in Strawberries </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/48676/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/48676/</guid>
+  <type>conference_item</type>
+  <description>  Choi, Taeyeong and Cielniak, Grzegorz  (2022) Channel Randomisation with Domain Control for Effective Representation Learning of Visual Anomalies in Strawberries.  In: AI for Agriculture and Food Systems, 28-2-2022, Virtual.  </description></item>
 <item>
   <pubDate>Sun, 25 Oct 2020 00:00:00 +0100</pubDate>
   <title> On Robotic In-Orbit Assembly of Large Aperture Space Telescopes </title>
@@ -132,26 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/47575/</guid>
   <type>conference_item</type>
   <description>  Maamar, Zakaria and Al-Khafajiy, Mohammed  (2021) Cloud-edge coupling to mitigate execution failures.  In: 36th Annual ACM Symposium on Applied Computing, March 22 - 26, 2021, Republic of Korea.  </description></item>
-<item>
-  <pubDate>Tue, 21 Apr 2020 00:00:00 +0100</pubDate>
-  <title> UAV and Fog Computing for IoE-Based Systems: A Case Study on Environment Disasters Prediction and Recovery Plans </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/47572/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/47572/</guid>
-  <type>book_section</type>
-  <description>  Al-Khafajiy, Mohammed, Baker, Thar, Hussien, Aseel and Cotgrave, Alison  (2020) UAV and Fog Computing for IoE-Based Systems: A Case Study on Environment Disasters Prediction and Recovery Plans.   In:  Unmanned Aerial Vehicles in Smart Cities.   Springer, pp. 133-152.  ISBN 978-3-030-38712-9  </description></item>
-<item>
-  <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
-  <title> Fog Computing Framework for Internet of Things Applications </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/47568/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/47568/</guid>
-  <type>conference_item</type>
-  <description>  Al-Khafajiy, Mohammed, Baker, Thar, Al-Libawy, Hilal, Waraich, Atif, Chalmers, Carl and Alfandi, Omar  (2019) Fog Computing Framework for Internet of Things Applications.  In: International Conference on Developments in eSystems Engineering (DESE), 2-5 Sept. 2018, Cambridge, UK.  </description></item>
-<item>
-  <pubDate>Sat, 28 Jul 2018 00:00:00 +0100</pubDate>
-  <title> Cognitive Computing Meets the Internet of Things </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/47570/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/47570/</guid>
-  <type>conference_item</type>
-  <description>  Sellami, Mohamed, Al-Khafajiy, Mohammed, Atif, Yacine, Ugljanin, Emir, Faci, Noura, Baker, Thar and Maamar, Zakaria  (2018) Cognitive Computing Meets the Internet of Things.  In: 13th International Conference on Software Technologies.  </description></item>
     </channel>
 </rss>
