@@ -9,10 +9,24 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", ",,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 04 Apr 2022 03:57:40 +0100</pubDate>
-    <lastBuildDate>Mon, 04 Apr 2022 03:57:40 +0100</lastBuildDate>
+    <pubDate>Mon, 11 Apr 2022 04:00:20 +0100</pubDate>
+    <lastBuildDate>Mon, 11 Apr 2022 04:00:20 +0100</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Sun, 01 May 2022 00:00:00 +0100</pubDate>
+  <title> Self-supervised Representation Learning for Reliable Robotic Monitoring of Fruit Anomalies </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/48682/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/48682/</guid>
+  <type>conference_item</type>
+  <description>  Choi, Taeyeong, Would, Owen, Salazar-Gomez, Adrian and Cielniak, Grzegorz  (2022) Self-supervised Representation Learning for Reliable Robotic Monitoring of Fruit Anomalies.  In: 2022 IEEE International Conference on Robotics and Automation (ICRA), 23-27 May 2022, Philadelphia (PA), USA.  </description></item>
+<item>
+  <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+  <title> Educational robots and their control interfaces: how can we make them more accessible for Special Education? </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/48058/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/48058/</guid>
+  <type>conference_item</type>
+  <description>  Galvez Trigo, Maria, Standen, Penelope and Cobb, Sue  (2022) Educational robots and their control interfaces: how can we make them more accessible for Special Education?  In: HCI International Conference 2022.  </description></item>
 <item>
   <pubDate>Mon, 22 Nov 2021 00:00:00 +0000</pubDate>
   <title> Gaussian map predictions for 3D surface feature localisation and counting </title>
@@ -139,19 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/47571/</guid>
   <type>conference_item</type>
   <description>  Maamar, Zakaria, Boukadi, Khouloud, Ugljanin, Emir, Baker, Thar, Asim, Muhammad, Al-Khafajiy, Mohammed, Benslimane, Djamal and El Alaoui El Abdallaoui, Hasna  (2018) Thing Federation as a Service: Foundations and Demonstration.  In: International Conference on Model and Data Engineering.  </description></item>
-<item>
-  <pubDate>Thu, 10 Jan 2019 00:00:00 +0000</pubDate>
-  <title> IoT-Fog Optimal Workload via Fog Offloading </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/47567/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/47567/</guid>
-  <type>conference_item</type>
-  <description>  Al-Khafajiy, Mohammed, Baker, Thar, Waraich, Atif, Al-Jumeily, Dhiya and Hussain, Abir  (2019) IoT-Fog Optimal Workload via Fog Offloading.  In: IEEE/ACM International Conference on Utility and Cloud Computing Companion.  </description></item>
-<item>
-  <pubDate>Mon, 22 Mar 2021 00:00:00 +0000</pubDate>
-  <title> Cloud-edge coupling to mitigate execution failures </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/47575/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/47575/</guid>
-  <type>conference_item</type>
-  <description>  Maamar, Zakaria and Al-Khafajiy, Mohammed  (2021) Cloud-edge coupling to mitigate execution failures.  In: 36th Annual ACM Symposium on Applied Computing, March 22 - 26, 2021, Republic of Korea.  </description></item>
     </channel>
 </rss>
