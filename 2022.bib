@@ -7,7 +7,7 @@
          journal = {Expert Systems with Applications},
              doi = {10.1016/j.eswa.2021.116473},
             year = {2022},
-        keywords = {ARRAY(0x558e720c3208)},
+        keywords = {ARRAY(0x558e72221730)},
              url = {https://eprints.lincoln.ac.uk/id/eprint/47700/},
         abstract = {Tea chrysanthemum detection at its flowering stage is one of the key components for selective chrysanthemum harvesting robot development. However, it is a challenge to detect flowering chrysanthemums under unstructured field environments given variations on illumination, occlusion and object scale. In this context, we propose a highly fused and lightweight deep learning architecture based on YOLO for tea chrysanthemum detection (TC-YOLO). First, in the backbone component and neck component, the method uses the Cross-Stage Partially Dense network (CSPDenseNet) and the Cross-Stage Partial ResNeXt network (CSPResNeXt) as the main networks, respectively, and embeds custom feature fusion modules to guide the gradient flow. In the final head component, the method combines the recursive feature pyramid (RFP) multiscale fusion reflow structure and the Atrous Spatial Pyramid Pool (ASPP) module with cavity convolution to achieve the detection task. The resulting model was tested on 300 field images using a data enhancement strategy combining flipping and rotation, showing that under the NVIDIA Tesla P100 GPU environment, if the inference speed is 47.23 FPS for each image (416 {$\times$} 416), TC-YOLO can achieve the average precision (AP) of 92.49\% on our own tea chrysanthemum dataset. Through further validation, it was found that overlap had the least effect on tea chrysanthemum detection, and illumination had the greatest effect on tea chrysanthemum detection. In addition, this method (13.6 M) can be deployed on a single mobile GPU, and it could be further developed as a perception system for a selective chrysanthemum harvesting robot in the future.}
 }
@@ -19,7 +19,7 @@
           author = {Taeyeong Choi and Owen Would and Adrian Salazar-Gomez and Grzegorz Cielniak},
        publisher = {IEEE},
             year = {2022},
-        keywords = {ARRAY(0x558e720c2de8)},
+        keywords = {ARRAY(0x558e72208f30)},
              url = {https://eprints.lincoln.ac.uk/id/eprint/48682/},
         abstract = {Data augmentation can be a simple yet powerful tool for autonomous robots to fully utilise available data for self-supervised
 identification of atypical scenes or objects. State-of-the-art augmentation methods arbitrarily embed "structural" peculiarity on typical images so that classifying these artefacts can provide guidance for learning representations for the detection of anomalous visual signals. In this paper, however, we argue that learning such structure-sensitive representations can be a suboptimal approach to some classes of anomaly (e.g., unhealthy fruits) which could be better recognised by a different type of visual element such as "colour". We thus propose Channel Randomisation as a novel data augmentation method for restricting neural networks to learn encoding of "colour irregularity" whilst predicting channel-randomised images to ultimately build reliable fruit-monitoring robots identifying atypical fruit qualities. Our experiments show that (1) this colour-based alternative can better learn representations for consistently accurate identification of fruit anomalies in various fruit species, and also, (2) unlike other methods, the validation accuracy can be utilised as a criterion for early stopping of training in practice due to positive correlation between the performance in the self-supervised colour-differentiation task and the subsequent detection rate of actual anomalous fruits. Also, the proposed approach is evaluated on a new agricultural dataset, Riseholme-2021, consisting of 3.5K strawberry images gathered by a mobile robot, which we share online to encourage active agri-robotics research.}
@@ -36,7 +36,7 @@ identification of atypical scenes or objects. State-of-the-art augmentation meth
          journal = {Journal of Chemical Theory and Computation},
              doi = {https://doi.org/10.1021/acs.jctc.1c00924},
            pages = {2543--2555},
-        keywords = {ARRAY(0x558e720c2dd0)},
+        keywords = {ARRAY(0x558e72208f18)},
              url = {https://eprints.lincoln.ac.uk/id/eprint/49062/},
         abstract = {The determination of drug residence times, which define the time an inhibitor is in complex with its
 target, is a fundamental part of the drug discovery process. Synthesis and experimental
@@ -65,6 +65,19 @@ identify key structural features of the inhibitors that can be used as starting 
 strategies in drug discovery.}
 }
 
+@inproceedings{lincoln49117,
+       booktitle = {2021 2nd International Symposium on Automation, Information and Computing (ISAIC 2021)},
+           month = {April},
+           title = {Temperature-based Collision Detection in Extreme Low Light Condition with Bio-inspired LGMD Neural Network},
+          author = {Yicheng Zhang and Cheng Hu and Mei Liu and Hao Luan and Fang Lei and Heriberto Cuayahuitl and Shigang Yue},
+       publisher = {IOP Publishing Ltd},
+            year = {2022},
+             doi = {10.1088/1742-6596/2224/1/012004},
+        keywords = {ARRAY(0x558e722217c0)},
+             url = {https://eprints.lincoln.ac.uk/id/eprint/49117/},
+        abstract = {It is an enormous challenge for intelligent vehicles to avoid collision accidents at night because of the extremely poor light conditions. Thermal cameras can capture temperature map at night, even with no light sources and are ideal for collision detection in darkness. However, how to extract collision cues efficiently and effectively from the captured temperature map with limited computing resources is still a key issue to be solved. Recently, a bio-inspired neural network LGMD has been proposed for collision detection successfully, but for daytime and visible light. Whether it can be used for temperature-based collision detection or not remains unknown. In this study, we proposed an improved LGMD-based visual neural network for temperature-based collision detection at extreme light conditions. We show in this study that the insect inspired visual neural network can pick up the expanding temperature differences of approaching objects as long as the temperature difference against its background can be captured by a thermal sensor. Our results demonstrated that the proposed LGMD neural network can detect collisions swiftly based on the thermal modality in darkness; therefore, it can be a critical collision detection algorithm for autonomous vehicles driving at night to avoid fatal collisions with humans, animals, or other vehicles.}
+}
+
 @article{lincoln46497,
            month = {April},
            title = {Robotic Exploration for Learning Human Motion Patterns},
@@ -73,7 +86,7 @@ strategies in drug discovery.}
             year = {2022},
              doi = {10.1109/TRO.2021.3101358},
          journal = {IEEE Transaction on Robotics},
-        keywords = {ARRAY(0x558e720c3298)},
+        keywords = {ARRAY(0x558e722217a8)},
              url = {https://eprints.lincoln.ac.uk/id/eprint/46497/},
         abstract = {Understanding how people are likely to move is key to efficient and safe robot navigation in human environments. However, mobile robots can only observe a fraction of the environment at a time, while the activity patterns of people may also change at different times. This paper introduces a new methodology for mobile robot exploration to maximise the knowledge of human activity patterns by deciding where and when to collect observations. We introduce an exploration policy driven by the entropy levels in a spatio-temporal map of pedestrian flows, and compare multiple spatio-temporal exploration strategies including both informed and uninformed approaches. The evaluation is performed by simulating mobile robot exploration using real sensory data from three long-term pedestrian datasets. The results show that for certain scenarios the models built with proposed exploration system can better predict the flow patterns than uninformed strategies, allowing the robot to move in a more socially compliant way, and that the exploration ratio is a key factor when it comes to the model prediction accuracy.}
 }
@@ -84,7 +97,7 @@ strategies in drug discovery.}
            title = {Multiple broccoli head detection and tracking in 3D point clouds for autonomous harvesting},
           author = {Hector A. Montes and Grzegorz Cielniak},
             year = {2022},
-        keywords = {ARRAY(0x558e720c3280)},
+        keywords = {ARRAY(0x558e72221808)},
              url = {https://eprints.lincoln.ac.uk/id/eprint/48675/},
         abstract = {This paper explores a tracking method of broccoli heads that combine a Particle Filter and 3D features detectors to track multiple crops in a sequence of 3D data frames. The tracking accuracy is verified based on a data association method that matches detections with tracks over each frame. The particle filter incorporates a simple motion model to produce the posterior particle distribution, and a similarity model as probability function to measure the tracking accuracy. The method is tested with datasets of two broccoli varieties collected in planted fields from two different countries. Our evaluation shows the tracking method reduces the number of false negatives produced by the detectors on their own. In addition, the method accurately detects and tracks the 3D locations of broccoli heads relative to the vehicle at high frame rates}
 }
@@ -98,7 +111,7 @@ strategies in drug discovery.}
              doi = {10.1109/TNNLS.2022.3149832},
            pages = {1--15},
             year = {2022},
-        keywords = {ARRAY(0x558e720c32e0)},
+        keywords = {ARRAY(0x558e72221a18)},
              url = {https://eprints.lincoln.ac.uk/id/eprint/48358/},
         abstract = {Collision detection is critical for autonomous vehicles or robots to serve human society safely. Detecting looming objects robustly and timely plays an important role in collision avoidance systems. The locust lobula giant movement detector (LGMD1) is specifically selective to looming objects which are on a direct collision course. However, the existing LGMD1 models can not distinguish a looming object from a near and fast translatory moving object, because the latter can evoke a large amount of excitation that can lead to false LGMD1 spikes. This paper presents a new visual neural system model (LGMD1) that applies a neural competition mechanism within a framework of separated ON and OFF pathways to shut off the translating response. The competition-based approach responds vigorously to monotonous ON/OFF responses resulting from a looming object. However, it does not respond to paired ON-OFF responses that result from a translating object, thereby enhancing collision selectivity. Moreover, a complementary denoising mechanism ensures reliable collision detection. To verify the effectiveness of the model, we have conducted systematic comparative experiments on synthetic and real datasets. The results show that our method exhibits more accurate discrimination between looming and translational events -- the looming motion can be correctly detected. It also demonstrates that the proposed model is more robust than comparative models.}
 }
@@ -109,11 +122,25 @@ strategies in drug discovery.}
            title = {Channel Randomisation with Domain Control for Effective Representation Learning of Visual Anomalies in Strawberries},
           author = {Taeyeong Choi and Grzegorz Cielniak},
             year = {2022},
-        keywords = {ARRAY(0x558e720c34a8)},
+        keywords = {ARRAY(0x558e72221748)},
              url = {https://eprints.lincoln.ac.uk/id/eprint/48676/},
         abstract = {Channel Randomisation (CH-Rand) has appeared as a key data augmentation technique for anomaly detection on fruit
 images because neural networks can learn useful representations of colour irregularity whilst classifying the samples
 from the augmented "domain". Our previous study has revealed its success with significantly more reliable performance than other state-of-the-art methods, largely specialised for identifying structural implausibility on non-agricultural objects (e.g., screws). In this paper, we further enhance CH-Rand with additional guidance to generate more informative data for representation learning of anomalies in fruits as most of its fundamental designs are still maintained. To be specific, we first control the "colour space" on which CH-Rand is executed to investigate whether a particular model{--}e.g., HSV , YCbCr, or L*a*b* {--}can better help synthesise realistic anomalies than the RGB, suggested in the original design. In addition, we develop a learning "curriculum" in which CH-Rand shifts its augmented domain to gradually increase the difficulty of the examples for neural networks to classify. To the best of our best knowledge, we are the first to connect the concept of curriculum to self-supervised representation learning for anomaly detection. Lastly, we perform evaluations with the Riseholme-2021 dataset, which contains {\ensuremath{>}} 3.5K real strawberry images at various growth levels along with anomalous examples. Our experimental results show that the trained models with the proposed strategies can achieve over 16\% higher scores of AUC-PR with more than three times less variability than the naive CH-Rand whilst using the same deep networks and data.}
+}
+
+@article{lincoln49094,
+           month = {January},
+           title = {A Looming Spatial Localization Neural Network Inspired by MLG1 Neurons in the Crab Neohelice},
+          author = {Hao Luan and Qingbing Fu and Yicheng Zhang and Mu Hua and Shengyong Chen and Shigang Yue},
+       publisher = {Frontiers Media},
+            year = {2022},
+             doi = {10.3389/fnins.2021.787256},
+         journal = {Frontiers in Neuroscience},
+        keywords = {ARRAY(0x558e72221760)},
+             url = {https://eprints.lincoln.ac.uk/id/eprint/49094/},
+        abstract = {Similar to most visual animals, the crab Neohelice granulata relies predominantly on visual information to escape from predators, to track prey and for selecting mates. It, therefore, needs specialized neurons to process visual information and determine the spatial location of looming objects. In the crab Neohelice granulata, the Monostratified Lobula Giant type1 (MLG1) neurons have been found to manifest looming sensitivity with finely tuned capabilities of encoding spatial location information. MLG1s neuronal ensemble can not only perceive the location of a looming stimulus, but are also thought to be able to influence the direction of movement continuously, for example, escaping from a threatening, looming target in relation to its position. Such specific characteristics make the MLG1s unique compared to normal looming detection neurons in invertebrates which can not localize spatial looming. Modeling the MLG1s ensemble is not only critical for elucidating the mechanisms underlying the functionality of such neural circuits, but also important for developing new autonomous, efficient, directionally reactive collision avoidance systems for robots and vehicles. However, little computational modeling has been done for implementing looming spatial localization analogous to the specific functionality of MLG1s ensemble. To bridge this gap, we propose a model of MLG1s and their pre-synaptic visual neural network to detect the spatial location of looming objects. The model consists of 16 homogeneous sectors arranged in a circular field inspired by the natural arrangement of 16 MLG1s? receptive fields to encode and convey spatial information concerning looming objects with dynamic expanding edges in different locations of the visual field. Responses of the proposed model to systematic real-world visual stimuli match many of the biological characteristics of MLG1 neurons.
+The systematic experiments demonstrate that our proposed MLG1s model works effectively and robustly to perceive and localize looming information, which could be a promising candidate for intelligent machines interacting within dynamic environments free of collision. This study also sheds light upon a new type of neuromorphic visual sensor strategy that can extract looming objects with locational information in a quick and reliable manner.}
 }
 
 @inproceedings{lincoln48058,
@@ -122,7 +149,7 @@ from the augmented "domain". Our previous study has revealed its success with si
           author = {Maria Galvez Trigo and Penelope Standen and Sue Cobb},
        publisher = {Springer},
             year = {2022},
-        keywords = {ARRAY(0x558e720c3220)},
+        keywords = {ARRAY(0x558e72221a48)},
              url = {https://eprints.lincoln.ac.uk/id/eprint/48058/},
         abstract = {Existing design standards and guidelines provide guidance on what factors to consider to produce interactive systems that are not only usable, but also accessible. However, these standards are usually general, and when it comes to designing an interactive system for children with Learning Difficulties or Disabilities (LD) and/or Autism Spectrum Conditions (ASC) they are often not specific enough, leading to systems that are not fit for that purpose. If we dive into the area of educational robotics, we face even more issues, in part due to the relative novelty of these technologies. In this paper, we present an analysis of 26 existing educational robots and the interfaces used to control them. Furthermore, we present the results of running focus groups and a questionnaire with 32 educators with expertise in Special Education and parents at four different institutions, to explore potential accessibility issues of existing systems and to identify desirable characteristics. We conclude introduc- ing an initial set of design recommendations, to complement existing design standards and guidelines, that would help with producing future more accessible control interfaces for educational robots, with an especial focus on helping pupils with LDs and/or ASC.}
 }
@@ -132,9 +159,20 @@ from the augmented "domain". Our previous study has revealed its success with si
            title = {From Human Perception and Action Recognition to Causal Understanding of Human-Robot Interaction in Industrial Environments},
           author = {Stefano Ghidoni and Matteo Terreran and Daniele Evangelista and Emanuele Menegatti and Christian Eitzinger and Enrico Villagrossi and Nicola Pedrocchi and Nicola Castaman and Marcin Malecha and Sariah Mghames and Luca Castri and Marc Hanheide and Nicola Bellotto},
             year = {2022},
-        keywords = {ARRAY(0x558e720c3238)},
+        keywords = {ARRAY(0x558e72221a60)},
              url = {https://eprints.lincoln.ac.uk/id/eprint/48515/},
         abstract = {Human-robot collaboration is migrating from lightweight robots in laboratory environments to industrial applications, where heavy tasks and powerful robots are more common. In this scenario, a reliable perception of the humans involved in the process and related intentions and behaviors is fundamental. This paper presents two projects investigating the use of robots in relevant industrial scenarios, providing an overview of how industrial human-robot collaborative tasks can be successfully addressed.}
+}
+
+@inproceedings{lincoln49036,
+       booktitle = {The 23rd International Workshop on Multi-Agent-Based Simulation (MABS))},
+           title = {Challenges for Multi-Agent Based Agricultural Workforce Management},
+          author = {Helen Harman and Elizabeth I. Sklar},
+       publisher = {Springer},
+            year = {2022},
+        keywords = {ARRAY(0x558e72221a90)},
+             url = {https://eprints.lincoln.ac.uk/id/eprint/49036/},
+        abstract = {Multi-agent task allocation methods seek to distribute a set of tasks fairly amongst a set of agents. In real-world settings, such as soft fruit farms, human labourers undertake harvesting tasks, assigned by farm managers. The work here explores the application of artificial intelligence planning methodologies to optimise the existing workforce and applies multi-agent based simulation to evaluate the efficacy of the AI strategies. Key challenges threatening the acceptance of such an approach are highlighted and solutions are evaluated experimentally.}
 }
 
 @article{lincoln49072,
@@ -143,7 +181,7 @@ from the augmented "domain". Our previous study has revealed its success with si
        publisher = {Elsevier},
             year = {2022},
          journal = {Trends in Food Science and Technology},
-        keywords = {ARRAY(0x558e720c34d8)},
+        keywords = {ARRAY(0x558e72221aa8)},
              url = {https://eprints.lincoln.ac.uk/id/eprint/49072/},
         abstract = {Background:  The use of artificial intelligence (AI) is growing in food supply chains. The ethical language associated with food supply and technology is contextualised and framed by the meaning given to it by stakeholders. Failure to differentiate between these nuanced meanings can create a barrier to technology adoption and reduce the benefit derived.
 Scope and approach: The aim of this review paper is to consider the embedded ethical language used by stakeholders who collaborate in the adoption of AI in food supply chains.    Ethical perspectives frame this literature review and provide structure to consider how to shape a common discourse to build trust in, and frame more considered utilisation of, AI in food supply chains to the benefit of users, and wider society. 
@@ -156,7 +194,7 @@ Key findings and conclusions: Whilst the nature of data within the food system i
        publisher = {Frontiers Media},
             year = {2022},
          journal = {Frontiers in plant science},
-        keywords = {ARRAY(0x558e720c34f0)},
+        keywords = {ARRAY(0x558e72221ad8)},
              url = {https://eprints.lincoln.ac.uk/id/eprint/48499/},
         abstract = {A high resolution dataset is one of the prerequisites for tea chrysanthemum detection with deep learning algorithms. This is crucial for further developing a selective chrysanthemum harvesting robot. However, generating high resolution datasets of the tea chrysanthemum with complex unstructured environments is a challenge. In this context, we propose a novel generative adversarial network (TC-GAN) that attempts to deal with this challenge. First, we designed a non-linear mapping network for untangling the features of the underlying code. Then, a customized regularisation method was used to provide fine-grained control over the image details. Finally, a gradient diversion design with multi-scale feature extraction capability was adopted to optimize the training process. The proposed TC-GAN was compared with 12 state-of-the-art generative adversarial networks, showing that an optimal average precision (AP) of 90.09\% was achieved with the generated images (512*512) on the developed TC-YOLO object detection model under the NVIDIA Tesla P100 GPU environment. Moreover, the detection model was deployed into the embedded NVIDIA Jetson TX2 platform with 0.1s inference time, and this edge computing device could be further developed into a perception system for selective chrysanthemum picking robots in the future.}
 }
