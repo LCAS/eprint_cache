@@ -9,10 +9,17 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", ",,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 20 Jun 2022 04:08:49 +0100</pubDate>
-    <lastBuildDate>Mon, 20 Jun 2022 04:08:49 +0100</lastBuildDate>
+    <pubDate>Mon, 27 Jun 2022 04:15:41 +0100</pubDate>
+    <lastBuildDate>Mon, 27 Jun 2022 04:15:41 +0100</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Wed, 20 Jul 2022 00:00:00 +0100</pubDate>
+  <title> Scaling a hippocampus model with GPU parallelisation and test-driven refactoring </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/49936/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/49936/</guid>
+  <type>conference_item</type>
+  <description>  Stevenson, Jack and Fox, Charles  (2022) Scaling a hippocampus model with GPU parallelisation and test-driven refactoring.  In: 11th International Conference on Biomimetic and Biohybrid Systems (Living Machines), 20-22 July 2022.  </description></item>
 <item>
   <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
   <title> An Agricultural Event Prediction Framework towards Anticipatory Scheduling of Robot Fleets: General Concepts and Case Studies </title>
@@ -146,12 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/49072/</guid>
   <type>article</type>
   <description>  Manning, Louise, Brewer, Steve, Craigon, Peter, Frey, P.J, Gutierrez, Anabel, Jacobs, Naomi, Kanza, Samantha, Munday, Samuel, Sacks, Justin and Pearson, Simon  (2022) Artificial intelligence and ethics within the food sector: developing a common language for technology adoption across the supply chain.  Trends in Food Science and Technology .       ISSN 0924-2244  </description></item>
-<item>
-  <pubDate>Tue, 12 Apr 2022 00:00:00 +0100</pubDate>
-  <title> Combined Free-Energy Calculation and Machine Learning Methods for Understanding Ligand Unbinding Kinetics </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/49062/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/49062/</guid>
-  <type>article</type>
-  <description>  Badaoui, Magd, Buigues, Pedro, Berta, Denes, Mandana, Guarav, Gu, Hankang, Földes, Tamás, Dickson, Callum, Hornak, Viktor, Kato, Mitsunori, Molteni, Carla, Parsons, Simon and Rosta, Edina  (2022) Combined Free-Energy Calculation and Machine Learning Methods for Understanding Ligand Unbinding Kinetics.  Journal of Chemical Theory and Computation, 18  (4).   pp. 2543-2555.     ISSN 1549-9618  </description></item>
     </channel>
 </rss>
