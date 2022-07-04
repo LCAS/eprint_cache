@@ -9,10 +9,24 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", ",,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 27 Jun 2022 04:15:41 +0100</pubDate>
-    <lastBuildDate>Mon, 27 Jun 2022 04:15:41 +0100</lastBuildDate>
+    <pubDate>Mon, 04 Jul 2022 04:17:05 +0100</pubDate>
+    <lastBuildDate>Mon, 04 Jul 2022 04:17:05 +0100</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Fri, 01 Jul 2022 00:00:00 +0100</pubDate>
+  <title> A comparison of neural‑based visual recognisers for speech activity detection </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/49800/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/49800/</guid>
+  <type>article</type>
+  <description>  Raza, Sajjadali and Cuayahuitl, Heriberto  (2022) A comparison of neural‑based visual recognisers for speech activity detection.  International Journal of Speech Technology .       ISSN 1572-8110  </description></item>
+<item>
+  <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+  <title> Towards Infield Navigation: leveraging simulated data for crop row detection </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/49913/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/49913/</guid>
+  <type>conference_item</type>
+  <description>  De Silva, Rajitha, Cielniak, Grzegorz and Gao, Junfeng  (2022) Towards Infield Navigation: leveraging simulated data for crop row detection.  In: IEEE International Conference on Automation Science and Engineering (CASE).  </description></item>
 <item>
   <pubDate>Wed, 20 Jul 2022 00:00:00 +0100</pubDate>
   <title> Scaling a hippocampus model with GPU parallelisation and test-driven refactoring </title>
@@ -139,19 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/49117/</guid>
   <type>conference_item</type>
   <description>  Zhang, Yicheng, Hu, Cheng, Liu, Mei, Luan, Hao, Lei, Fang, Cuayahuitl, Heriberto and Yue, Shigang  (2022) Temperature-based Collision Detection in Extreme Low Light Condition with Bio-inspired LGMD Neural Network.  In: 2021 2nd International Symposium on Automation, Information and Computing (ISAIC 2021), 03/12/21-06/12/21, Beijing.  </description></item>
-<item>
-  <pubDate>Fri, 21 Jan 2022 00:00:00 +0000</pubDate>
-  <title> A Looming Spatial Localization Neural Network Inspired by MLG1 Neurons in the Crab Neohelice </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/49094/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/49094/</guid>
-  <type>article</type>
-  <description>  Luan, Hao, Fu, Qingbing, Zhang, Yicheng, Hua, Mu, Chen, Shengyong and Yue, Shigang  (2022) A Looming Spatial Localization Neural Network Inspired by MLG1 Neurons in the Crab Neohelice.  Frontiers in Neuroscience .       ISSN 1662-4548  </description></item>
-<item>
-  <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-  <title> Artificial intelligence and ethics within the food sector: developing a common language for technology adoption across the supply chain </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/49072/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/49072/</guid>
-  <type>article</type>
-  <description>  Manning, Louise, Brewer, Steve, Craigon, Peter, Frey, P.J, Gutierrez, Anabel, Jacobs, Naomi, Kanza, Samantha, Munday, Samuel, Sacks, Justin and Pearson, Simon  (2022) Artificial intelligence and ethics within the food sector: developing a common language for technology adoption across the supply chain.  Trends in Food Science and Technology .       ISSN 0924-2244  </description></item>
     </channel>
 </rss>
