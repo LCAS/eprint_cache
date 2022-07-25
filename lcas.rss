@@ -9,10 +9,17 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", ",,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 18 Jul 2022 04:16:15 +0100</pubDate>
-    <lastBuildDate>Mon, 18 Jul 2022 04:16:15 +0100</lastBuildDate>
+    <pubDate>Mon, 25 Jul 2022 04:16:15 +0100</pubDate>
+    <lastBuildDate>Mon, 25 Jul 2022 04:16:15 +0100</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+  <title> Multi-Agent Task Allocation Techniques for Harvest Team Formation </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/50057/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/50057/</guid>
+  <type>conference_item</type>
+  <description>  Harman, Helen and Sklar, Elizabeth  (2022) Multi-Agent Task Allocation Techniques for Harvest Team Formation.  In: Advances in Practical Applications of Agents, Multi-Agent Systems, and Complex Systems Simulation. The PAAMS Collection, 13th-15th July 2022, Italy.  </description></item>
 <item>
   <pubDate>Sat, 02 Jul 2022 00:00:00 +0100</pubDate>
   <title> A survey on deep reinforcement learning for audio‑based applications </title>
@@ -124,7 +131,7 @@
   <link>https://eprints.lincoln.ac.uk/id/eprint/49460/</link>
   <guid>https://eprints.lincoln.ac.uk/id/eprint/49460/</guid>
   <type>article</type>
-  <description>  Pearson, Simon, Camacho‑Villa, Carolina, Valluru, Ravi, Oorbessy, Gaju, Rai, Mini, Gould, Iain, Brewer, Steve and Sklar, Elizabeth  (2022) Robotics and Autonomous Systems for Net Zero Agriculture.  AGRICULTURE ROBOTICS Current Robotics Reports, 3 .   pp. 57-64.      </description></item>
+  <description>  Pearson, Simon, Camacho‑Villa, Carolina, Valluru, Ravi, Oorbessy, Gaju, Rai, Mini, Gould, Iain, Brewer, Steve and Sklar, Elizabeth  (2022) Robotics and Autonomous Systems for Net Zero Agriculture.  Current Robotics Reports, 3 .   pp. 57-64.     ISSN 2662-4087  </description></item>
 <item>
   <pubDate>Thu, 29 Sep 2022 00:00:00 +0100</pubDate>
   <title> Using Semantic Systems Engineering Techniques to Verity the Large Aperture Space Telescope Mission – Current Status </title>
@@ -146,12 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/49326/</guid>
   <type>article</type>
   <description>  Parnell, Katie J., Fischer, Joel, Clarck, Jed, Bodenman, Adrian, Galvez Trigo, Maria J., Brito, Mario P., Divband Soorati, Mohammad, Plant, Katherine and Ramchurn, Sarvapali  (2022) Trustworthy UAV relationships: Applying the Schema Action World taxonomy to UAVs and UAV swarm operations.  International Journal of Human–Computer Interaction .       ISSN 1044-7318  </description></item>
-<item>
-  <pubDate>Sun, 22 May 2022 00:00:00 +0100</pubDate>
-  <title> Game Theory, Proxemics and Trust for Self-Driving Car Social Navigation </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/49183/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/49183/</guid>
-  <type>conference_item</type>
-  <description>  Camara, Fanta and Fox, Charles  (2022) Game Theory, Proxemics and Trust for Self-Driving Car Social Navigation.  In: Social Robot Navigation: Advances and Evaluation (SEANavBench 2022), May 23rd-27th 2022, Philadelphia, PA, USA.  </description></item>
     </channel>
 </rss>
