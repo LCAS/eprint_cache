@@ -9,10 +9,24 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", ",,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 08 Aug 2022 04:14:48 +0100</pubDate>
-    <lastBuildDate>Mon, 08 Aug 2022 04:14:48 +0100</lastBuildDate>
+    <pubDate>Mon, 15 Aug 2022 04:17:37 +0100</pubDate>
+    <lastBuildDate>Mon, 15 Aug 2022 04:17:37 +0100</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Sat, 01 Oct 2022 00:00:00 +0100</pubDate>
+  <title> Peduncle Gripping and Cutting Force for Strawberry Harvesting Robotic end-effector Design </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/50259/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/50259/</guid>
+  <type>conference_item</type>
+  <description>  Vishnu, Rajendran Sugathakumary, Parsa, Soran, Parsons, Simon and Ghalamzan Esfahani, Amir  (2022) Peduncle Gripping and Cutting Force for Strawberry Harvesting Robotic end-effector Design.  In: [14:35] Vishnu Rajendran Sugathakumary (25451641) 2022 4th International Conference on Control and Robotics (ICCR 2022).  </description></item>
+<item>
+  <pubDate>Fri, 09 Sep 2022 00:00:00 +0100</pubDate>
+  <title> EMap: Real-time Terrain Estimation </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/50390/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/50390/</guid>
+  <type>conference_item</type>
+  <description>  Lock, Jacobus, Camara, Fanta and Fox, Charles  (2022) EMap: Real-time Terrain Estimation.  In: 23rd Towards Autonomous Robotic Systems (TAROS) Conference, 7-9 Sep, 2022, Oxford, UK.  </description></item>
 <item>
   <pubDate>Mon, 21 Feb 2022 00:00:00 +0000</pubDate>
   <title> A Robust Visual System for Looming Cue Detection Against Translation Motion </title>
@@ -139,19 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/49488/</guid>
   <type>article</type>
   <description>  Carignan, Craig R., Detry, Renaud, Rai Saaj, Mini, Marani, Giacomo and Vander Hook, Joshua D.  (2022) Editorial: Robotic In-Situ Servicing, Assembly and Manufacturing.  Frontiers in Robotics and AI, 9 .       ISSN 2296-9144  </description></item>
-<item>
-  <pubDate>Sun, 18 Oct 2020 00:00:00 +0100</pubDate>
-  <title> Advances in Robotic In-Orbit Assembly of Large Aperture Space Telescopes </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/49489/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/49489/</guid>
-  <type>conference_item</type>
-  <description>  Nair, Manu H., Saaj, Mini, Adlen, Sam, Esfahani, Amir G, and Eckersley, Steve  (2020) Advances in Robotic In-Orbit Assembly of Large Aperture Space Telescopes.  In: 15th International Symposium on Artificial Intelligence, Robotics and Automation in Space (i-SAIRAS 2020), 18-20 October 2020, Pasadena, US.  </description></item>
-<item>
-  <pubDate>Wed, 01 Jun 2022 00:00:00 +0100</pubDate>
-  <title> Robotics and Autonomous Systems for Net Zero Agriculture </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/49460/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/49460/</guid>
-  <type>article</type>
-  <description>  Pearson, Simon, Camacho‑Villa, Carolina, Valluru, Ravi, Oorbessy, Gaju, Rai, Mini, Gould, Iain, Brewer, Steve and Sklar, Elizabeth  (2022) Robotics and Autonomous Systems for Net Zero Agriculture.  Current Robotics Reports, 3 .   pp. 57-64.     ISSN 2662-4087  </description></item>
     </channel>
 </rss>
