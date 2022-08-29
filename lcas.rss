@@ -9,10 +9,31 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", ",,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 22 Aug 2022 04:17:39 +0100</pubDate>
-    <lastBuildDate>Mon, 22 Aug 2022 04:17:39 +0100</lastBuildDate>
+    <pubDate>Mon, 29 Aug 2022 04:24:14 +0100</pubDate>
+    <lastBuildDate>Mon, 29 Aug 2022 04:24:14 +0100</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Fri, 26 Aug 2022 00:00:00 +0100</pubDate>
+  <title> Blockchain Crop Assurance and Localisation </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/50385/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/50385/</guid>
+  <type>conference_item</type>
+  <description>  Clawson, Garry and Fox, Charles  (2022) Blockchain Crop Assurance and Localisation.  In: The 5th UK Robotics and Autonomous Systems Conference, 26 Aug, 2022, Aberystwyth, UK.  </description></item>
+<item>
+  <pubDate>Mon, 29 Aug 2022 00:00:00 +0100</pubDate>
+  <title> Extending Quantitative Proxemics and Trust to HRI </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/49872/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/49872/</guid>
+  <type>conference_item</type>
+  <description>  Camara, Fanta and Fox, Charles  (2022) Extending Quantitative Proxemics and Trust to HRI.  In: 31st IEEE International Conference on Robot &amp; Human Interactive Communication, 29 Aug-2 Sep 2022, Naples, Italy.  </description></item>
+<item>
+  <pubDate>Sun, 23 Oct 2022 00:00:00 +0100</pubDate>
+  <title> Robot Policy Learning from Demonstration Using Advantage Weighting and Early Termination </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/50442/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/50442/</guid>
+  <type>conference_item</type>
+  <description>  Mohtasib, Abdalkarim, Neumann, Gerhard and Cuayahuitl, Heriberto  (2022) Robot Policy Learning from Demonstration Using Advantage Weighting and Early Termination.  In: IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS).  </description></item>
 <item>
   <pubDate>Sat, 01 Oct 2022 00:00:00 +0100</pubDate>
   <title> Peduncle Gripping and Cutting Force for Strawberry Harvesting Robotic end-effector Design </title>
@@ -132,26 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/49491/</guid>
   <type>conference_item</type>
   <description>  Nair, Manu H., Saaj, Chakravarthini Mini, Esfahani, Amir G., Nanjangud, Angadh, Eckersley, Steve and Bianco, Paolo  (2020) In-Space Robotic Assembly and Servicing of High-Value Infrastructure.  In: 71st International Astronautical Congress, 12-16 October 2020, Dubai.  </description></item>
-<item>
-  <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
-  <title> Modelling and Control of an End-Over-End Walking Robot </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/49496/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/49496/</guid>
-  <type>conference_item</type>
-  <description>  Nair, Manu H., Saaj, Mini and Esfahani, Amir G.  (2020) Modelling and Control of an End-Over-End Walking Robot.  In: 21st Towards Autonomous Robotic Systems Conference, 16 September 2020, University of Nottingham, UK.  </description></item>
-<item>
-  <pubDate>Mon, 28 Sep 2020 00:00:00 +0100</pubDate>
-  <title> Cloud SF – A continuous Integration Framework for the Design and Validation of Cyber-Physical Systems </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/49494/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/49494/</guid>
-  <type>conference_item</type>
-  <description>  Bullegas, Gianmaria, Kapur, Anurag, Saaj, Mini, Nair, Manu H., Pop, Adrian and Fritzson, Peter  (2020) Cloud SF – A continuous Integration Framework for the Design and Validation of Cyber-Physical Systems.  In: Model Based Space Systems and Software Engineering MBSE2020, 28-29 September 2020, European Space Agency, Amsterdam.  </description></item>
-<item>
-  <pubDate>Thu, 31 Mar 2022 00:00:00 +0100</pubDate>
-  <title> Editorial: Robotic In-Situ Servicing, Assembly and Manufacturing </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/49488/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/49488/</guid>
-  <type>article</type>
-  <description>  Carignan, Craig R., Detry, Renaud, Rai Saaj, Mini, Marani, Giacomo and Vander Hook, Joshua D.  (2022) Editorial: Robotic In-Situ Servicing, Assembly and Manufacturing.  Frontiers in Robotics and AI, 9 .       ISSN 2296-9144  </description></item>
     </channel>
 </rss>
