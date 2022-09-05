@@ -9,10 +9,24 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", ",,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 29 Aug 2022 04:24:14 +0100</pubDate>
-    <lastBuildDate>Mon, 29 Aug 2022 04:24:14 +0100</lastBuildDate>
+    <pubDate>Mon, 05 Sep 2022 04:27:28 +0100</pubDate>
+    <lastBuildDate>Mon, 05 Sep 2022 04:27:28 +0100</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Thu, 16 Jun 2022 00:00:00 +0100</pubDate>
+  <title> Benchmark of Sampling-Based Optimizing Planners for Outdoor Robot Navigation </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/50521/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/50521/</guid>
+  <type>conference_item</type>
+  <description>  Atas, Fetullah, Cielniak, Grzegorz and Grimstad, Lars  (2022) Benchmark of Sampling-Based Optimizing Planners for Outdoor Robot Navigation.  In: 17th International Conference on Intelligent Autonomous Systems, 13-16 June 2022, Zagreb, Croatia.  </description></item>
+<item>
+  <pubDate>Wed, 24 Aug 2022 00:00:00 +0100</pubDate>
+  <title> Trustworthy UAV relationships: Applying the Schema Action World taxonomy to UAVs and UAV swarm operations </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/50550/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/50550/</guid>
+  <type>article</type>
+  <description>  Parnell, Katie J., Fischer, Joel, Clark, Jed, Bodenman, Adrian, Galvez Trigo, Maria J., Brito, Mario P., Divband Soorati, Mohammad, Plant, Katherine and Ramchurn, Sarvapali  (2022) Trustworthy UAV relationships: Applying the Schema Action World taxonomy to UAVs and UAV swarm operations.  International Journal of Human–Computer Interaction .       ISSN 1044-7318  </description></item>
 <item>
   <pubDate>Fri, 26 Aug 2022 00:00:00 +0100</pubDate>
   <title> Blockchain Crop Assurance and Localisation </title>
@@ -139,19 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/49668/</guid>
   <type>article</type>
   <description>  Pal, Abhishesh, Das, Gautham, Hanheide, Marc, Leite, Antonio Candea and From, Pal  (2022) An Agricultural Event Prediction Framework towards Anticipatory Scheduling of Robot Fleets: General Concepts and Case Studies.  Agronomy, 12  (6).       ISSN 2073-4395  </description></item>
-<item>
-  <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-  <title> Effects of Wording and Gendered Voices on Acceptability of Voice Assistants in Future Autonomous Vehicles </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/49118/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/49118/</guid>
-  <type>conference_item</type>
-  <description>  Jestin, Iris, Fischer, Joel E., Galvez Trigo, Maria J., Large, David R. and Burnett, Gary E.  (2022) Effects of Wording and Gendered Voices on Acceptability of Voice Assistants in Future Autonomous Vehicles.  In: CUI ’22: Conversational User Interfaces Conference, 26th-28th July 2022, Glasgow.  </description></item>
-<item>
-  <pubDate>Mon, 12 Oct 2020 00:00:00 +0100</pubDate>
-  <title> In-Space Robotic Assembly and Servicing of High-Value Infrastructure </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/49491/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/49491/</guid>
-  <type>conference_item</type>
-  <description>  Nair, Manu H., Saaj, Chakravarthini Mini, Esfahani, Amir G., Nanjangud, Angadh, Eckersley, Steve and Bianco, Paolo  (2020) In-Space Robotic Assembly and Servicing of High-Value Infrastructure.  In: 71st International Astronautical Congress, 12-16 October 2020, Dubai.  </description></item>
     </channel>
 </rss>
