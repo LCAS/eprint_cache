@@ -9,10 +9,24 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", ",,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 05 Sep 2022 04:27:28 +0100</pubDate>
-    <lastBuildDate>Mon, 05 Sep 2022 04:27:28 +0100</lastBuildDate>
+    <pubDate>Mon, 12 Sep 2022 04:30:21 +0100</pubDate>
+    <lastBuildDate>Mon, 12 Sep 2022 04:30:21 +0100</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Fri, 14 May 2021 00:00:00 +0100</pubDate>
+  <title> Exploring Co-creative Drawing Workflows </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/50873/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/50873/</guid>
+  <type>article</type>
+  <description>  Jansen, Chipp and Sklar, Elizabeth  (2021) Exploring Co-creative Drawing Workflows.  Frontiers in Robotics and AI, 8 .       ISSN 2296-9144  </description></item>
+<item>
+  <pubDate>Tue, 30 Aug 2022 00:00:00 +0100</pubDate>
+  <title> High-throughput phenotyping for breeding targets - Current status and future directions of strawberry trait automation </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/49681/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/49681/</guid>
+  <type>article</type>
+  <description>  James, Katherine Margaret Frances, Sargent, Daniel James, Whitehouse, Adam and Cielniak, Grzegorz  (2022) High-throughput phenotyping for breeding targets - Current status and future directions of strawberry trait automation.  Plants, People, Planet, 4  (5).   pp. 432-443.     ISSN 2572-2611  </description></item>
 <item>
   <pubDate>Thu, 16 Jun 2022 00:00:00 +0100</pubDate>
   <title> Benchmark of Sampling-Based Optimizing Planners for Outdoor Robot Navigation </title>
@@ -139,19 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/49943/</guid>
   <type>book_section</type>
   <description>  Ghalamzan Esfahani, Amir, Das, Gautham, Gould, Iain, Zarafshan, Payam, Rajendran Sugathakumary, Vishnu, Heselden, James, Badiee, Amir, Wright, Isobel and Pearson, Simon  (2022) Applications of robotic and solar energy in precision agriculture and smart farming.   In:  Solar Energy Advancements in Agriculture and Food Production Systems.   Elsevier.  ISBN 9780323898669, 9780323886253  </description></item>
-<item>
-  <pubDate>Wed, 20 Jul 2022 00:00:00 +0100</pubDate>
-  <title> Scaling a hippocampus model with GPU parallelisation and test-driven refactoring </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/49936/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/49936/</guid>
-  <type>conference_item</type>
-  <description>  Stevenson, Jack and Fox, Charles  (2022) Scaling a hippocampus model with GPU parallelisation and test-driven refactoring.  In: 11th International Conference on Biomimetic and Biohybrid Systems (Living Machines), 20-22 July 2022.  </description></item>
-<item>
-  <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-  <title> An Agricultural Event Prediction Framework towards Anticipatory Scheduling of Robot Fleets: General Concepts and Case Studies </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/49668/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/49668/</guid>
-  <type>article</type>
-  <description>  Pal, Abhishesh, Das, Gautham, Hanheide, Marc, Leite, Antonio Candea and From, Pal  (2022) An Agricultural Event Prediction Framework towards Anticipatory Scheduling of Robot Fleets: General Concepts and Case Studies.  Agronomy, 12  (6).       ISSN 2073-4395  </description></item>
     </channel>
 </rss>
