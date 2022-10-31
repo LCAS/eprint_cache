@@ -9,10 +9,31 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", ",,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 24 Oct 2022 04:33:18 +0100</pubDate>
-    <lastBuildDate>Mon, 24 Oct 2022 04:33:18 +0100</lastBuildDate>
+    <pubDate>Mon, 31 Oct 2022 03:19:09 +0000</pubDate>
+    <lastBuildDate>Mon, 31 Oct 2022 03:19:09 +0000</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Thu, 01 Sep 2022 00:00:00 +0100</pubDate>
+  <title> Learning Cooperative Behaviours in Adversarial Multi-agent Systems </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/52230/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/52230/</guid>
+  <type>conference_item</type>
+  <description>  Wang, Ni, Das, Gautham and Millard, Alan  (2022) Learning Cooperative Behaviours in Adversarial Multi-agent Systems.  In: Towards Autonomous Robotic Systems, Oxford.  </description></item>
+<item>
+  <pubDate>Thu, 01 Sep 2022 00:00:00 +0100</pubDate>
+  <title> Agent-Based Simulation of Multi-robot Soil Compaction Mapping </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/52228/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/52228/</guid>
+  <type>conference_item</type>
+  <description>  Roberts-Elliott, Laurence, Das, Gautham and Millard, Alan  (2022) Agent-Based Simulation of Multi-robot Soil Compaction Mapping.  In: Towards Autonomous Robotic Systems, Oxford.  </description></item>
+<item>
+  <pubDate>Thu, 01 Sep 2022 00:00:00 +0100</pubDate>
+  <title> Numerical analysis of wind turbines blade in deep dynamic stall </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/50417/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/50417/</guid>
+  <type>article</type>
+  <description>  Karbasian, Hamid Reza, Esfahani, Javad Abolfazli, Aliyu, Aliyu Musa and Kim, Kyung Chun  (2022) Numerical analysis of wind turbines blade in deep dynamic stall.  Renewable Energy, 197 .   pp. 1094-1105.     ISSN 0960-1481  </description></item>
 <item>
   <pubDate>Mon, 14 Feb 2022 00:00:00 +0000</pubDate>
   <title> Marine Robotics for Deep-Sea Specimen Collection: A Taxonomy of Underwater Manipulative Actions </title>
@@ -132,26 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/51674/</guid>
   <type>conference_item</type>
   <description>  Owen, Amie, Harman, Helen and Sklar, Elizabeth  (2022) Towards Autonomous Task Allocation Using a Robot Team in a Food Factory.  In: UKRAS2022 Conference ‘Robotics for Unconstrained Environments’, 26th August 2022, Aberystwyth, Scotland.  </description></item>
-<item>
-  <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-  <title> Towards the application of multi-agent task allocation to hygiene tasks in the food production industry. </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/51673/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/51673/</guid>
-  <type>conference_item</type>
-  <description>  Owen, Amie, Harman, Helen and Sklar, Elizabeth I.  (2022) Towards the application of multi-agent task allocation to hygiene tasks in the food production industry.  In: 20th International Conference on Practical Applications of Agents and Multi-Agent Systems, PAAMS 2022, 12-15th July 2022, L'Aquila, Italy.  </description></item>
-<item>
-  <pubDate>Fri, 14 May 2021 00:00:00 +0100</pubDate>
-  <title> Exploring Co-creative Drawing Workflows </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/50873/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/50873/</guid>
-  <type>article</type>
-  <description>  Jansen, Chipp and Sklar, Elizabeth  (2021) Exploring Co-creative Drawing Workflows.  Frontiers in Robotics and AI, 8 .       ISSN 2296-9144  </description></item>
-<item>
-  <pubDate>Tue, 30 Aug 2022 00:00:00 +0100</pubDate>
-  <title> High-throughput phenotyping for breeding targets - Current status and future directions of strawberry trait automation </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/49681/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/49681/</guid>
-  <type>article</type>
-  <description>  James, Katherine Margaret Frances, Sargent, Daniel James, Whitehouse, Adam and Cielniak, Grzegorz  (2022) High-throughput phenotyping for breeding targets - Current status and future directions of strawberry trait automation.  Plants, People, Planet, 4  (5).   pp. 432-443.     ISSN 2572-2611  </description></item>
     </channel>
 </rss>
