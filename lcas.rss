@@ -9,10 +9,24 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", ",,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 31 Oct 2022 03:19:09 +0000</pubDate>
-    <lastBuildDate>Mon, 31 Oct 2022 03:19:09 +0000</lastBuildDate>
+    <pubDate>Mon, 07 Nov 2022 03:11:33 +0000</pubDate>
+    <lastBuildDate>Mon, 07 Nov 2022 03:11:33 +0000</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Thu, 13 Oct 2022 00:00:00 +0100</pubDate>
+  <title> Unfreezing autonomous vehicles with game theory, proxemics, and trust </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/52159/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/52159/</guid>
+  <type>article</type>
+  <description>  Camara, Fanta and Fox, Charles  (2022) Unfreezing autonomous vehicles with game theory, proxemics, and trust.  Frontiers in Computer Science .       ISSN 2624-9898  </description></item>
+<item>
+  <pubDate>Mon, 31 Oct 2022 00:00:00 +0000</pubDate>
+  <title> Proactive slip control by learned slip model and trajectory adaptation </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/52220/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/52220/</guid>
+  <type>conference_item</type>
+  <description>  Nazari, Kiyanoush, Mandil, Willow and Ghalamzan Esfahani, Amir  (2022) Proactive slip control by learned slip model and trajectory adaptation.  In: 6th Conference on Robot Learning, 14th-16th December 2022, Auckland, New Zealand.  </description></item>
 <item>
   <pubDate>Thu, 01 Sep 2022 00:00:00 +0100</pubDate>
   <title> Learning Cooperative Behaviours in Adversarial Multi-agent Systems </title>
@@ -139,19 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/50876/</guid>
   <type>conference_item</type>
   <description>  Camara, Fanta and Fox, Charles  (2022) Learning Pedestrian Social Behaviour for Game-Theoretic Self-Driving Cars.  In: RSS Pioneers Workshop, 26 June 2022, New York.  </description></item>
-<item>
-  <pubDate>Thu, 27 Oct 2022 00:00:00 +0100</pubDate>
-  <title> Beyond mAP: Towards practical object detection for weed spraying in precision agriculture </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/51680/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/51680/</guid>
-  <type>conference_item</type>
-  <description>  Salazar-Gomez, Adrian, Darbyshire, Madeleine, Gao, Junfeng, Sklar, Elizabeth and Parsons, Simon  (2022) Beyond mAP: Towards practical object detection for weed spraying in precision agriculture.  In: 2022 IEEE/RSJ International Conference on Intelligent Robots and Systems, 23-27 Oct 2022, Kyoto, Japan.  </description></item>
-<item>
-  <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-  <title> Towards Autonomous Task Allocation Using a Robot Team in a Food Factory </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/51674/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/51674/</guid>
-  <type>conference_item</type>
-  <description>  Owen, Amie, Harman, Helen and Sklar, Elizabeth  (2022) Towards Autonomous Task Allocation Using a Robot Team in a Food Factory.  In: UKRAS2022 Conference ‘Robotics for Unconstrained Environments’, 26th August 2022, Aberystwyth, Scotland.  </description></item>
     </channel>
 </rss>
