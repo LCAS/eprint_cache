@@ -9,10 +9,17 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", ",,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 07 Nov 2022 03:11:33 +0000</pubDate>
-    <lastBuildDate>Mon, 07 Nov 2022 03:11:33 +0000</lastBuildDate>
+    <pubDate>Mon, 14 Nov 2022 03:11:14 +0000</pubDate>
+    <lastBuildDate>Mon, 14 Nov 2022 03:11:14 +0000</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Thu, 27 Oct 2022 00:00:00 +0100</pubDate>
+  <title> Collection and Evaluation of a Long-Term 4D Agri-Robotic Dataset </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/52350/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/52350/</guid>
+  <type>conference_item</type>
+  <description>  Polvara, Ruccardo, Molina Mellado, Sergio, Hroob, Ibrahim, Cielniak, Grzegorz and Hanheide, Marc  (2022) Collection and Evaluation of a Long-Term 4D Agri-Robotic Dataset.  In: Perception and Navigation for Autonomous Robotics in Unstructured and Dynamic Environments, 27th October 2022, Kyoto.  </description></item>
 <item>
   <pubDate>Thu, 13 Oct 2022 00:00:00 +0100</pubDate>
   <title> Unfreezing autonomous vehicles with game theory, proxemics, and trust </title>
@@ -146,12 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/50609/</guid>
   <type>conference_item</type>
   <description>  Parsa, Soran, Maior, Horia A., Thumwood, Alex Reeve Elliott, Wilson, Max L, Hanheide, Marc and Ghalamzan Esfahani, Amir  (2022) The Impact of Motion Scaling and Haptic Guidance on Operators’ Workload and Performance in Teleoperation.  In: 2022 CHI Conference on Human Factors in Computing Systems, New Orleans.  </description></item>
-<item>
-  <pubDate>Sun, 26 Jun 2022 00:00:00 +0100</pubDate>
-  <title> Learning Pedestrian Social Behaviour for Game-Theoretic Self-Driving Cars </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/50876/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/50876/</guid>
-  <type>conference_item</type>
-  <description>  Camara, Fanta and Fox, Charles  (2022) Learning Pedestrian Social Behaviour for Game-Theoretic Self-Driving Cars.  In: RSS Pioneers Workshop, 26 June 2022, New York.  </description></item>
     </channel>
 </rss>
