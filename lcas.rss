@@ -9,17 +9,24 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", ",,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 14 Nov 2022 03:11:14 +0000</pubDate>
-    <lastBuildDate>Mon, 14 Nov 2022 03:11:14 +0000</lastBuildDate>
+    <pubDate>Mon, 21 Nov 2022 03:04:16 +0000</pubDate>
+    <lastBuildDate>Mon, 21 Nov 2022 03:04:16 +0000</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Wed, 26 Oct 2022 00:00:00 +0100</pubDate>
+  <title> Multi-agent task allocation for harvest management </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/52212/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/52212/</guid>
+  <type>article</type>
+  <description>  Harman, Helen and Sklar, Elizabeth  (2022) Multi-agent task allocation for harvest management.  Frontiers in Robotics and AI .       ISSN 2296-9144  </description></item>
 <item>
   <pubDate>Thu, 27 Oct 2022 00:00:00 +0100</pubDate>
   <title> Collection and Evaluation of a Long-Term 4D Agri-Robotic Dataset </title>
   <link>https://eprints.lincoln.ac.uk/id/eprint/52350/</link>
   <guid>https://eprints.lincoln.ac.uk/id/eprint/52350/</guid>
   <type>conference_item</type>
-  <description>  Polvara, Ruccardo, Molina Mellado, Sergio, Hroob, Ibrahim, Cielniak, Grzegorz and Hanheide, Marc  (2022) Collection and Evaluation of a Long-Term 4D Agri-Robotic Dataset.  In: Perception and Navigation for Autonomous Robotics in Unstructured and Dynamic Environments, 27th October 2022, Kyoto.  </description></item>
+  <description>  Polvara, Riccardo, Molina Mellado, Sergio, Hroob, Ibrahim, Cielniak, Grzegorz and Hanheide, Marc  (2022) Collection and Evaluation of a Long-Term 4D Agri-Robotic Dataset.  In: Perception and Navigation for Autonomous Robotics in Unstructured and Dynamic Environments, 27th October 2022, Kyoto.  </description></item>
 <item>
   <pubDate>Thu, 13 Oct 2022 00:00:00 +0100</pubDate>
   <title> Unfreezing autonomous vehicles with game theory, proxemics, and trust </title>
@@ -146,12 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/51742/</guid>
   <type>conference_item</type>
   <description>  Fox, Charles  (2013) Where wall-following works: case study of simple heuristics vs. optimal exploratory behaviour.  In: Conference on Biomimetic and Biohybrid Systems, 12 July 2013, London, UK.  </description></item>
-<item>
-  <pubDate>Fri, 01 Apr 2022 00:00:00 +0100</pubDate>
-  <title> The Impact of Motion Scaling and Haptic Guidance on Operators’ Workload and Performance in Teleoperation </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/50609/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/50609/</guid>
-  <type>conference_item</type>
-  <description>  Parsa, Soran, Maior, Horia A., Thumwood, Alex Reeve Elliott, Wilson, Max L, Hanheide, Marc and Ghalamzan Esfahani, Amir  (2022) The Impact of Motion Scaling and Haptic Guidance on Operators’ Workload and Performance in Teleoperation.  In: 2022 CHI Conference on Human Factors in Computing Systems, New Orleans.  </description></item>
     </channel>
 </rss>
