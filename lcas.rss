@@ -9,10 +9,17 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", ",,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 28 Nov 2022 02:51:47 +0000</pubDate>
-    <lastBuildDate>Mon, 28 Nov 2022 02:51:47 +0000</lastBuildDate>
+    <pubDate>Mon, 05 Dec 2022 02:44:59 +0000</pubDate>
+    <lastBuildDate>Mon, 05 Dec 2022 02:44:59 +0000</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+  <title> Causal Discovery of Dynamic Models for Predicting Human Spatial Interactions </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/52266/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/52266/</guid>
+  <type>conference_item</type>
+  <description>  Castri, Luca, Mghames, Sariah, Hanheide, Marc and Bellotto, Nicola  (2022) Causal Discovery of Dynamic Models for Predicting Human Spatial Interactions.  In: International Conference on Social Robotics (ICSR).  </description></item>
 <item>
   <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
   <title> Ethics by Design: Responsible Research &amp; Innovation for AI in the Food Sector </title>
@@ -146,12 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/52083/</guid>
   <type>article</type>
   <description>  Chellapurath, Mrudul, Walker, Kyle, Donato, Enrico, Picardi, Giacomo, Stefanni, Sergio, Laschi, Cecilia, Giorgio Serchi, Francesco and Calisti, Marcello  (2021) Analysis of Station Keeping Performance of an Underwater Legged Robot.  IEEE/ASME Transactions on Mechatronics .   pp. 1-12.     ISSN 1083-4435  </description></item>
-<item>
-  <pubDate>Wed, 01 Jun 2022 00:00:00 +0100</pubDate>
-  <title> Robotics and autonomous systems for net-zero agriculture </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/50887/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/50887/</guid>
-  <type>article</type>
-  <description>  Pearson, Simon, Camacho-Villa, Tania Carolina, Valluru, Ravi, Gaju, Oorbessy, Rai, Mini, Gould, Iain, Brewer, Steve and Sklar, Elizabeth  (2022) Robotics and autonomous systems for net-zero agriculture.  Current Robotics Reports, 3 .   pp. 57-64.     ISSN 2662-4087  </description></item>
     </channel>
 </rss>
