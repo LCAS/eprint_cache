@@ -34,7 +34,13 @@ staff = [
     'Kucukyilmaz, Ayse',
     'Parsons, Simon',
     'Pearson, Simon',
-    'Bochtis'
+    'Bochtis',
+    'Polvara, Riccardo',
+    'del Duchetto, Francesco',
+    'Klimchik, Alexandr',
+    'Rai, Mini',
+    'Harman, Helen',
+    'Galvez Trigo'
 ]
 
 # recent
