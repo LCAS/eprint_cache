@@ -9,10 +9,17 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", "Polvara,Riccardo", "del Duchetto,Francesco", "Klimchik,Alexandr", "Rai,Mini", "Harman,Helen", "Galvez Trigo", ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 06 Feb 2023 02:46:08 +0000</pubDate>
-    <lastBuildDate>Mon, 06 Feb 2023 02:46:08 +0000</lastBuildDate>
+    <pubDate>Mon, 13 Feb 2023 02:48:14 +0000</pubDate>
+    <lastBuildDate>Mon, 13 Feb 2023 02:48:14 +0000</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Mon, 14 Nov 2022 00:00:00 +0000</pubDate>
+  <title> 3D-SiamMask: Vision-Based Multi-Rotor Aerial-Vehicle Tracking for a Moving Object </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/53298/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/53298/</guid>
+  <type>article</type>
+  <description>  Al Mdfaa, Mohamad Al, Kulathunga, Geesara and Klimchik, Alexandr  (2022) 3D-SiamMask: Vision-Based Multi-Rotor Aerial-Vehicle Tracking for a Moving Object.  Remote Sensing, 14  (22).   p. 5756.     ISSN 2072-4292  </description></item>
 <item>
   <title> Attention and Prediction-Guided Motion Detection for Low-Contrast Small Moving Targets </title>
   <link>https://eprints.lincoln.ac.uk/id/eprint/53193/</link>
@@ -145,12 +152,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/52230/</guid>
   <type>conference_item</type>
   <description>  Wang, Ni, Das, Gautham and Millard, Alan  (2022) Learning Cooperative Behaviours in Adversarial Multi-agent Systems.  In: Towards Autonomous Robotic Systems, Oxford.  </description></item>
-<item>
-  <pubDate>Thu, 01 Sep 2022 00:00:00 +0100</pubDate>
-  <title> Agent-Based Simulation of Multi-robot Soil Compaction Mapping </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/52228/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/52228/</guid>
-  <type>conference_item</type>
-  <description>  Roberts-Elliott, Laurence, Das, Gautham and Millard, Alan  (2022) Agent-Based Simulation of Multi-robot Soil Compaction Mapping.  In: Towards Autonomous Robotic Systems, Oxford.  </description></item>
     </channel>
 </rss>
