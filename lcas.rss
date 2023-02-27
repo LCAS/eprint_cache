@@ -9,10 +9,17 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", "Polvara,Riccardo", "del Duchetto,Francesco", "Klimchik,Alexandr", "Rai,Mini", "Harman,Helen", "Galvez Trigo", ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 20 Feb 2023 02:48:58 +0000</pubDate>
-    <lastBuildDate>Mon, 20 Feb 2023 02:48:58 +0000</lastBuildDate>
+    <pubDate>Mon, 27 Feb 2023 02:48:31 +0000</pubDate>
+    <lastBuildDate>Mon, 27 Feb 2023 02:48:31 +0000</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
+  <title> Towards Long-term Autonomy: A Perspective from Robot Learning </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/53115/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/53115/</guid>
+  <type>conference_item</type>
+  <description>  Yan, Zhi, Sun, Li, Krajnik, Tomas, Duckett, Tom and Bellotto, Nicola  (2023) Towards Long-term Autonomy: A Perspective from Robot Learning.  In: AAAI Bridge Program “AI and Robotics”, 7 February 2023, Washington, DC, USA.  </description></item>
 <item>
   <pubDate>Tue, 30 Aug 2022 00:00:00 +0100</pubDate>
   <title> Towards Safety in Open-field Agricultural Robotic Applications: A Method for Human Risk Assessment using Classifiers </title>
@@ -145,12 +152,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/52350/</guid>
   <type>conference_item</type>
   <description>  Polvara, Riccardo, Molina Mellado, Sergio, Hroob, Ibrahim, Cielniak, Grzegorz and Hanheide, Marc  (2022) Collection and Evaluation of a Long-Term 4D Agri-Robotic Dataset.  In: Perception and Navigation for Autonomous Robotics in Unstructured and Dynamic Environments, 27th October 2022, Kyoto.  </description></item>
-<item>
-  <pubDate>Thu, 13 Oct 2022 00:00:00 +0100</pubDate>
-  <title> Unfreezing autonomous vehicles with game theory, proxemics, and trust </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/52159/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/52159/</guid>
-  <type>article</type>
-  <description>  Camara, Fanta and Fox, Charles  (2022) Unfreezing autonomous vehicles with game theory, proxemics, and trust.  Frontiers in Computer Science .       ISSN 2624-9898  </description></item>
     </channel>
 </rss>
