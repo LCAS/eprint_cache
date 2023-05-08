@@ -9,10 +9,17 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", "Polvara,Riccardo", "del Duchetto,Francesco", "Klimchik,Alexandr", "Rai,Mini", "Harman,Helen", "Galvez Trigo", ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 01 May 2023 03:42:07 +0100</pubDate>
-    <lastBuildDate>Mon, 01 May 2023 03:42:07 +0100</lastBuildDate>
+    <pubDate>Mon, 08 May 2023 03:41:56 +0100</pubDate>
+    <lastBuildDate>Mon, 08 May 2023 03:41:56 +0100</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+  <title> Haptic-guided Grasping to Minimise Torque Effort during Robotic Telemanipulation </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/53715/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/53715/</guid>
+  <type>article</type>
+  <description>  Ghalamzan Esfahani, Amir Masoud  (2023) Haptic-guided Grasping to Minimise Torque Effort during Robotic Telemanipulation.  Autonomous Robots .       ISSN 0929-5593  </description></item>
 <item>
   <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
   <title> DeepVerge: Classification of Roadside Verge Biodiversity and Conservation Potential </title>
@@ -145,12 +152,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/52277/</guid>
   <type>article</type>
   <description>  Ali Khan, Nabeel, Mohammadi, Mokhtar, Ghafoor, Mubeen and Tariq, Syed Ali  (2022) Convolutional Neural Networks Based Time-Frequency Image Enhancement For the Analysis of EEG Signals.  Multidimensional Systems and Signal Processing, 33 .   pp. 863-877.     ISSN 863–877  </description></item>
-<item>
-  <pubDate>Fri, 30 Sep 2022 00:00:00 +0100</pubDate>
-  <title> Accelerating Motion Perception Model Mimics the Visual Neuronal Ensemble of Crab </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/52805/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/52805/</guid>
-  <type>conference_item</type>
-  <description>  Luan, Hao, Hua, Mu, Peng, Jigen, Yue, Shigang, Chen, Shengyong and Fu, Qinbing  (2022) Accelerating Motion Perception Model Mimics the Visual Neuronal Ensemble of Crab.  In: International Joint Conference on Neural Networks (IJCNN).  </description></item>
     </channel>
 </rss>
