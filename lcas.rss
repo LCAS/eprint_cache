@@ -9,10 +9,17 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", "Polvara,Riccardo", "del Duchetto,Francesco", "Klimchik,Alexandr", "Rai,Mini", "Harman,Helen", "Galvez Trigo", ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 15 May 2023 03:42:51 +0100</pubDate>
-    <lastBuildDate>Mon, 15 May 2023 03:42:51 +0100</lastBuildDate>
+    <pubDate>Mon, 22 May 2023 03:44:42 +0100</pubDate>
+    <lastBuildDate>Mon, 22 May 2023 03:44:42 +0100</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Wed, 01 Apr 2020 00:00:00 +0100</pubDate>
+  <title> Toward Robot Co-Labourers for Intelligent Farming </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/53892/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/53892/</guid>
+  <type>conference_item</type>
+  <description>  Huang, Zhuoling, Miyauchi, Genki, Salazar Gomez, Adrian, Bird, Richie, Singh Kalsi, Amar, Liu, Zeyang, Jansen, Chipp, Parsons, Simon and Sklar, Elizabeth  (2020) Toward Robot Co-Labourers for Intelligent Farming.  In: HRI '20: Companion of the 2020 ACM/IEEE International Conference on Human-Robot Interaction.  </description></item>
 <item>
   <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
   <title> Haptic-guided Grasping to Minimise Torque Effort during Robotic Telemanipulation </title>
@@ -145,12 +152,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/46356/</guid>
   <type>article</type>
   <description>  Dos Santos, Ália, Fili, Natalia, Pearson, David S., Hari-Gupta, Yukti and Toseland, Christopher P.  (2021) High-throughput mechanobiology: Force modulation of ensemble biochemical and cell-based assays.  Biophysical Journal, 120  (4).   pp. 631-641.     ISSN 1542-0086  </description></item>
-<item>
-  <pubDate>Thu, 01 Sep 2022 00:00:00 +0100</pubDate>
-  <title> Convolutional Neural Networks Based Time-Frequency Image Enhancement For the Analysis of EEG Signals </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/52277/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/52277/</guid>
-  <type>article</type>
-  <description>  Ali Khan, Nabeel, Mohammadi, Mokhtar, Ghafoor, Mubeen and Tariq, Syed Ali  (2022) Convolutional Neural Networks Based Time-Frequency Image Enhancement For the Analysis of EEG Signals.  Multidimensional Systems and Signal Processing, 33 .   pp. 863-877.     ISSN 863–877  </description></item>
     </channel>
 </rss>
