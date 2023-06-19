@@ -9,10 +9,24 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", "Polvara,Riccardo", "del Duchetto,Francesco", "Klimchik,Alexandr", "Rai,Mini", "Harman,Helen", "Galvez Trigo", ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 12 Jun 2023 03:51:28 +0100</pubDate>
-    <lastBuildDate>Mon, 12 Jun 2023 03:51:28 +0100</lastBuildDate>
+    <pubDate>Mon, 19 Jun 2023 03:46:58 +0100</pubDate>
+    <lastBuildDate>Mon, 19 Jun 2023 03:46:58 +0100</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+  <title> A Neuro-Symbolic Approach for Enhanced Human Motion Prediction </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/54568/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/54568/</guid>
+  <type>conference_item</type>
+  <description>  Mghames, Sariah, Castri, Luca, Hanheide, Marc and Bellotto, Nicola  (2023) A Neuro-Symbolic Approach for Enhanced Human Motion Prediction.  In: International Joint Conference on Neural Networks (IJCNN).  </description></item>
+<item>
+  <pubDate>Tue, 20 Dec 2022 00:00:00 +0000</pubDate>
+  <title> A Novel Model Fusion Approach for Greenhouse Crop Yield Prediction </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/54930/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/54930/</guid>
+  <type>article</type>
+  <description>  Gong, Liyun, Yu, Miao, Cutsuridis, Vassilis, Kollias, Stefanos and Pearson, Simon  (2022) A Novel Model Fusion Approach for Greenhouse Crop Yield Prediction.  Horticulturae, 9  (1).       ISSN 2311-7524  </description></item>
 <item>
   <pubDate>Thu, 01 Sep 2022 00:00:00 +0100</pubDate>
   <title> Providing Explanations via the EQR Argument Scheme </title>
@@ -139,19 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/54118/</guid>
   <type>conference_item</type>
   <description>  Constantinou, Marina, Polvara, Riccardo and Makridis, Evagoras  (2023) The technologisation of thematic analysis: a case study into automatising qualitative research.  In: 17th International Technology, Education and Development Conference, 6th-8th March 2023, Valencia, Spain.  </description></item>
-<item>
-  <pubDate>Fri, 01 Apr 2022 00:00:00 +0100</pubDate>
-  <title> Design of Automatic Strawberry Harvest Robot Suitable in Complex Environments </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/53890/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/53890/</guid>
-  <type>conference_item</type>
-  <description>  Huang, Zhuoling, Sklar, Elizabeth and Parsons, Simon  (2022) Design of Automatic Strawberry Harvest Robot Suitable in Complex Environments.  In: HRI '20: Companion of the 2020 ACM/IEEE International Conference on Human-Robot Interaction.  </description></item>
-<item>
-  <pubDate>Thu, 20 Jul 2017 00:00:00 +0100</pubDate>
-  <title> Towards automated strawberry harvesting: Identifying the picking point </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/53889/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/53889/</guid>
-  <type>conference_item</type>
-  <description>  Huang, Zhuoling, Wane, Sam and Parsons, Simon  (2017) Towards automated strawberry harvesting: Identifying the picking point.  In: TAROS 2017: Towards Autonomous Robotic Systems.  </description></item>
     </channel>
 </rss>
