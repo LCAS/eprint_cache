@@ -9,10 +9,24 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", "Polvara,Riccardo", "del Duchetto,Francesco", "Klimchik,Alexandr", "Rai,Mini", "Harman,Helen", "Galvez Trigo", ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 04 Sep 2023 03:35:18 +0100</pubDate>
-    <lastBuildDate>Mon, 04 Sep 2023 03:35:18 +0100</lastBuildDate>
+    <pubDate>Mon, 11 Sep 2023 03:35:13 +0100</pubDate>
+    <lastBuildDate>Mon, 11 Sep 2023 03:35:13 +0100</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+  <title> Bacchus Long‐Term (BLT) data set: Acquisition of the agricultural multimodal BLT data set with automated robot deployment </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56037/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56037/</guid>
+  <type>article</type>
+  <description>  Polvara, Riccardo, Molina Mellado, Sergio, Hroob, Ibrahim, Papadimitriou, Alexios, Tsiolis, Konstantinos, Giakoumis, Dimitrios, Likothanassis, Spiridon, Tzovaras, Dimitrios, Cielniak, Grzegorz and Hanheide, Marc  (2023) Bacchus Long‐Term (BLT) data set: Acquisition of the agricultural multimodal BLT data set with automated robot deployment.  Journal of Field Robotics .       ISSN 1556-4959  </description></item>
+<item>
+  <pubDate>Tue, 05 Sep 2023 00:00:00 +0100</pubDate>
+  <title> Learned Long-Term Stability Scan Filtering for Robust Robot Localisation in Continuously Changing Environments </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56036/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56036/</guid>
+  <type>conference_item</type>
+  <description>  Hroob, Ibrahim, Molina Mellado, Sergio, Polvara, Riccardo, Cielniak, Grzegorz and Hanheide, Marc  (2023) Learned Long-Term Stability Scan Filtering for Robust Robot Localisation in Continuously Changing Environments.  In: European Conference on Mobile Robots (ECMR), 4 - 7 September, Coimbra, Portugal.  </description></item>
 <item>
   <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
   <title> Argument Schemes and a Dialogue System for Explainable Planning </title>
@@ -139,19 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/55428/</guid>
   <type>article</type>
   <description>  Ganzer, Jordi, Criado, Natalia, Lopez-Sanchez, Maite, Parsons, Simon and Rodriguez-Aguilar, Juan A.  (2023) A model to support collective reasoning: Formalization, analysis and computational assessment.  Journal of Artificial Intelligence Research (JAIR) .       ISSN 1076-9757  </description></item>
-<item>
-  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-  <title> Active Debris Removal: A Review and Case Study on LEOPARD Phase 0-A Mission </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/55015/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/55015/</guid>
-  <type>article</type>
-  <description>  Poozhiyil, Mithun, Nair, Manu, Rai, Mini, Hall, Alexander, Meringolo, Connor, Shilton, Mark, Kay, Steven, Forte, Danilo, Sweeting, Martin, Antoniou, Nikki and Irwin, Victoria  (2023) Active Debris Removal: A Review and Case Study on LEOPARD Phase 0-A Mission.  Advances in Space Research .       ISSN 0273-1177  </description></item>
-<item>
-  <pubDate>Fri, 02 Jun 2023 00:00:00 +0100</pubDate>
-  <title> In-the-Wild Failures in a Long-Term HRI Deployment </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/54842/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/54842/</guid>
-  <type>conference_item</type>
-  <description>  Del Duchetto, Francesco, Kucukyilmaz, Ayse and Hanheide, Marc  (2023) In-the-Wild Failures in a Long-Term HRI Deployment.  In: Workshop on Robot Execution Failures and Failure Management Strategies at IEEE ICRA 2023, June 2nd, 2023, ExCeL London.  </description></item>
     </channel>
 </rss>
