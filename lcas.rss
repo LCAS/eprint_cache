@@ -9,10 +9,38 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", "Polvara,Riccardo", "del Duchetto,Francesco", "Klimchik,Alexandr", "Rai,Mini", "Harman,Helen", "Galvez Trigo", ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 18 Sep 2023 03:35:10 +0100</pubDate>
-    <lastBuildDate>Mon, 18 Sep 2023 03:35:10 +0100</lastBuildDate>
+    <pubDate>Mon, 25 Sep 2023 03:35:51 +0100</pubDate>
+    <lastBuildDate>Mon, 25 Sep 2023 03:35:51 +0100</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate>
+  <title> TS-Rep: Self-supervised time series representation learning from robot sensor data </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/55956/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/55956/</guid>
+  <type>conference_item</type>
+  <description>  Somaiya, Pratik, Pandya, Harit, Polvara, Riccardo, Hanheide, Marc and Cielniak, Grzegorz  (2022) TS-Rep: Self-supervised time series representation learning from robot sensor data.  In: NeurIPS 2022 Workshop: Self-Supervised Learning - Theory and Practice, 28 November - 9 December 2022, New Orleans.  </description></item>
+<item>
+  <pubDate>Sun, 19 Sep 2021 00:00:00 +0100</pubDate>
+  <title> Robust Counting of Soft Fruit Through Occlusions with Re-identification </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/55954/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/55954/</guid>
+  <type>conference_item</type>
+  <description>  Kirk, Raymond, Mangan, Michael and Cielniak, Grzegorz  (2021) Robust Counting of Soft Fruit Through Occlusions with Re-identification.  In: 13th International Conference on Computer Vision Systems, ICVS 2021, 22 - 24 September 2021, Online.  </description></item>
+<item>
+  <pubDate>Sun, 19 Sep 2021 00:00:00 +0100</pubDate>
+  <title> Non-destructive Soft Fruit Mass and Volume Estimation for Phenotyping in Horticulture </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/55953/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/55953/</guid>
+  <type>conference_item</type>
+  <description>  Kirk, Raymond, Mangan, Michael and Cielniak, Grzegorz  (2021) Non-destructive Soft Fruit Mass and Volume Estimation for Phenotyping in Horticulture.  In: 13th International Conference on Computer Vision Systems, ICVS 2021, 22 - 24 September 2021, Online.  </description></item>
+<item>
+  <pubDate>Wed, 23 Aug 2023 00:00:00 +0100</pubDate>
+  <title> Tactile-Sensing Technologies: Trends, Challenges and Outlook in Agri-Food Manipulation </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56099/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56099/</guid>
+  <type>article</type>
+  <description>  Mandil, Willow, Nazari, Kiyanoush, Rajendran Sugathakumary, Vishnu and Ghalamzan Esfahani, Amir  (2023) Tactile-Sensing Technologies: Trends, Challenges and Outlook in Agri-Food Manipulation.  Sensors, 23  (17).       ISSN 1424-8220  </description></item>
 <item>
   <pubDate>Fri, 07 Jul 2023 00:00:00 +0100</pubDate>
   <title> On Optimising Topology of Agricultural Fields for Efficient Robotic Fleet Deployment </title>
@@ -125,33 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/55397/</guid>
   <type>conference_item</type>
   <description>  Alabi, Elijah, Camara, Fanta and Fox, Charles  (2023) Evaluation of OSMC open source motor driver\\ for reproducible robotics research.  In: TAROS, Sep 12-15 2023, Cambridge, UK.  </description></item>
-<item>
-  <pubDate>Tue, 12 Sep 2023 00:00:00 +0100</pubDate>
-  <title> Open source hardware robotics interfacing board </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/55399/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/55399/</guid>
-  <type>conference_item</type>
-  <description>  Gaikwad, Kshitij, Soni, Rakshit, Fox, Charles and Waltham, Chris  (2023) Open source hardware robotics interfacing board.  In: TAROS, Sep 12-15 2023, Cambridge, UK.  </description></item>
-<item>
-  <pubDate>Tue, 12 Sep 2023 00:00:00 +0100</pubDate>
-  <title> Skid-steer friction calibration protocol for digital twin creation </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/55400/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/55400/</guid>
-  <type>conference_item</type>
-  <description>  Trimble, Rachel and Fox, Charles  (2023) Skid-steer friction calibration protocol for digital twin creation.  In: TAROS, September 12-15 2023, Cambridge, UK.  </description></item>
-<item>
-  <pubDate>Mon, 29 May 2023 00:00:00 +0100</pubDate>
-  <title> Statistical Shape Representations for Temporal Registration of Plant Components in 3D </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/55292/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/55292/</guid>
-  <type>conference_item</type>
-  <description>  Heiwolt, Karoline, Öztireli, Cengiz and Cielniak, Grzegorz  (2023) Statistical Shape Representations for Temporal Registration of Plant Components in 3D.  In: International Conference on Robotics and Automation 2023, 29 May – 2 June 2023, ExCel, London, UK.  </description></item>
-<item>
-  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-  <title> Deep learning-based Crop Row Detection for Infield Navigation of Agri-Robots </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/55690/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/55690/</guid>
-  <type>article</type>
-  <description>  De Silva, Rajitha, Cielniak, Grzegorz, Wang, Gang and Gao, Junfeng  (2023) Deep learning-based Crop Row Detection for Infield Navigation of Agri-Robots.  Journal of Field Robotics .       ISSN 1556-4959  </description></item>
     </channel>
 </rss>
