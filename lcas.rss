@@ -9,10 +9,17 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", "Polvara,Riccardo", "del Duchetto,Francesco", "Klimchik,Alexandr", "Rai,Mini", "Harman,Helen", "Galvez Trigo", ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 25 Sep 2023 03:35:51 +0100</pubDate>
-    <lastBuildDate>Mon, 25 Sep 2023 03:35:51 +0100</lastBuildDate>
+    <pubDate>Mon, 02 Oct 2023 03:36:05 +0100</pubDate>
+    <lastBuildDate>Mon, 02 Oct 2023 03:36:05 +0100</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Tue, 18 Apr 2023 00:00:00 +0100</pubDate>
+  <title> Underwater legged robotics: review and perspectives </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56189/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56189/</guid>
+  <type>article</type>
+  <description>  Picardi, G, Astolfi, A, Chatzievangelou, D, Aguzzi, J and Calisti, Marcello  (2023) Underwater legged robotics: review and perspectives.  Bioinspiration &amp; Biomimetics, 18  (3).       ISSN 1748-3182  </description></item>
 <item>
   <pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate>
   <title> TS-Rep: Self-supervised time series representation learning from robot sensor data </title>
@@ -146,12 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/55398/</guid>
   <type>conference_item</type>
   <description>  Davy, Josh and Fox, Charles  (2023) Simultaneous Base and Arm Trajectories for Multi-Target Mobile Agri-Robot.  In: TAROS, Sep 12-15 2023, Cambridge, UK.  </description></item>
-<item>
-  <pubDate>Tue, 12 Sep 2023 00:00:00 +0100</pubDate>
-  <title> Evaluation of OSMC open source motor driver\\ for reproducible robotics research </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/55397/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/55397/</guid>
-  <type>conference_item</type>
-  <description>  Alabi, Elijah, Camara, Fanta and Fox, Charles  (2023) Evaluation of OSMC open source motor driver\\ for reproducible robotics research.  In: TAROS, Sep 12-15 2023, Cambridge, UK.  </description></item>
     </channel>
 </rss>
