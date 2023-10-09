@@ -9,10 +9,38 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", "Polvara,Riccardo", "del Duchetto,Francesco", "Klimchik,Alexandr", "Rai,Mini", "Harman,Helen", "Galvez Trigo", ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 02 Oct 2023 03:36:05 +0100</pubDate>
-    <lastBuildDate>Mon, 02 Oct 2023 03:36:05 +0100</lastBuildDate>
+    <pubDate>Mon, 09 Oct 2023 03:35:37 +0100</pubDate>
+    <lastBuildDate>Mon, 09 Oct 2023 03:35:37 +0100</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
+  <title> Adaptive technique for physical human–robot interaction handling using proprioceptive sensors </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56590/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56590/</guid>
+  <type>article</type>
+  <description>  Popov, Dmitry, Pahkevich, Anatol and Klimchik, Alexandr  (2023) Adaptive technique for physical human–robot interaction handling using proprioceptive sensors.  Engineering Applications of Artificial Intelligence, 126  (D).       ISSN 0952-1976  </description></item>
+<item>
+  <pubDate>Thu, 21 Sep 2023 00:00:00 +0100</pubDate>
+  <title> Key Point-Based Orientation Estimation of Strawberries for Robotic Fruit Picking </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56545/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56545/</guid>
+  <type>conference_item</type>
+  <description>  Le Louedec, Justin and Cielniak, Grzegorz  (2023) Key Point-Based Orientation Estimation of Strawberries for Robotic Fruit Picking.  In: 14th International Conference, ICVS 2023, 27 - 29 September 2023, Vienna, Austria.  </description></item>
+<item>
+  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+  <title> Cyclic Action Graphs for goal recognition problems with inaccurately initialised fluents </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56319/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56319/</guid>
+  <type>article</type>
+  <description>  Harman, Helen and Simoens, Pieter  (2023) Cyclic Action Graphs for goal recognition problems with inaccurately initialised fluents.  Knowledge and Information Systems .       ISSN 0219-1377  </description></item>
+<item>
+  <pubDate>Wed, 13 Sep 2023 00:00:00 +0100</pubDate>
+  <title> Towards an Abstract Lightweight Multi-robot ROS Simulator for Rapid Experimentation </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56229/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56229/</guid>
+  <type>conference_item</type>
+  <description>  Roberts-Elliott, Laurence, Das, Gautham and Millard, Alan  (2023) Towards an Abstract Lightweight Multi-robot ROS Simulator for Rapid Experimentation.  In: The 23rd Towards Autonomous Robotic Systems (TAROS) Conference, 13 - 15 September 2023, Cambridge.  </description></item>
 <item>
   <pubDate>Tue, 18 Apr 2023 00:00:00 +0100</pubDate>
   <title> Underwater legged robotics: review and perspectives </title>
@@ -125,33 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/56037/</guid>
   <type>article</type>
   <description>  Polvara, Riccardo, Molina Mellado, Sergio, Hroob, Ibrahim, Papadimitriou, Alexios, Tsiolis, Konstantinos, Giakoumis, Dimitrios, Likothanassis, Spiridon, Tzovaras, Dimitrios, Cielniak, Grzegorz and Hanheide, Marc  (2023) Bacchus Long‐Term (BLT) data set: Acquisition of the agricultural multimodal BLT data set with automated robot deployment.  Journal of Field Robotics .       ISSN 1556-4959  </description></item>
-<item>
-  <pubDate>Tue, 05 Sep 2023 00:00:00 +0100</pubDate>
-  <title> Learned Long-Term Stability Scan Filtering for Robust Robot Localisation in Continuously Changing Environments </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56036/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56036/</guid>
-  <type>conference_item</type>
-  <description>  Hroob, Ibrahim, Molina Mellado, Sergio, Polvara, Riccardo, Cielniak, Grzegorz and Hanheide, Marc  (2023) Learned Long-Term Stability Scan Filtering for Robust Robot Localisation in Continuously Changing Environments.  In: European Conference on Mobile Robots (ECMR), 4 - 7 September, Coimbra, Portugal.  </description></item>
-<item>
-  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-  <title> Argument Schemes and a Dialogue System for Explainable Planning </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/55636/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/55636/</guid>
-  <type>article</type>
-  <description>  Mahesar, Quratul-ain, Hanheide, Marc and Parsons, Simon  (2023) Argument Schemes and a Dialogue System for Explainable Planning.  ACM Transactions on Intelligent Systems and Technology .       ISSN 2157-6904  </description></item>
-<item>
-  <pubDate>Fri, 01 Sep 2023 00:00:00 +0100</pubDate>
-  <title> Visual teach and generalise (VTAG)—Exploiting perceptual aliasing for scalable autonomous robotic navigation in horticultural environments </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/55642/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/55642/</guid>
-  <type>article</type>
-  <description>  Cox, Jonathan, Tsagkopoulos, Nikolaos, Rozsypálek, Zdeněk, Krajník, Tomáš, Sklar, Elizabeth and Hanheide, Marc  (2023) Visual teach and generalise (VTAG)—Exploiting perceptual aliasing for scalable autonomous robotic navigation in horticultural environments.  Computers and Electronics in Agriculture, 212  (108054).       ISSN 0168-1699  </description></item>
-<item>
-  <pubDate>Tue, 12 Sep 2023 00:00:00 +0100</pubDate>
-  <title> Simultaneous Base and Arm Trajectories for Multi-Target Mobile Agri-Robot </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/55398/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/55398/</guid>
-  <type>conference_item</type>
-  <description>  Davy, Josh and Fox, Charles  (2023) Simultaneous Base and Arm Trajectories for Multi-Target Mobile Agri-Robot.  In: TAROS, Sep 12-15 2023, Cambridge, UK.  </description></item>
     </channel>
 </rss>
