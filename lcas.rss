@@ -9,10 +9,38 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", "Polvara,Riccardo", "del Duchetto,Francesco", "Klimchik,Alexandr", "Rai,Mini", "Harman,Helen", "Galvez Trigo", ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 09 Oct 2023 03:35:37 +0100</pubDate>
-    <lastBuildDate>Mon, 09 Oct 2023 03:35:37 +0100</lastBuildDate>
+    <pubDate>Mon, 16 Oct 2023 03:37:09 +0100</pubDate>
+    <lastBuildDate>Mon, 16 Oct 2023 03:37:09 +0100</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+  <title> A procedure for the stiffness identification of parallel robots under measurement limitations </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56591/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56591/</guid>
+  <type>article</type>
+  <description>  Bina, Rasool, Kamali E., Ali, Taghvaeipour, Afshin and Klimchik, Alexandr  (2023) A procedure for the stiffness identification of parallel robots under measurement limitations.  Mechanics Based Design of Structures and Machines .       ISSN 1539-7734  </description></item>
+<item>
+  <pubDate>Wed, 27 Sep 2023 00:00:00 +0100</pubDate>
+  <title> Navigating in 3D Uneven Environments through Supervoxels and Nonlinear MPC </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56559/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56559/</guid>
+  <type>conference_item</type>
+  <description>  Atas, Fetullah, Cielniak, Grzegorz and Grimstad, Lars  (2023) Navigating in 3D Uneven Environments through Supervoxels and Nonlinear MPC.  In: European Conference on Mobile Robots (ECMR), 4 - 7 September 2023, Coimbra, Portugal.  </description></item>
+<item>
+  <pubDate>Thu, 28 Sep 2023 00:00:00 +0100</pubDate>
+  <title> An Agricultural Precision Sprayer Deposit Identification System </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56560/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56560/</guid>
+  <type>conference_item</type>
+  <description>  Rogers, Harry, De La Iglesia, Beatriz, Zebin, Tahmina, Cielniak, Grzegorz and Magri, Ben  (2023) An Agricultural Precision Sprayer Deposit Identification System.  In: 2023 IEEE 19th International Conference on Automation Science and Engineering (CASE), 26-30 August 2023, Auckland, New Zealand.  </description></item>
+<item>
+  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+  <title> A kinematic model generates non-circular human proxemics zones </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56622/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56622/</guid>
+  <type>article</type>
+  <description>  Camara, Fanta and Fox, Charles  (2023) A kinematic model generates non-circular human proxemics zones.  Advanced Robotics .       ISSN 0169-1864  </description></item>
 <item>
   <pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
   <title> Adaptive technique for physical human–robot interaction handling using proprioceptive sensors </title>
@@ -125,33 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/56155/</guid>
   <type>article</type>
   <description>  Cox, Jonathan, Li, Dom, Fox, Charles and Coutts, Shaun  (2023) Black-grass (Alopecurus myosuroides) in cereal multispectral detection by UAV.  Weed Science .       ISSN 0043-1745  </description></item>
-<item>
-  <pubDate>Fri, 15 Sep 2023 00:00:00 +0100</pubDate>
-  <title> An assessment of self-supervised learning for data efficient potato instance segmentation </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56183/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56183/</guid>
-  <type>conference_item</type>
-  <description>  Hurst, Bradley, Bellotto, Nicola and Bosilj, Petra  (2023) An assessment of self-supervised learning for data efficient potato instance segmentation.  In: TAROS, Sep 12-15 2023, Cambridge, UK.  </description></item>
-<item>
-  <pubDate>Mon, 29 May 2023 00:00:00 +0100</pubDate>
-  <title> Enabling Robot Autonomy through a Modular Software Framework </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/55955/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/55955/</guid>
-  <type>conference_item</type>
-  <description>  Atas, Fetullah, Cielniak, Grzegorz and Grimstad, Lars  (2023) Enabling Robot Autonomy through a Modular Software Framework.  In: ICRA2023 Workshop on Robot Software Architectures, 29 May - 2 June 2023, London.  </description></item>
-<item>
-  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-  <title> Modular autonomous strawberry-picking robotic system </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56100/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56100/</guid>
-  <type>article</type>
-  <description>  Parsa, Soran, Debnath, Bappaditya, Khan, Muhammad Arshad and Ghalamzan Esfahani, Amir  (2023) Modular autonomous strawberry-picking robotic system.  Journal of Field Robotics .       ISSN 1556-4959  </description></item>
-<item>
-  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-  <title> Bacchus Long‐Term (BLT) data set: Acquisition of the agricultural multimodal BLT data set with automated robot deployment </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56037/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56037/</guid>
-  <type>article</type>
-  <description>  Polvara, Riccardo, Molina Mellado, Sergio, Hroob, Ibrahim, Papadimitriou, Alexios, Tsiolis, Konstantinos, Giakoumis, Dimitrios, Likothanassis, Spiridon, Tzovaras, Dimitrios, Cielniak, Grzegorz and Hanheide, Marc  (2023) Bacchus Long‐Term (BLT) data set: Acquisition of the agricultural multimodal BLT data set with automated robot deployment.  Journal of Field Robotics .       ISSN 1556-4959  </description></item>
     </channel>
 </rss>
