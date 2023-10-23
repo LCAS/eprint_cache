@@ -9,10 +9,45 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", "Polvara,Riccardo", "del Duchetto,Francesco", "Klimchik,Alexandr", "Rai,Mini", "Harman,Helen", "Galvez Trigo", ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 16 Oct 2023 03:37:09 +0100</pubDate>
-    <lastBuildDate>Mon, 16 Oct 2023 03:37:09 +0100</lastBuildDate>
+    <pubDate>Mon, 23 Oct 2023 03:36:39 +0100</pubDate>
+    <lastBuildDate>Mon, 23 Oct 2023 03:36:39 +0100</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Fri, 31 Mar 2023 00:00:00 +0100</pubDate>
+  <title> User-Driven Design and Development of an Underwater Soft Gripper for Biological Sampling and Litter Collection </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56195/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56195/</guid>
+  <type>article</type>
+  <description>  Picardi, Giacomo, De Luca, Mauro, Chimienti, Giovanni, Cianchetti, Matteo and Calisti, Marcello  (2023) User-Driven Design and Development of an Underwater Soft Gripper for Biological Sampling and Litter Collection.  Journal of Marine Science and Engineering, 11  (4).   p. 771.     ISSN 2077-1312  </description></item>
+<item>
+  <pubDate>Mon, 15 May 2023 00:00:00 +0100</pubDate>
+  <title> Articulated legs allow energy optimization across different speeds for legged robots with elastically suspended loads </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56182/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56182/</guid>
+  <type>conference_item</type>
+  <description>  Astolfi, Anna and Calisti, Marcello  (2023) Articulated legs allow energy optimization across different speeds for legged robots with elastically suspended loads.  In: IEEE RoboSoft 2023, Singapore.  </description></item>
+<item>
+  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+  <title> Python Subset to Digital Logic Dataflow Compiler for Robots and IoT </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56659/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56659/</guid>
+  <type>conference_item</type>
+  <description>  Jurkans, Kristaps and Fox, Charles  (2023) Python Subset to Digital Logic Dataflow Compiler for Robots and IoT.  In: International Symposium on Intelligent and Trustworthy Computing, Communications, and Networking (ITCCN-2023), 1-3 Nov 2023, Exeter, UK.  </description></item>
+<item>
+  <pubDate>Wed, 27 Sep 2023 00:00:00 +0100</pubDate>
+  <title> Developing a Comprehensive Model for the Prevention of Tension Neck Syndrome: A Focus on Musculoskeletal Disorder Prevention Strategies </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56743/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56743/</guid>
+  <type>conference_item</type>
+  <description>  Sohani, Behnaz, Ifeoluwa Joshua, Adigun, Aliyu, Aliyu, Rahmani, Amir and Khaled, Goher  (2023) Developing a Comprehensive Model for the Prevention of Tension Neck Syndrome: A Focus on Musculoskeletal Disorder Prevention Strategies.  In: The WRC Symposium on Advanced Robotics and Automation, China 2023, 19 August 2023, Beijing, China.  </description></item>
+<item>
+  <pubDate>Mon, 15 May 2023 00:00:00 +0100</pubDate>
+  <title> Spatial Position Estimation of Lightweight and Delicate Objects using a Soft haptic Probe </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56196/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56196/</guid>
+  <type>conference_item</type>
+  <description>  Sofla, Mohammad Sheikh, Vayakkattil, Srikishan and Calisti, Marcello  (2023) Spatial Position Estimation of Lightweight and Delicate Objects using a Soft haptic Probe.  In: IEEE RoboSoft Conference 2023, 3rd-7th April 2023.  </description></item>
 <item>
   <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
   <title> A procedure for the stiffness identification of parallel robots under measurement limitations </title>
@@ -118,40 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/56102/</guid>
   <type>article</type>
   <description>  Molina Mellado, Sergio, Mannucci, Anna, Magnusson, Martin, Adolfsson, Daniel, Andreasson, Henrik, Hamad, Mazin, Abdolshah, Saeed, Chadalavada, Ravi Teja, Palmieri, Luigi, Linder, Timm, Swaminathan, Chittaranjan Srinivas, Kucner, Tomasz Piotr, Hanheide, Marc, Fernandez-Carmona, Manuel, Cielniak, Grzegorz, Duckett, Tom, Pecora, Federico, Bokesand, Simon, Arras, Kai Oliver, Haddadin, Sami and Lilienthal, Achim J.  (2023) The ILIAD Safety Stack: Human-Aware Infrastructure-Free Navigation of Industrial Mobile Robots.  IEEE Robotics and Automation Magazine .   pp. 2-13.     ISSN 1070-9932  </description></item>
-<item>
-  <pubDate>Mon, 11 Sep 2023 00:00:00 +0100</pubDate>
-  <title> OpenPodcar: An Open Source Vehicle for Self-Driving Car Research </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56199/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56199/</guid>
-  <type>article</type>
-  <description>  Camara, Fanta, Waltham, Chris, Churchill, Grey and Fox, Charles  (2023) OpenPodcar: An Open Source Vehicle for Self-Driving Car Research.  Journal of Open Hardware, 7  (1).   pp. 1-17.     ISSN 2514-1708  </description></item>
-<item>
-  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-  <title> Plant Phenotyping Using DLT Method: Towards Retrieving the Delicate Features in a Dynamic Environment </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56198/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56198/</guid>
-  <type>article</type>
-  <description>  Vayakkattil, Srikishan, Cielniak, Grzegorz and Calisti, Marcello  (2023) Plant Phenotyping Using DLT Method: Towards Retrieving the Delicate Features in a Dynamic Environment.  Lecture Notes in Computer Science, 14136 .   pp. 3-14.     ISSN 0302-9743  </description></item>
-<item>
-  <pubDate>Fri, 01 Sep 2023 00:00:00 +0100</pubDate>
-  <title> Towards robust registration of heterogeneous multispectral UAV imagery: A two-stage approach for cotton leaf lesion grading </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/55903/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/55903/</guid>
-  <type>article</type>
-  <description>  Li, Xinzhou, Gao, Junfeng, Jin, Shichao, Jiang, Chunxin, Zhao, Mingming and Lu, Mingzhou  (2023) Towards robust registration of heterogeneous multispectral UAV imagery: A two-stage approach for cotton leaf lesion grading.  Computers and Electronics in Agriculture, 212 .       ISSN 0168-1699  </description></item>
-<item>
-  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-  <title> Motion-Based Segmentation Utilising Oscillatory Plant Properties </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56159/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56159/</guid>
-  <type>conference_item</type>
-  <description>  Wagner, Nikolaus and Cielniak, Grzegorz  (2023) Motion-Based Segmentation Utilising Oscillatory Plant Properties.  In: CVPPA @ ICCV 2023, 02 - 06 October, 2023, Paris.  </description></item>
-<item>
-  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-  <title> Black-grass (Alopecurus myosuroides) in cereal multispectral detection by UAV </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56155/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56155/</guid>
-  <type>article</type>
-  <description>  Cox, Jonathan, Li, Dom, Fox, Charles and Coutts, Shaun  (2023) Black-grass (Alopecurus myosuroides) in cereal multispectral detection by UAV.  Weed Science .       ISSN 0043-1745  </description></item>
     </channel>
 </rss>
