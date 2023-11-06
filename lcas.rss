@@ -9,10 +9,17 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", "Polvara,Riccardo", "del Duchetto,Francesco", "Klimchik,Alexandr", "Rai,Mini", "Harman,Helen", "Galvez Trigo", ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 30 Oct 2023 02:36:47 +0000</pubDate>
-    <lastBuildDate>Mon, 30 Oct 2023 02:36:47 +0000</lastBuildDate>
+    <pubDate>Mon, 06 Nov 2023 02:38:38 +0000</pubDate>
+    <lastBuildDate>Mon, 06 Nov 2023 02:38:38 +0000</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Fri, 08 Sep 2023 00:00:00 +0100</pubDate>
+  <title> Smart Parking System Using Heuristic Optimization For Autonomous Transportation Robots In Agriculture </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/57084/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/57084/</guid>
+  <type>conference_item</type>
+  <description>  Ravikanna, Roopika, Heselden, James, Khan, Muhammad Arshad, Perrett, Andrew, Zhu, Zuyuan, Das, Gautham and Hanheide, Marc  (2023) Smart Parking System Using Heuristic Optimization For Autonomous Transportation Robots In Agriculture.  In: The 23rd Towards Autonomous Robotic Systems (TAROS) Conference, 13 - 15 September 2023, University of Cambridge, UK.  </description></item>
 <item>
   <pubDate>Fri, 31 Mar 2023 00:00:00 +0100</pubDate>
   <title> User-Driven Design and Development of an Underwater Soft Gripper for Biological Sampling and Litter Collection </title>
@@ -146,12 +153,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/55464/</guid>
   <type>conference_item</type>
   <description>  Zhu, Zuyuan, Das, Gautham and Hanheide, Marc  (2023) On Optimising Topology of Agricultural Fields for Efficient Robotic Fleet Deployment.  In: The 18th international conference on Intelligent Autonomous System 2023 (IAS18 – 2023), July 4-7, 2023, Sowon, Korea.  </description></item>
-<item>
-  <pubDate>Fri, 11 Aug 2023 00:00:00 +0100</pubDate>
-  <title> The ILIAD Safety Stack: Human-Aware Infrastructure-Free Navigation of Industrial Mobile Robots </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56102/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56102/</guid>
-  <type>article</type>
-  <description>  Molina Mellado, Sergio, Mannucci, Anna, Magnusson, Martin, Adolfsson, Daniel, Andreasson, Henrik, Hamad, Mazin, Abdolshah, Saeed, Chadalavada, Ravi Teja, Palmieri, Luigi, Linder, Timm, Swaminathan, Chittaranjan Srinivas, Kucner, Tomasz Piotr, Hanheide, Marc, Fernandez-Carmona, Manuel, Cielniak, Grzegorz, Duckett, Tom, Pecora, Federico, Bokesand, Simon, Arras, Kai Oliver, Haddadin, Sami and Lilienthal, Achim J.  (2023) The ILIAD Safety Stack: Human-Aware Infrastructure-Free Navigation of Industrial Mobile Robots.  IEEE Robotics and Automation Magazine .   pp. 2-13.     ISSN 1070-9932  </description></item>
     </channel>
 </rss>
