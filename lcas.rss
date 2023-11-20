@@ -9,10 +9,23 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", "Polvara,Riccardo", "del Duchetto,Francesco", "Klimchik,Alexandr", "Rai,Mini", "Harman,Helen", "Galvez Trigo", ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 13 Nov 2023 02:38:42 +0000</pubDate>
-    <lastBuildDate>Mon, 13 Nov 2023 02:38:42 +0000</lastBuildDate>
+    <pubDate>Mon, 20 Nov 2023 02:39:58 +0000</pubDate>
+    <lastBuildDate>Mon, 20 Nov 2023 02:39:58 +0000</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <title> An Agent-Based Model for Collaborative Learning to Combat Antimicrobial Resistance: Proof of Concept Based on Broiler Production in Senegal </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/57157/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/57157/</guid>
+  <type>article</type>
+  <description>  Ndekou, Paul Python, Drake, Archie, Lomax, Jake, Dione, Michel, Faye, Ardiouma, Nsangou, Mohamed Daly Njiemessa, Korir, Lilian and Sklar, Elizabeth   An Agent-Based Model for Collaborative Learning to Combat Antimicrobial Resistance: Proof of Concept Based on Broiler Production in Senegal.  Science in One Health .   p. 100051.     ISSN 2949-7043  </description></item>
+<item>
+  <pubDate>Mon, 04 Dec 2023 00:00:00 +0000</pubDate>
+  <title> Enhancing Fall Detection Accuracy with a Transfer Learning-Aided Transformer Model using Computer Vision </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56964/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56964/</guid>
+  <type>conference_item</type>
+  <description>  McCall, Sheldon, Yu, Miao, Gong, Liyun, Yue, Shigang and Kollias, Stefanos  (2023) Enhancing Fall Detection Accuracy with a Transfer Learning-Aided Transformer Model using Computer Vision.  In: ICMLHM 2023 : International Conference on Machine Learning for Healthcare and Medicine, 4 - 5 December 2023, Tokyo, Japan.  </description></item>
 <item>
   <pubDate>Sun, 10 Dec 2023 00:00:00 +0000</pubDate>
   <title> Neural Fields with Hard Constraints of Arbitrary Differential Order </title>
@@ -139,19 +152,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/56229/</guid>
   <type>conference_item</type>
   <description>  Roberts-Elliott, Laurence, Das, Gautham and Millard, Alan  (2023) Towards an Abstract Lightweight Multi-robot ROS Simulator for Rapid Experimentation.  In: The 23rd Towards Autonomous Robotic Systems (TAROS) Conference, 13 - 15 September 2023, Cambridge.  </description></item>
-<item>
-  <pubDate>Tue, 18 Apr 2023 00:00:00 +0100</pubDate>
-  <title> Underwater legged robotics: review and perspectives </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56189/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56189/</guid>
-  <type>article</type>
-  <description>  Picardi, G, Astolfi, A, Chatzievangelou, D, Aguzzi, J and Calisti, Marcello  (2023) Underwater legged robotics: review and perspectives.  Bioinspiration &amp; Biomimetics, 18  (3).       ISSN 1748-3182  </description></item>
-<item>
-  <pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate>
-  <title> TS-Rep: Self-supervised time series representation learning from robot sensor data </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/55956/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/55956/</guid>
-  <type>conference_item</type>
-  <description>  Somaiya, Pratik, Pandya, Harit, Polvara, Riccardo, Hanheide, Marc and Cielniak, Grzegorz  (2022) TS-Rep: Self-supervised time series representation learning from robot sensor data.  In: NeurIPS 2022 Workshop: Self-Supervised Learning - Theory and Practice, 28 November - 9 December 2022, New Orleans.  </description></item>
     </channel>
 </rss>
