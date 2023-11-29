@@ -2,17 +2,66 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/">
     <channel>
 
-    <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", "Polvara,Riccardo", "del Duchetto,Francesco", "Klimchik,Alexandr", "Rai,Mini", "Harman,Helen", "Galvez Trigo", ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
+    <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj,Mini", "Elgeneidy", "Esfahani", "Bosilj", "Calisti,Marcello", "Das,Gautham", "Gao,Junfeng", "Guevara,Leonardo", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Yue,Shigang", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Parsons,Simon", "Pearson,Simon", "Bochtis", "Polvara,Riccardo", "del Duchetto,Francesco", "Klimchik,Alexandr", "Rai,Mini", "Harman,Helen", "Zied,Tayeb", ",,,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
     <link>https://eprints.lincoln.ac.uk/</link>
-    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://eprints.lincoln.ac.uk/cgi/search/archive/advanced/export_lincoln_RSS2.xml?screen=Search&amp;dataset=archive&amp;_action_export=1&amp;output=RSS2&amp;exp=0%7C1%7C-%7Ccreators_name%3Acreators_name%3AANY%3AIN%3A%22Hanheide%2C+Marc%22%2C+%22Duckett%2C+Tom%22%2C+%22Sklar%2C+Elizabeth%22%2C+%22Saaj%22%2C+%22Elgeneidy%22%2C+%22Esfahani%22%2C+%22Bosilj%22%2C+%22Goher%22%2C+%22Calisti%22%2C+%22Das%2C+Gautham%22%2C+%22Gao%2C+Junfeng%22%2C+%22Ghafoor%2C+Mubeen%22%2C+%22Maleki%2C+Sepehr%22%2C+%22Al-Khafajiy%22%2C+%22Polydoros%22%2C+%22Galvez+Trigo%22%2C+%22Millard%2C+Alan%22%2C+%22Yue%2C+Shigang%22%2C+%22Neumann%2C+Gerhard%22%2C+%22Bellotto%2C+Nicola%22%2C+%22Baxter%2C+Paul%22%2C+%22Cielniak%2C+Grzegorz%22%2C+%22Cuayahuitl%2C+Heriberto%22%2C+%22Fox%2C+Charles%22%2C+%22Kucukyilmaz%2C+Ayse%22%2C+%22Parsons%2C+Simon%22%2C+%22Pearson%2C+Simon%22%2C+%22Bochtis%22%2C+%22Polvara%2C+Riccardo%22%2C+%22del+Duchetto%2C+Francesco%22%2C+%22Klimchik%2C+Alexandr%22%2C+%22Rai%2C+Mini%22%2C+%22Harman%2C+Helen%22%2C+%22Galvez+Trigo%22" type="application/rss+xml"></atom:link>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://eprints.lincoln.ac.uk/cgi/search/archive/advanced/export_lincoln_RSS2.xml?screen=Search&amp;dataset=archive&amp;_action_export=1&amp;output=RSS2&amp;exp=0%7C1%7C-%7Ccreators_name%3Acreators_name%3AANY%3AIN%3A%22Hanheide%2C+Marc%22%2C+%22Duckett%2C+Tom%22%2C+%22Sklar%2C+Elizabeth%22%2C+%22Saaj%2C+Mini%22%2C+%22Elgeneidy%22%2C+%22Esfahani%22%2C+%22Bosilj%22%2C+%22Calisti%2C+Marcello%22%2C+%22Das%2C+Gautham%22%2C+%22Gao%2C+Junfeng%22%2C+%22Guevara%2C+Leonardo%22%2C+%22Maleki%2C+Sepehr%22%2C+%22Al-Khafajiy%22%2C+%22Polydoros%22%2C+%22Yue%2C+Shigang%22%2C+%22Bellotto%2C+Nicola%22%2C+%22Baxter%2C+Paul%22%2C+%22Cielniak%2C+Grzegorz%22%2C+%22Cuayahuitl%2C+Heriberto%22%2C+%22Fox%2C+Charles%22%2C+%22Parsons%2C+Simon%22%2C+%22Pearson%2C+Simon%22%2C+%22Bochtis%22%2C+%22Polvara%2C+Riccardo%22%2C+%22del+Duchetto%2C+Francesco%22%2C+%22Klimchik%2C+Alexandr%22%2C+%22Rai%2C+Mini%22%2C+%22Harman%2C+Helen%22%2C+%22Zied%2C+Tayeb%22" type="application/rss+xml"></atom:link>
     <description></description><image>
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
-        <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj", "Elgeneidy", "Esfahani", "Bosilj", "Goher", "Calisti", "Das,Gautham", "Gao,Junfeng", "Ghafoor,Mubeen", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Galvez Trigo", "Millard,Alan", "Yue,Shigang", "Neumann,Gerhard", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Kucukyilmaz,Ayse", "Parsons,Simon", "Pearson,Simon", "Bochtis", "Polvara,Riccardo", "del Duchetto,Francesco", "Klimchik,Alexandr", "Rai,Mini", "Harman,Helen", "Galvez Trigo", ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
+        <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj,Mini", "Elgeneidy", "Esfahani", "Bosilj", "Calisti,Marcello", "Das,Gautham", "Gao,Junfeng", "Guevara,Leonardo", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Yue,Shigang", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Parsons,Simon", "Pearson,Simon", "Bochtis", "Polvara,Riccardo", "del Duchetto,Francesco", "Klimchik,Alexandr", "Rai,Mini", "Harman,Helen", "Zied,Tayeb", ",,,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 27 Nov 2023 02:39:30 +0000</pubDate>
-    <lastBuildDate>Mon, 27 Nov 2023 02:39:30 +0000</lastBuildDate>
+    <pubDate>Wed, 29 Nov 2023 15:01:25 +0000</pubDate>
+    <lastBuildDate>Wed, 29 Nov 2023 15:01:25 +0000</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+  <title> Towards Continuous Acoustic Tactile Soft Sensing </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56882/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56882/</guid>
+  <type>conference_item</type>
+  <description>  Rajendran Sugathakumary, Vishnu, Parsons, Simon and Ghalamzan Esfahani, Amir  (2023) Towards Continuous Acoustic Tactile Soft Sensing.  In: 21st International Conference on Advanced Robotics, 5-8 December 2023, Abu Dhabi.  </description></item>
+<item>
+  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+  <title> Efficient Causal Discovery for Robotics Applications </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56810/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56810/</guid>
+  <type>conference_item</type>
+  <description>  Castri, Luca, Mghames, Sariah and Bellotto, Nicola  (2023) Efficient Causal Discovery for Robotics Applications.  In: Italian Conference on Robotics and Intelligent Machines (I-RIM 3D).  </description></item>
+<item>
+  <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
+  <title> Towards practical object detection for weed spraying in precision agriculture </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56887/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56887/</guid>
+  <type>article</type>
+  <description>  Darbyshire, Madeleine, Salazar-Gomez, Adrian, Gao, Junfeng, Sklar, Elizabeth and Parsons, Simon  (2023) Towards practical object detection for weed spraying in precision agriculture.  Frontiers in Plant Science, 14 .       ISSN 1664-462X  </description></item>
+<item>
+  <pubDate>Thu, 28 Sep 2023 00:00:00 +0100</pubDate>
+  <title> Towards Single Point Incremental Forming Accuracy: An Approach for the Springback Effect Compensation </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56655/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56655/</guid>
+  <type>conference_item</type>
+  <description>  Shaker, Walid K. and Klimchik, Alexandr  (2023) Towards Single Point Incremental Forming Accuracy: An Approach for the Springback Effect Compensation.  In: 2023 IEEE 19th International Conference on Automation Science and Engineering (CASE), 26-30 August 2023, Auckland, New Zealand.  </description></item>
+<item>
+  <pubDate>Fri, 01 Sep 2023 00:00:00 +0100</pubDate>
+  <title> DDoS-FOCUS: A Distributed DoS Attacks Mitigation using Deep Learning Approach for a Secure IoT Network </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56609/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56609/</guid>
+  <type>conference_item</type>
+  <description>  Al-Khafajiy, Mohammed, Al-Tameemi, Ghaith and Baker, Thar  (2023) DDoS-FOCUS: A Distributed DoS Attacks Mitigation using Deep Learning Approach for a Secure IoT Network.  In: IEEE International Conference on Edge Computing (EDGE), 02-08 July 2023, Chicago, IL, USA.  </description></item>
+<item>
+  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+  <title> An Intelligent Routing Approach for Multimedia Traffic Transmission Over SDN </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56607/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56607/</guid>
+  <type>conference_item</type>
+  <description>  Jameel, Mohammed Al, Kanakis, Triantafyllos, Turner, Scott, Al-Sherbaz, Ali, Bhaya, Wesam S. and Al-Khafajiy, Mohammed  (2023) An Intelligent Routing Approach for Multimedia Traffic Transmission Over SDN.  In: International Conference on Developments in eSystems Engineering (DESE).  </description></item>
+<item>
+  <pubDate>Sun, 01 Oct 2023 00:00:00 +0100</pubDate>
+  <title> Training the UK Agri-food Sector to Employ Robotics and Autonomous Systems </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/57218/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/57218/</guid>
+  <type>monograph</type>
+  <description>  Howard, H, Wane, S, Mihaylova, L, Rose, DC, Ray, P, Manning, Louise and Sklar, Elizabeth  (2023) Training the UK Agri-food Sector to Employ Robotics and Autonomous Systems.  Project Report. EPSRC UK-RAS.  </description></item>
 <item>
   <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
   <title> A comparative data set of annotated Broccoli heads from a moving vehicle with accompanying depth mapping data </title>
@@ -20,6 +69,13 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/56526/</guid>
   <type>conference_item</type>
   <description>  Hardy, Oliver, Seemakurthy, Karthik and Sklar, Elizabeth  (2023) A comparative data set of annotated Broccoli heads from a moving vehicle with accompanying depth mapping data.  In: CVPPA 2023 Workshop (8th workshop on Computer Vision in Plant Phenotyping and Agriculture), 2 October 2023, Paris Convention Centre, France.  </description></item>
+<item>
+  <pubDate>Mon, 08 Apr 2019 00:00:00 +0100</pubDate>
+  <title> Social robot navigation based on HRI non-verbal communication </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/56520/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/56520/</guid>
+  <type>conference_item</type>
+  <description>  Vasconez, Juan Pablo, Guevara, Leonardo and Cheein, Fernando Auat  (2019) Social robot navigation based on HRI non-verbal communication.  In: SAC '19: Proceedings of the 34th ACM/SIGAPP Symposium on Applied Computing, 8 - 12 April 2019, Limassol, Cyprus.  </description></item>
 <item>
   <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
   <title> Thing Artifact-based Design of IoT Ecosystems </title>
@@ -96,61 +152,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/57084/</guid>
   <type>conference_item</type>
   <description>  Ravikanna, Roopika, Heselden, James, Khan, Muhammad Arshad, Perrett, Andrew, Zhu, Zuyuan, Das, Gautham and Hanheide, Marc  (2023) Smart Parking System Using Heuristic Optimization For Autonomous Transportation Robots In Agriculture.  In: The 23rd Towards Autonomous Robotic Systems (TAROS) Conference, 13 - 15 September 2023, University of Cambridge, UK.  </description></item>
-<item>
-  <pubDate>Fri, 31 Mar 2023 00:00:00 +0100</pubDate>
-  <title> User-Driven Design and Development of an Underwater Soft Gripper for Biological Sampling and Litter Collection </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56195/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56195/</guid>
-  <type>article</type>
-  <description>  Picardi, Giacomo, De Luca, Mauro, Chimienti, Giovanni, Cianchetti, Matteo and Calisti, Marcello  (2023) User-Driven Design and Development of an Underwater Soft Gripper for Biological Sampling and Litter Collection.  Journal of Marine Science and Engineering, 11  (4).   p. 771.     ISSN 2077-1312  </description></item>
-<item>
-  <pubDate>Mon, 15 May 2023 00:00:00 +0100</pubDate>
-  <title> Articulated legs allow energy optimization across different speeds for legged robots with elastically suspended loads </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56182/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56182/</guid>
-  <type>conference_item</type>
-  <description>  Astolfi, Anna and Calisti, Marcello  (2023) Articulated legs allow energy optimization across different speeds for legged robots with elastically suspended loads.  In: IEEE RoboSoft 2023, Singapore.  </description></item>
-<item>
-  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-  <title> Python Subset to Digital Logic Dataflow Compiler for Robots and IoT </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56659/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56659/</guid>
-  <type>conference_item</type>
-  <description>  Jurkans, Kristaps and Fox, Charles  (2023) Python Subset to Digital Logic Dataflow Compiler for Robots and IoT.  In: International Symposium on Intelligent and Trustworthy Computing, Communications, and Networking (ITCCN-2023), 1-3 Nov 2023, Exeter, UK.  </description></item>
-<item>
-  <pubDate>Wed, 27 Sep 2023 00:00:00 +0100</pubDate>
-  <title> Developing a Comprehensive Model for the Prevention of Tension Neck Syndrome: A Focus on Musculoskeletal Disorder Prevention Strategies </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56743/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56743/</guid>
-  <type>conference_item</type>
-  <description>  Sohani, Behnaz, Ifeoluwa Joshua, Adigun, Aliyu, Aliyu, Rahmani, Amir and Khaled, Goher  (2023) Developing a Comprehensive Model for the Prevention of Tension Neck Syndrome: A Focus on Musculoskeletal Disorder Prevention Strategies.  In: The WRC Symposium on Advanced Robotics and Automation, China 2023, 19 August 2023, Beijing, China.  </description></item>
-<item>
-  <pubDate>Mon, 15 May 2023 00:00:00 +0100</pubDate>
-  <title> Spatial Position Estimation of Lightweight and Delicate Objects using a Soft haptic Probe </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56196/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56196/</guid>
-  <type>conference_item</type>
-  <description>  Sofla, Mohammad Sheikh, Vayakkattil, Srikishan and Calisti, Marcello  (2023) Spatial Position Estimation of Lightweight and Delicate Objects using a Soft haptic Probe.  In: IEEE RoboSoft Conference 2023, 3rd-7th April 2023.  </description></item>
-<item>
-  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-  <title> A procedure for the stiffness identification of parallel robots under measurement limitations </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56591/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56591/</guid>
-  <type>article</type>
-  <description>  Bina, Rasool, Kamali E., Ali, Taghvaeipour, Afshin and Klimchik, Alexandr  (2023) A procedure for the stiffness identification of parallel robots under measurement limitations.  Mechanics Based Design of Structures and Machines .       ISSN 1539-7734  </description></item>
-<item>
-  <pubDate>Wed, 27 Sep 2023 00:00:00 +0100</pubDate>
-  <title> Navigating in 3D Uneven Environments through Supervoxels and Nonlinear MPC </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56559/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56559/</guid>
-  <type>conference_item</type>
-  <description>  Atas, Fetullah, Cielniak, Grzegorz and Grimstad, Lars  (2023) Navigating in 3D Uneven Environments through Supervoxels and Nonlinear MPC.  In: European Conference on Mobile Robots (ECMR), 4 - 7 September 2023, Coimbra, Portugal.  </description></item>
-<item>
-  <pubDate>Thu, 28 Sep 2023 00:00:00 +0100</pubDate>
-  <title> An Agricultural Precision Sprayer Deposit Identification System </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56560/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56560/</guid>
-  <type>conference_item</type>
-  <description>  Rogers, Harry, De La Iglesia, Beatriz, Zebin, Tahmina, Cielniak, Grzegorz and Magri, Ben  (2023) An Agricultural Precision Sprayer Deposit Identification System.  In: 2023 IEEE 19th International Conference on Automation Science and Engineering (CASE), 26-30 August 2023, Auckland, New Zealand.  </description></item>
     </channel>
 </rss>
