@@ -10,28 +10,23 @@ staff = [
     'Hanheide, Marc',
     'Duckett, Tom',
     'Sklar, Elizabeth',
-    'Saaj',
+    'Saaj, Mini',
     'Elgeneidy',
     'Esfahani',
     'Bosilj',
-    'Goher', 
-    'Calisti',
+    'Calisti, Marcello',
     'Das, Gautham',
     'Gao, Junfeng',
-    'Ghafoor, Mubeen',
+    'Guevara, Leonardo',
     'Maleki, Sepehr',
     'Al-Khafajiy',
     'Polydoros', 
-    'Galvez Trigo', 
-    'Millard, Alan',
     'Yue, Shigang',
-    'Neumann, Gerhard',
     'Bellotto, Nicola',
     'Baxter, Paul',
     'Cielniak, Grzegorz',
     'Cuayahuitl, Heriberto',
     'Fox, Charles',
-    'Kucukyilmaz, Ayse',
     'Parsons, Simon',
     'Pearson, Simon',
     'Bochtis',
@@ -40,11 +35,11 @@ staff = [
     'Klimchik, Alexandr',
     'Rai, Mini',
     'Harman, Helen',
-    'Galvez Trigo'
+    'Zied, Tayeb'
 ]
 
 # recent
-years = list(range(2012,2024))
+years = list(range(2012,2025))
 
 def quote_name(n):
     return '%%22%s%%22' % n.replace(',','%2C').replace(' ','+')
