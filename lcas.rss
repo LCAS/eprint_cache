@@ -9,10 +9,24 @@
         <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
         <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj,Mini", "Elgeneidy", "Esfahani", "Bosilj", "Calisti,Marcello", "Das,Gautham", "Gao,Junfeng", "Guevara,Leonardo", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Yue,Shigang", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Parsons,Simon", "Pearson,Simon", "Bochtis", "Polvara,Riccardo", "del Duchetto,Francesco", "Klimchik,Alexandr", "Rai,Mini", "Harman,Helen", "Zied,Tayeb", ",,,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
         <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Wed, 29 Nov 2023 15:01:25 +0000</pubDate>
-    <lastBuildDate>Wed, 29 Nov 2023 15:01:25 +0000</lastBuildDate>
+    <pubDate>Mon, 04 Dec 2023 02:38:49 +0000</pubDate>
+    <lastBuildDate>Mon, 04 Dec 2023 02:38:49 +0000</lastBuildDate>
     <language>en</language>
     <copyright></copyright>
+<item>
+  <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
+  <title> Survey on Motion Planning for Multirotor Aerial Vehicles in Plan-based Control Paradigm </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/57199/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/57199/</guid>
+  <type>article</type>
+  <description>  Kulathunga, Geesara and Klimchik, Alexandr  (2023) Survey on Motion Planning for Multirotor Aerial Vehicles in Plan-based Control Paradigm.  Remote Sensing, 15  (21).   p. 5237.     ISSN 2072-4292  </description></item>
+<item>
+  <pubDate>Mon, 09 Oct 2023 00:00:00 +0100</pubDate>
+  <title> Comparative Analysis of Springback Compensation for Various Profiles in Incremental Forming </title>
+  <link>https://eprints.lincoln.ac.uk/id/eprint/57368/</link>
+  <guid>https://eprints.lincoln.ac.uk/id/eprint/57368/</guid>
+  <type>conference_item</type>
+  <description>  Shaker, Walid and Klimchik, Alexandr  (2023) Comparative Analysis of Springback Compensation for Various Profiles in Incremental Forming.  In: 2023 International Russian Automation Conference (RusAutoCon), 10-16 September 2023, Sochi, Russian Federation.  </description></item>
 <item>
   <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
   <title> Towards Continuous Acoustic Tactile Soft Sensing </title>
@@ -138,19 +152,5 @@
   <guid>https://eprints.lincoln.ac.uk/id/eprint/56608/</guid>
   <type>article</type>
   <description>  Maamar, Zakaria, Kajan, Ejub, Al-Khafajiy, Mohammed, Dohan, Murtada, Fayoumi, Amjad and Yahya, Fadwa  (2023) A multi-type artifact framework for cyber–physical, social systems design and development.  Internet of Things, 22 .   p. 100820.     ISSN 2542-6605  </description></item>
-<item>
-  <pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate>
-  <title> Evaluation Of Deviations Due To Robot Configuration For Robot-based Incremental Sheet Metal Forming </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/57109/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/57109/</guid>
-  <type>conference_item</type>
-  <description>  Paul, Eldho, Bharti, Sahil, Uthama, Anandu, Boby, Riby Abraham, Krishnaswamy, Hariharan and Klimchik, Alexandr  (2023) Evaluation Of Deviations Due To Robot Configuration For Robot-based Incremental Sheet Metal Forming.  In: 6th International Conference on Advances in Robotics, 5 - 8 July 2023, Ropar, India.  </description></item>
-<item>
-  <pubDate>Fri, 08 Sep 2023 00:00:00 +0100</pubDate>
-  <title> Smart Parking System Using Heuristic Optimization For Autonomous Transportation Robots In Agriculture </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/57084/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/57084/</guid>
-  <type>conference_item</type>
-  <description>  Ravikanna, Roopika, Heselden, James, Khan, Muhammad Arshad, Perrett, Andrew, Zhu, Zuyuan, Das, Gautham and Hanheide, Marc  (2023) Smart Parking System Using Heuristic Optimization For Autonomous Transportation Robots In Agriculture.  In: The 23rd Towards Autonomous Robotic Systems (TAROS) Conference, 13 - 15 September 2023, University of Cambridge, UK.  </description></item>
     </channel>
 </rss>
