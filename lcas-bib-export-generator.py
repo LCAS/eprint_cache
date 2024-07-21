@@ -5,6 +5,7 @@ from asyncio import run
 
 from requests import get
 from sys import stderr
+from json import dumps
 
 
 # recent
@@ -53,32 +54,39 @@ def rss_url(staff):
 def get_file(bibtex_url):
     return get(bibtex_url, verify=False, timeout=200).text
 
+
+def parse_bib(bib):
+    from bibtexparser import loads
+    return loads(bib).entries_dict
+
 #years.reverse()
 async def main():
     from config import Config
     staff_dict = Config.staff_dict
     
 
+
+    bibs = []
+    for (staff, data) in staff_dict.items():
+        if not data:
+            continue
+        if data['orcid']:
+            orcid = data['orcid']
+            print('process staff %s with id %s' % (staff, orcid), file=stderr)
+            staff_bib = await get_orcid_works(orcid, max_dls=10)
+            bibs.extend(staff_bib)
+            with open('%s.bib' % staff, 'w') as bib_file:
+                bib_file.write(parse_and_format_bib("".join(set(staff_bib))))
+                
+    bib = "".join(set(bibs))            
+    with open('lcas.bib', 'w') as all_bib:
+        all_bib.write(
+            parse_and_format_bib(bib)
+        )
+    with open('lcas.json', 'w') as jsonfile:
+        jsonfile.write(dumps(parse_bib(parse_and_format_bib(bib)), indent=2))
+
     with open('wordpress.html','w') as html_file:
-
-        with open('lcas.bib', 'w') as all_bib:
-            bibs = []
-            for (staff, data) in staff_dict.items():
-                if not data:
-                    continue
-                if data['orcid']:
-                    orcid = data['orcid']
-                    print('process staff %s with id %s' % (staff, orcid), file=stderr)
-                    staff_bib = await get_orcid_works(orcid, max_dls=10)
-                    bibs.extend(staff_bib)
-                    with open('%s.bib' % staff, 'w') as bib_file:
-                        bib_file.write(parse_and_format_bib("".join(set(staff_bib))))
-                        
-            bib = "".join(set(bibs))            
-            all_bib.write(
-                parse_and_format_bib(bib)
-            )
-
         print(shortcode_pattern % (
             'https://raw.githubusercontent.com/LCAS/eprint_cache/main/lcas.bib',
             highlight_names(staff_dict.keys()),
