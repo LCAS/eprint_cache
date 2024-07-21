@@ -1,0 +1,33 @@
+class Config:
+
+    staff_dict = {
+        'Hanheide, Marc': '0000-0001-7728-1849',
+        'Duckett, Tom': None,
+        'Sklar, Elizabeth': None,
+        'Saaj, Mini': None,
+        'Elgeneidy': None,
+        'Esfahani': None,
+        'Bosilj': None,
+        'Calisti, Marcello': None,
+        'Das, Gautham': None,
+        'Gao, Junfeng': None,
+        'Guevara, Leonardo': None,
+        'Maleki, Sepehr': None,
+        'Al-Khafajiy': None,
+        'Polydoros': None, 
+        'Yue, Shigang': None,
+        'Bellotto, Nicola': None,
+        'Baxter, Paul': None,
+        'Cielniak, Grzegorz': '0000-0002-6299-8465',
+        'Cuayahuitl, Heriberto': None,
+        'Fox, Charles': None,
+        'Parsons, Simon': None,
+        'Pearson, Simon': None,
+        'Bochtis': None,
+        'Polvara, Riccardo': None,
+        'del Duchetto, Francesco': None,
+        'Klimchik, Alexandr': None,
+        'Rai, Mini': None,
+        'Harman, Helen': None,
+        'Zied, Tayeb': None
+    }
