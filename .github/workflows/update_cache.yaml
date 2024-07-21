@@ -6,6 +6,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   update-cache:
@@ -19,8 +22,13 @@ jobs:
           git config --global user.name 'L-CAS GitHub'
           git config --global user.email 'marc@hanheide.net'
       - run: |
-          python3 lcas-bib-export-generator.py
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install -r requirements.txt
+          python lcas-bib-export-generator.py
+      - if: github.event_name != 'pull_request'
+        run: |
           git add -f *.bib *.rss *.html
-          git commit -m "automated commit"
+          git commit -m "automated commit `date`"
           git push
 
