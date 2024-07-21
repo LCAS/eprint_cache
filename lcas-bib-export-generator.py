@@ -63,10 +63,17 @@ async def main():
 
         with open('lcas.bib', 'w') as all_bib:
             bibs = []
-            for (staff, orcid) in staff_dict.items():
-                if orcid:
+            for (staff, data) in staff_dict.items():
+                if not data:
+                    continue
+                if data['orcid']:
+                    orcid = data['orcid']
                     print('process staff %s with id %s' % (staff, orcid), file=stderr)
-                    bibs.extend(await get_orcid_works(orcid, max_dls=5))
+                    staff_bib = await get_orcid_works(orcid, max_dls=10)
+                    bibs.extend(staff_bib)
+                    with open('%s.bib' % staff, 'w') as bib_file:
+                        bib_file.write(parse_and_format_bib("".join(set(staff_bib))))
+                        
             bib = "".join(set(bibs))            
             all_bib.write(
                 parse_and_format_bib(bib)
