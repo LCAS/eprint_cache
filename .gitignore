@@ -1,3 +1,6 @@
-*.bib
-*.rss
-wordpress.html
+#*.bib
+#*.rss
+#wordpress.html
+.venv
+*.pyc
+.DS_Store

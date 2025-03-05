@@ -1,119 +1,123 @@
 #!/usr/bin/env python
 
+from orcid_to_bibtex import get_orcid_works, parse_and_format_bib
+from asyncio import run
+
 from requests import get
 from sys import stderr
+from json import dumps, loads
 
-# old URL using IDs that is NOT working reliably:
-# http://eprints.lincoln.ac.uk/cgi/search/archive/advanced/export_lirolem_BibTeX.bib?screen=Search&dataset=archive&_action_export=1&output=BibTeX&exp=0%7C1%7C-date%2Fcreators_name%2Ftitle%7Carchive%7C-%7Ccreators_id%3Acreators_id%3AANY%3AIN%3A002146+801704+801872+801929+003092+002165+001928+802799+002604+504752+504299+002325%7Ctype%3Atype%3AANY%3AEQ%3Aarticle+review+book_section+monograph+conference_item+book+thesis+dataset%7C-%7Ceprint_status%3Aeprint_status%3AANY%3AEQ%3Aarchive%7Cmetadata_visibility%3Ametadata_visibility%3AANY%3AEQ%3Ashow&n=
-
-staff = [
-    'Hanheide, Marc',
-    'Duckett, Tom',
-    'Sklar, Elizabeth',
-    'Saaj, Mini',
-    'Elgeneidy',
-    'Esfahani',
-    'Bosilj',
-    'Calisti, Marcello',
-    'Das, Gautham',
-    'Gao, Junfeng',
-    'Guevara, Leonardo',
-    'Maleki, Sepehr',
-    'Al-Khafajiy',
-    'Polydoros', 
-    'Yue, Shigang',
-    'Bellotto, Nicola',
-    'Baxter, Paul',
-    'Cielniak, Grzegorz',
-    'Cuayahuitl, Heriberto',
-    'Fox, Charles',
-    'Parsons, Simon',
-    'Pearson, Simon',
-    'Bochtis',
-    'Polvara, Riccardo',
-    'del Duchetto, Francesco',
-    'Klimchik, Alexandr',
-    'Rai, Mini',
-    'Harman, Helen',
-    'Zied, Tayeb'
-]
 
 # recent
-years = list(range(2012,2025))
+#years = list(range(2012,2025))
 
-def quote_name(n):
-    return '%%22%s%%22' % n.replace(',','%2C').replace(' ','+')
+class BibGenerator:
+    def __init__(self, load_from=None):
+        from config import Config
+        self.staff_dict = Config.staff_dict
+        if load_from:
+            with open(load_from, 'r') as staff_file:
+                self.staff_dict = loads(staff_file.read())
+        self.shortcode_pattern = (
+            '[bibfilter group="firstauthor" group_order="desc" format="ieee" order=asc limit=1000 '
+            'file="%s" '
+            'timeout=60000 '
+            'highlight="%s" '
+            'sortauthors=1 '
+            'allow="incollection,mastersthesis,article,conference,techreport,inproceedings" '
+            'author="%s"'
+            ']'
+        )
 
-def quote_names(ns):
-    return [quote_name(n) for n in ns]
+    def retrieve_profiles(self):
+        from requests import get
+        from json import loads
 
+        for staff_id, staff in self.staff_dict.items():
+            if 'sys_id' not in staff or staff['sys_id'] is None:
+                print(f"no sys_id for {staff_id}", file=stderr)
+                continue
+            url = f"https://staff.lincoln.ac.uk/profile/{staff['sys_id']}/data/"
+            response = get(url)
+            if response.status_code != 200:
+                print(f"error retrieving profile for {staff_id} from {url}", file=stderr)
+                continue
+            staff.update(loads(response.text)['person'])
+            print(f"retrieved profile for {staff_id} from {url}", file=stderr)
+        #pprint(self.staff_dict, stream=stderr)
 
-#http://eprints.lincoln.ac.uk/cgi/search/archive/advanced?screen=Search&dataset=archive&_action_search=Search&documents_merge=ALL&documents=&title_merge=ALL&title=&documents.title_merge=ALL&documents.title=&creators_name_merge=ANY&creators_name=Hanheide+Duckett+Saaj+Sklar+Yue+Bellotto+Baxter&creators_id_merge=ALL&creators_id=&abstract_merge=ALL&abstract=&date_online=&date_accepted=&date=2019-&documents.description_merge=ALL&documents.description=&keywords_merge=ALL&keywords=&subjects_merge=ANY&divisions_merge=ANY&editors_name_merge=ALL&editors_name=&refereed=EITHER&publication_merge=ALL&publication=&projects_merge=ALL&projects=&satisfyall=ALL&order=-date%2Fcreators_name%2Ftitle
-#http://eprints.lincoln.ac.uk/cgi/search/archive/advanced/export_lincoln_BibTeX.bib?screen=Search&dataset=archive&_action_export=1&output=BibTeX&exp=0%7C1%7C-date%2Fcreators_name%2Ftitle%7Carchive%7C-%7Ccreators_name%3Acreators_name%3AANY%3AEQ%3AHanheide+Duckett+Saaj+Sklar+Yue+Bellotto+Baxter%7Cdate%3Adate%3AALL%3AEQ%3A2019-%7C-%7Ceprint_status%3Aeprint_status%3AANY%3AEQ%3Aarchive%7Cmetadata_visibility%3Ametadata_visibility%3AANY%3AEQ%3Ashow&n=&cache=11353462
+    def quote_name(self, n):
+        return '%%22%s%%22' % n.replace(',','%2C').replace(' ','+')
 
-url_pattern='http://eprints.lincoln.ac.uk/cgi/search/archive/advanced/export_lirolem_BibTeX.bib?screen=Search&dataset=archive&_action_export=1&output=BibTeX&exp=0%%7C1%%7C-%%7Ccreators_name%%3Acreators_name%%3AANY%%3AIN%%3A%s%%7Cdate%%3Adate%%3AALL%%3AEQ%%3A%s'
+    def quote_names(self, ns):
+        return [self.quote_name(n) for n in ns]
 
+    def highlight_names(self, names):
+        filtered = [s.split(', ')[0] for s in names]
+        return '|'.join(filtered)
 
-'https://eprints.lincoln.ac.uk/cgi/search/archive/advanced/export_lincoln_AllRSS.rss?screen=Search&amp;dataset=archive&amp;_action_export=1&amp;output=AllRSS&amp;exp=0%7C1%7C-date%2Fcreators_name%2Ftitle%7Carchive%7C-%7Ccreators_name%3Acreators_name%3AALL%3AEQ%3AHanheide'
+    def get_file(self, bibtex_url):
+        return get(bibtex_url, verify=False, timeout=200).text
 
-rss_url_pattern='http://eprints.lincoln.ac.uk/cgi/search/archive/advanced/export_lincoln_RSS2.xml?screen=Search&dataset=archive&_action_export=1&output=RSS2&exp=0%%7C1%%7C-%%7Ccreators_name%%3Acreators_name%%3AANY%%3AIN%%3A%s'
+    def parse_bib(self, bib):
+        from bibtexparser import loads
+        return loads(bib).entries_dict
 
+    async def retrieve_bibs(self, max_process=None):
 
-def highlight_names(names):
-    ret = ''
-    filtered = [s.split(', ')[0] for s in names]
-    return '|'.join(filtered)
+        processed = 0
+        for staff_id, staff in self.staff_dict.items():
+            staff['bib'] = []
+            try:
+                if 'orcid' in staff and staff['orcid']:
+                    orcid = staff['orcid']
+                    print(f"retrieve bib for {staff_id} with orcid id {orcid}", file=stderr)
+                    staff_bib = await get_orcid_works(orcid, max_dls=20)
+                    staff['bib'] = list(set(staff_bib))
+                else:
+                    print(f"no orcid for {staff_id}", file=stderr)
+                processed += 1
+                if max_process and processed >= max_process:
+                    break
+            except Exception as e:
+                print(f"error processing staff {staff_id}: {str(e)}", file=stderr)
+                print(f"execption details: {e}", file=stderr)
 
-shortcode_pattern=(
-    '[bibfilter group="firstauthor" group_order="desc" format="ieee" order=asc limit=1000 '
-    'file="%s" '
-    'timeout=60000 '
-    'highlight="%s" '
-    'sortauthors=1 '
-    'allow="incollection,mastersthesis,article,conference,techreport,inproceedings" '
-    'author="%s"'
-    ']'
-)
+    def save_staff(self, filename="staff.json"):
+        with open(filename, 'w') as staff_file:
+            staff_file.write(dumps(self.staff_dict, indent=2))
 
-def pubs_year_url(year, staff):
-    return url_pattern % ('%2C+'.join(quote_names(staff)), str(year))
+    def generate_bibs(self):
+        bibs = []
+        for staff_id, staff in self.staff_dict.items():
+            if 'bib' not in staff:
+                print(f"no bib for {staff_id}", file=stderr)
+                continue
+            staff_bib = staff['bib']
+            bibs.extend(staff_bib)
+            with open('%s.bib' % staff_id, 'w') as bib_file:
+                bib_file.write(parse_and_format_bib("".join(set(staff_bib))))
 
-def rss_url(staff):
-    return rss_url_pattern % ('%2C+'.join(quote_names(staff)))
+        bib = "".join(set(bibs))            
+        with open('lcas.bib', 'w') as all_bib:
+            all_bib.write(parse_and_format_bib(bib))
+        with open('lcas-bib.json', 'w') as jsonfile:
+            jsonfile.write(dumps(self.parse_bib(parse_and_format_bib(bib)), indent=2))
 
-def get_file(bibtex_url):
-    return get(bibtex_url, verify=False, timeout=200).text
+        with open('wordpress.html','w') as html_file:
+            names = self.highlight_names([s['surname'] for i, s in self.staff_dict.items()])
+            print(self.shortcode_pattern % (
+                'https://raw.githubusercontent.com/LCAS/eprint_cache/main/lcas.bib',
+                names, names
+            ), file=html_file)
 
-years.reverse()
+async def main():
+    #generator = BibGenerator(load_from='staff.json')
+    generator = BibGenerator()
+    generator.retrieve_profiles()
+    await generator.retrieve_bibs()
+    generator.generate_bibs()
+    generator.save_staff()
 
-with open('wordpress.html','w') as html_file:
-    print('<p>Download the <a href="%s" target="_blank">BibTeX file of all L-CAS publications</a></p>' % (
-        pubs_year_url('', staff)
-    ), file=html_file)
-
-    with open('lcas.bib', 'w') as all_bib:
-        bibtex = get_file(pubs_year_url('', staff))
-        all_bib.write(bibtex)
-
-    for year in years:
-        print("<h2>%s</h2>" % str(year), file=html_file)
-        bibtex_url = pubs_year_url(year, staff)
-        print('generating for year %d using %s' % (year, bibtex_url), file=stderr)
-        print(shortcode_pattern % (
-            bibtex_url,
-            highlight_names(staff),
-            highlight_names(staff)
-        ), file=html_file)
-
-        bibtex = get_file(bibtex_url)
-        with open('%d.bib' % year, 'w') as bibtex_file:
-            bibtex_file.write(bibtex)
-
-
-print('-------------------------------')
-with open('lcas.rss','w') as rss_file:
-    rssdata = get_file(rss_url(staff))
-    rss_file.write(rssdata)
-    print(rss_url(staff))
-
-
+if __name__ == "__main__":
+    run(main())
