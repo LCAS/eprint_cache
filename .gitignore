@@ -3,3 +3,4 @@
 #wordpress.html
 .venv
 *.pyc
+.DS_Store

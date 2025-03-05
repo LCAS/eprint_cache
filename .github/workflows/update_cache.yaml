@@ -28,7 +28,7 @@ jobs:
           python lcas-bib-export-generator.py
       - if: github.event_name != 'pull_request'
         run: |
-          git add -f *.bib *.rss *.html
+          git add -f *.bib *.json *.html
           git commit -m "automated commit `date`"
           git push
 
