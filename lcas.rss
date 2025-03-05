@@ -1,156 +1,187 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/">
-    <channel>
 
-    <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj,Mini", "Elgeneidy", "Esfahani", "Bosilj", "Calisti,Marcello", "Das,Gautham", "Gao,Junfeng", "Guevara,Leonardo", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Yue,Shigang", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Parsons,Simon", "Pearson,Simon", "Bochtis", "Polvara,Riccardo", "del Duchetto,Francesco", "Klimchik,Alexandr", "Rai,Mini", "Harman,Helen", "Zied,Tayeb", ",,,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
-    <link>https://eprints.lincoln.ac.uk/</link>
-    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://eprints.lincoln.ac.uk/cgi/search/archive/advanced/export_lincoln_RSS2.xml?screen=Search&amp;dataset=archive&amp;_action_export=1&amp;output=RSS2&amp;exp=0%7C1%7C-%7Ccreators_name%3Acreators_name%3AANY%3AIN%3A%22Hanheide%2C+Marc%22%2C+%22Duckett%2C+Tom%22%2C+%22Sklar%2C+Elizabeth%22%2C+%22Saaj%2C+Mini%22%2C+%22Elgeneidy%22%2C+%22Esfahani%22%2C+%22Bosilj%22%2C+%22Calisti%2C+Marcello%22%2C+%22Das%2C+Gautham%22%2C+%22Gao%2C+Junfeng%22%2C+%22Guevara%2C+Leonardo%22%2C+%22Maleki%2C+Sepehr%22%2C+%22Al-Khafajiy%22%2C+%22Polydoros%22%2C+%22Yue%2C+Shigang%22%2C+%22Bellotto%2C+Nicola%22%2C+%22Baxter%2C+Paul%22%2C+%22Cielniak%2C+Grzegorz%22%2C+%22Cuayahuitl%2C+Heriberto%22%2C+%22Fox%2C+Charles%22%2C+%22Parsons%2C+Simon%22%2C+%22Pearson%2C+Simon%22%2C+%22Bochtis%22%2C+%22Polvara%2C+Riccardo%22%2C+%22del+Duchetto%2C+Francesco%22%2C+%22Klimchik%2C+Alexandr%22%2C+%22Rai%2C+Mini%22%2C+%22Harman%2C+Helen%22%2C+%22Zied%2C+Tayeb%22" type="application/rss+xml"></atom:link>
-    <description></description><image>
-        <url>https://eprints.lincoln.ac.uk/images/sitelogo.png</url>
-        <title>The Lincoln Repository: Creators matches any of "Hanheide,Marc", "Duckett,Tom", "Sklar,Elizabeth", "Saaj,Mini", "Elgeneidy", "Esfahani", "Bosilj", "Calisti,Marcello", "Das,Gautham", "Gao,Junfeng", "Guevara,Leonardo", "Maleki,Sepehr", "Al-Khafajiy", "Polydoros", "Yue,Shigang", "Bellotto,Nicola", "Baxter,Paul", "Cielniak,Grzegorz", "Cuayahuitl,Heriberto", "Fox,Charles", "Parsons,Simon", "Pearson,Simon", "Bochtis", "Polvara,Riccardo", "del Duchetto,Francesco", "Klimchik,Alexandr", "Rai,Mini", "Harman,Helen", "Zied,Tayeb", ",,,,,,,,,,,,,,,,,,,,,,,,,,,,". Results ordered -Date Deposited. </title>
-        <link>https://eprints.lincoln.ac.uk/</link></image>
-    <pubDate>Mon, 05 Feb 2024 02:37:38 +0000</pubDate>
-    <lastBuildDate>Mon, 05 Feb 2024 02:37:38 +0000</lastBuildDate>
-    <language>en</language>
-    <copyright></copyright>
-<item>
-  <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
-  <title> Survey on Motion Planning for Multirotor Aerial Vehicles in Plan-based Control Paradigm </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/57199/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/57199/</guid>
-  <type>article</type>
-  <description>  Kulathunga, Geesara and Klimchik, Alexandr  (2023) Survey on Motion Planning for Multirotor Aerial Vehicles in Plan-based Control Paradigm.  Remote Sensing, 15  (21).   p. 5237.     ISSN 2072-4292  </description></item>
-<item>
-  <pubDate>Mon, 09 Oct 2023 00:00:00 +0100</pubDate>
-  <title> Comparative Analysis of Springback Compensation for Various Profiles in Incremental Forming </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/57368/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/57368/</guid>
-  <type>conference_item</type>
-  <description>  Shaker, Walid and Klimchik, Alexandr  (2023) Comparative Analysis of Springback Compensation for Various Profiles in Incremental Forming.  In: 2023 International Russian Automation Conference (RusAutoCon), 10-16 September 2023, Sochi, Russian Federation.  </description></item>
-<item>
-  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-  <title> Towards Continuous Acoustic Tactile Soft Sensing </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56882/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56882/</guid>
-  <type>conference_item</type>
-  <description>  Rajendran Sugathakumary, Vishnu, Parsons, Simon and Ghalamzan Esfahani, Amir  (2023) Towards Continuous Acoustic Tactile Soft Sensing.  In: 21st International Conference on Advanced Robotics, 5-8 December 2023, Abu Dhabi.  </description></item>
-<item>
-  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-  <title> Efficient Causal Discovery for Robotics Applications </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56810/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56810/</guid>
-  <type>conference_item</type>
-  <description>  Castri, Luca, Mghames, Sariah and Bellotto, Nicola  (2023) Efficient Causal Discovery for Robotics Applications.  In: Italian Conference on Robotics and Intelligent Machines (I-RIM 3D).  </description></item>
-<item>
-  <pubDate>Fri, 03 Nov 2023 00:00:00 +0000</pubDate>
-  <title> Towards practical object detection for weed spraying in precision agriculture </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56887/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56887/</guid>
-  <type>article</type>
-  <description>  Darbyshire, Madeleine, Salazar-Gomez, Adrian, Gao, Junfeng, Sklar, Elizabeth and Parsons, Simon  (2023) Towards practical object detection for weed spraying in precision agriculture.  Frontiers in Plant Science, 14 .       ISSN 1664-462X  </description></item>
-<item>
-  <pubDate>Thu, 28 Sep 2023 00:00:00 +0100</pubDate>
-  <title> Towards Single Point Incremental Forming Accuracy: An Approach for the Springback Effect Compensation </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56655/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56655/</guid>
-  <type>conference_item</type>
-  <description>  Shaker, Walid K. and Klimchik, Alexandr  (2023) Towards Single Point Incremental Forming Accuracy: An Approach for the Springback Effect Compensation.  In: 2023 IEEE 19th International Conference on Automation Science and Engineering (CASE), 26-30 August 2023, Auckland, New Zealand.  </description></item>
-<item>
-  <pubDate>Fri, 01 Sep 2023 00:00:00 +0100</pubDate>
-  <title> DDoS-FOCUS: A Distributed DoS Attacks Mitigation using Deep Learning Approach for a Secure IoT Network </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56609/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56609/</guid>
-  <type>conference_item</type>
-  <description>  Al-Khafajiy, Mohammed, Al-Tameemi, Ghaith and Baker, Thar  (2023) DDoS-FOCUS: A Distributed DoS Attacks Mitigation using Deep Learning Approach for a Secure IoT Network.  In: IEEE International Conference on Edge Computing (EDGE), 02-08 July 2023, Chicago, IL, USA.  </description></item>
-<item>
-  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-  <title> An Intelligent Routing Approach for Multimedia Traffic Transmission Over SDN </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56607/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56607/</guid>
-  <type>conference_item</type>
-  <description>  Jameel, Mohammed Al, Kanakis, Triantafyllos, Turner, Scott, Al-Sherbaz, Ali, Bhaya, Wesam S. and Al-Khafajiy, Mohammed  (2023) An Intelligent Routing Approach for Multimedia Traffic Transmission Over SDN.  In: International Conference on Developments in eSystems Engineering (DESE).  </description></item>
-<item>
-  <pubDate>Sun, 01 Oct 2023 00:00:00 +0100</pubDate>
-  <title> Training the UK Agri-food Sector to Employ Robotics and Autonomous Systems </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/57218/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/57218/</guid>
-  <type>monograph</type>
-  <description>  Howard, H, Wane, S, Mihaylova, L, Rose, DC, Ray, P, Manning, Louise and Sklar, Elizabeth  (2023) Training the UK Agri-food Sector to Employ Robotics and Autonomous Systems.  Project Report. EPSRC UK-RAS.  </description></item>
-<item>
-  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-  <title> A comparative data set of annotated Broccoli heads from a moving vehicle with accompanying depth mapping data </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56526/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56526/</guid>
-  <type>conference_item</type>
-  <description>  Hardy, Oliver, Seemakurthy, Karthik and Sklar, Elizabeth  (2023) A comparative data set of annotated Broccoli heads from a moving vehicle with accompanying depth mapping data.  In: CVPPA 2023 Workshop (8th workshop on Computer Vision in Plant Phenotyping and Agriculture), 2 October 2023, Paris Convention Centre, France.  </description></item>
-<item>
-  <pubDate>Mon, 08 Apr 2019 00:00:00 +0100</pubDate>
-  <title> Social robot navigation based on HRI non-verbal communication </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56520/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56520/</guid>
-  <type>conference_item</type>
-  <description>  Vasconez, Juan Pablo, Guevara, Leonardo and Cheein, Fernando Auat  (2019) Social robot navigation based on HRI non-verbal communication.  In: SAC '19: Proceedings of the 34th ACM/SIGAPP Symposium on Applied Computing, 8 - 12 April 2019, Limassol, Cyprus.  </description></item>
-<item>
-  <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-  <title> Thing Artifact-based Design of IoT Ecosystems </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/57197/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/57197/</guid>
-  <type>article</type>
-  <description>  Maamar, Zakaria, Faci, Noura, Al-Khafajiy, Mohammed and Dohan, Murtada  (2023) Thing Artifact-based Design of IoT Ecosystems.  Service Oriented Computing and Applications .       ISSN 1863-2386  </description></item>
-<item>
-  <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
-  <title> Heuristics and Rescheduling in Prioritised Multi-Robot Path Planning: A Literature Review </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/57338/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/57338/</guid>
-  <type>article</type>
-  <description>  Heselden, James and Das, Gautham  (2023) Heuristics and Rescheduling in Prioritised Multi-Robot Path Planning: A Literature Review.  Machines (Special Issue New Trends in Robotics, Automation and Mechatronics), 11  (11).       ISSN 2075-1702  </description></item>
-<item>
-  <pubDate>Sat, 04 Nov 2023 00:00:00 +0000</pubDate>
-  <title> Passively Adapting External Force Compensation System for Serial Manipulators </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/57367/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/57367/</guid>
-  <type>book_section</type>
-  <description>  Damien, Albert and Klimchik, Alexandr  (2023) Passively Adapting External Force Compensation System for Serial Manipulators.   In:  Advances in Mechanism and Machine Science. IFToMM WC 2023. Mechanisms and Machine Science.   Mechanisms and Machine Science, 148 .  Springer, Cham, pp. 560-569.  ISBN 9783031457692  </description></item>
-<item>
-  <pubDate>Thu, 01 Jun 2023 00:00:00 +0100</pubDate>
-  <title> Lindsey the Tour Guide Robot: Adaptive Long-Term Autonomy in Social Environments </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56723/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56723/</guid>
-  <type>thesis</type>
-  <description>  Del Duchetto, Francesco  (2023) Lindsey the Tour Guide Robot: Adaptive Long-Term Autonomy in Social Environments.  PhD thesis, University of Lincoln.  </description></item>
-<item>
-  <title> An Agent-Based Model for Collaborative Learning to Combat Antimicrobial Resistance: Proof of Concept Based on Broiler Production in Senegal </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/57157/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/57157/</guid>
-  <type>article</type>
-  <description>  Ndekou, Paul Python, Drake, Archie, Lomax, Jake, Dione, Michel, Faye, Ardiouma, Nsangou, Mohamed Daly Njiemessa, Korir, Lilian and Sklar, Elizabeth   An Agent-Based Model for Collaborative Learning to Combat Antimicrobial Resistance: Proof of Concept Based on Broiler Production in Senegal.  Science in One Health .   p. 100051.     ISSN 2949-7043  </description></item>
-<item>
-  <pubDate>Mon, 04 Dec 2023 00:00:00 +0000</pubDate>
-  <title> Enhancing Fall Detection Accuracy with a Transfer Learning-Aided Transformer Model using Computer Vision </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56964/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56964/</guid>
-  <type>conference_item</type>
-  <description>  McCall, Sheldon, Yu, Miao, Gong, Liyun, Yue, Shigang and Kollias, Stefanos  (2023) Enhancing Fall Detection Accuracy with a Transfer Learning-Aided Transformer Model using Computer Vision.  In: ICMLHM 2023 : International Conference on Machine Learning for Healthcare and Medicine, 4 - 5 December 2023, Tokyo, Japan.  </description></item>
-<item>
-  <pubDate>Sun, 10 Dec 2023 00:00:00 +0000</pubDate>
-  <title> Neural Fields with Hard Constraints of Arbitrary Differential Order </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56588/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56588/</guid>
-  <type>conference_item</type>
-  <description>  Zhong, Fangcheng, Fogarty, Kyle Thomas, Hanji, Param, Wu, Tianhao Walter, Sztrajman, Alejandro, Spielberg, Andrew Everett, Tagliasacchi, Andrea, Bosilj, Petra and Oztireli, Cengiz  (2023) Neural Fields with Hard Constraints of Arbitrary Differential Order.  In: Thirty-seventh Conference on Neural Information Processing Systems, 10 - 16 December 2023, New Orleans, USA.  </description></item>
-<item>
-  <pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate>
-  <title> LACTA: A Lightweight and Accurate Algorithm for Cherry Tomato Detection in Unstructured Environments </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56667/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56667/</guid>
-  <type>article</type>
-  <description>  Gao, Jin, Zhang, Junxiong, Zhang, Fan and Gao, Junfeng  (2024) LACTA: A Lightweight and Accurate Algorithm for Cherry Tomato Detection in Unstructured Environments.  Expert Systems with Applications, 238  (Part C).   p. 122073.     ISSN 0957-4174  </description></item>
-<item>
-  <pubDate>Thu, 01 Jun 2023 00:00:00 +0100</pubDate>
-  <title> A multi-type artifact framework for cyber–physical, social systems design and development </title>
-  <link>https://eprints.lincoln.ac.uk/id/eprint/56608/</link>
-  <guid>https://eprints.lincoln.ac.uk/id/eprint/56608/</guid>
-  <type>article</type>
-  <description>  Maamar, Zakaria, Kajan, Ejub, Al-Khafajiy, Mohammed, Dohan, Murtada, Fayoumi, Amjad and Yahya, Fadwa  (2023) A multi-type artifact framework for cyber–physical, social systems design and development.  Internet of Things, 22 .   p. 100820.     ISSN 2542-6605  </description></item>
-    </channel>
-</rss>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+  <title>404 - Page not found</title>
+
+    <style>
+      html {
+        height: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      body {
+        overflow-y: scroll;
+        margin: 0;
+
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        color: #464646;
+        font-family: Arial, 'Arial', Helvetica, sans-serif;
+        font-size: 14px;
+      }
+
+      .flex-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .main-container {
+        max-width: 1000px;
+        width: 100%;
+
+        flex: 1 0 auto;
+        flex-direction: column;
+
+        padding: 0 20px;
+        box-sizing: border-box;
+        margin: 70px 0;
+      }
+
+      .exclamation-wrapper {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        margin-bottom: 50px;
+      }
+
+      .content-wrapper {
+        min-height: 231px;
+
+        display: flex;
+
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      h1 {
+        margin: 0;
+        padding: 0;
+
+        text-align: center;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 41px;
+      }
+
+      p {
+        margin: 0;
+        line-height: 21px;
+
+        text-align: center;
+      }
+
+      a {
+        color: #C74D5A;
+        text-decoration: none;
+
+        white-space: nowrap;
+      }
+
+      a:visited {
+        color: #C74D5A;
+      }
+
+      .light-text {
+        color: #717171;
+      }
+
+      .medium-text {
+        font-size: 16px;
+        line-height: 21px;
+      }
+
+      .error-description {
+        margin: 10px 0;
+      }
+
+      .error-code {
+        font-weight: bold;
+        line-height: 16px;
+      }
+
+      .error-reason {
+        max-width: 628px;
+        margin: 59px 0;
+        text-align: center;
+      }
+
+      footer {
+        max-width: 628px;
+        width: 100%;
+
+        flex-wrap: wrap;
+
+        padding-top: 20px;
+        border-top: 1px solid #DDDDDD;
+      }
+
+      .footer-link-wrapper {
+        position: relative;
+        padding: 0 7px;
+      }
+
+      .footer-link-wrapper:not(:last-of-type)::after {
+        position: absolute;
+        right: 0;
+
+        content: "";
+        display: block;
+        border-right: 1px solid #DDDDDD;
+
+        height: 14px;
+      }
+
+      footer a {
+        padding: 0 7px;
+
+        min-height: 24px;
+      }
+    </style>
+    
+  </head>
+  <body>
+    <div class="main-container flex-center">
+      <div class="exclamation-wrapper">
+    <svg width="12" height="68" viewBox="0 0 12 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M3 0C1.34277 0 0 1.34375 0 3V46C0 47.6562 1.34277 49 3 49H9C10.6572 49 12 47.6562 12 46V3C12 1.34375 10.6572 0 9 0H3ZM3 56C1.34277 56 0 57.3438 0 59V65C0 66.6562 1.34277 68 3 68H9C10.6572 68 12 66.6562 12 65V59C12 57.3438 10.6572 56 9 56H3Z" fill="#464646"/>
+    </svg>
+  </div>
+
+      <div class="content-wrapper">
+          
+  <h1>the page cannot be found</h1>
+  <div class="error-description">
+    <p>The page you are looking for does not exist</p>
+    <p>or has been removed</p>
+  </div>
+
+      </div>
+
+      
+      
+      <footer class="flex-center">
+        
+          <span class="footer-link-wrapper flex-center">
+            <a class="flex-center" href="https://repository.lincoln.ac.uk/">Go to homepage</a>
+          </span>
+        
+      </footer>
+    </div>
+  </body>
+</html>
