@@ -115,7 +115,7 @@ async def main():
     #generator = BibGenerator(load_from='staff.json')
     generator = BibGenerator()
     generator.retrieve_profiles()
-    await generator.retrieve_bibs(max_process=1)
+    await generator.retrieve_bibs()
     generator.generate_bibs()
     generator.save_staff()
 
