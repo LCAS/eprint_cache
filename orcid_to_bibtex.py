@@ -127,31 +127,35 @@ def parse_and_format_bib(
     bib_id_count = defaultdict(int)
     for e in db.entries:
         # Remove all non-alphanumeric characters from the title, apart from spaces
-        title = "".join(
-            [
-                character
-                for character in e["title"]
-                if character.isalpha() or character.isspace()
-            ]
-        )
-        keywords = yake.KeywordExtractor().extract_keywords(title)
-        bibtex_id = e["ID"]
+        try:
+            title = "".join(
+                [
+                    character
+                    for character in e["title"]
+                    if character.isalpha() or character.isspace()
+                ]
+            )
+            keywords = yake.KeywordExtractor().extract_keywords(title)
+            bibtex_id = e["ID"]
 
-        # Intelligent renaming of BibTeX entry keys based on the title of the work.
-        # Keywords extracted from the title are added to the key until a unique key is generated. If keywords are
-        # exhausted and the resulting key is still not unique, then the instance number for that key is appended.
-        unique, c = False, 0
-        while not unique:
-            if c < len(keywords):
-                bibtex_id += "_" + keywords[c][0].replace(" ", "_").title()
-                if bibtex_id not in bib_id_count:
+            # Intelligent renaming of BibTeX entry keys based on the title of the work.
+            # Keywords extracted from the title are added to the key until a unique key is generated. If keywords are
+            # exhausted and the resulting key is still not unique, then the instance number for that key is appended.
+            unique, c = False, 0
+            while not unique:
+                if c < len(keywords):
+                    bibtex_id += "_" + keywords[c][0].replace(" ", "_").title()
+                    if bibtex_id not in bib_id_count:
+                        bib_id_count[bibtex_id] += 1
+                        unique = True
+                else:
                     bib_id_count[bibtex_id] += 1
-                    unique = True
-            else:
-                bib_id_count[bibtex_id] += 1
-                bibtex_id += bibtex_id + "_" + str(bib_id_count)
+                    bibtex_id += bibtex_id + "_" + str(bib_id_count)
 
-        e["ID"] = bibtex_id
+            e["ID"] = bibtex_id
+        except KeyError:
+            _log.warning(f"KeyError: {e}")
+            continue
 
     # Write the formatted BibTeX to file
     writer = bp.bwriter.BibTexWriter()
