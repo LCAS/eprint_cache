@@ -14,9 +14,9 @@ logger = getLogger(__name__)
 
 
 class FigShare:
-    def __init__(self, token=None, page_size=100):
+    def __init__(self, page_size=100):
         self.logger = getLogger("FigShare")
-        self.token = token
+        self.token = os.getenv('FIGSHARE_TOKEN')
         self.page_size = page_size
         self.base_url = "https://api.figshare.com/v2"
 
@@ -110,12 +110,81 @@ class Author:
         self.articles = [a for a in self.articles if a['url_public_html'].startswith(self.public_html_prefix)]
         self.logger.info(f"retained {len(self.articles)} articles")
 
+    def custom_fields_to_dicts(self):
+        for article in self.articles:
+            if 'details' not in article:
+                continue
+            if 'custom_fields' not in article['details']:
+                continue
+            self.logger.debug(f"convert")
+
+            cf = article['details']['custom_fields']
+            if type(cf) == list:
+                new_cf = {}
+                for p in cf:
+                    new_cf[p['name']] = p['value']
+                article['details']['custom_fields'] = new_cf
+
+    def retrieve_bibtex_from_dois(self):
+        from doi2bib import crossref
+        for article in self.articles:
+            if 'details' not in article:
+                continue
+            if 'custom_fields' not in article['details']:
+                continue
+            if "External DOI" not in article['details']['custom_fields']:
+                self.logger.info(f"no External DOI field")
+                continue
+            doi = article['details']['custom_fields']['External DOI']
+            #print(type(doi))
+            if len(doi) < 1:
+                self.logger.info(f"no External DOI")
+                continue
+            doi = doi[0]
+            doi = doi.replace("https://doi.org/","")
+            self.logger.info(f"retrieve for DOI {doi}")
+            success, bibtex = crossref.get_bib_from_doi(doi)
+            if success:
+                article['bibtex'] = bibtex
+                self.logger.info(bibtex)
 
 
 
 if __name__ == "__main__":
-    author = Author("Marc Hanheide")
-    author.retrieve_figshare()
-    author.remove_non_repository()
+    authors = {}
+
+    lcas_authors = [
+        "Marc Hanheide",
+        "Marcello Calisti",
+        "Grzegorz Cielniak",
+        "Simon Parsons",
+        "Elizabeth Sklar",
+        "Paul Baxter",
+        "Petra Bosilj",
+        "Heriberto Cuayahuitl",
+        "Gautham Das",
+        "Francesco Del Duchetto",
+        "Charles Fox",
+        "Leonardo Guevara",
+        "Helen Harman",
+        "Mohammed Al-Khafajiy",
+        "Alexandr Klimchik",
+        "Riccardo Polvara",
+        "Athanasios Polydoros",
+        "Zied Tayeb",
+        "Sepher Maleki",
+        "Junfeng Gao",
+        "Tom Duckett",
+        "Mini Chakravarthini Rai",
+        "Amir Ghalamzan Esfahani"
+    ]
+
+    for author_name in lcas_authors:
+        logger.info(f"*** processing {author_name}...")
+        authors[author_name] = Author(author_name)
+        authors[author_name].retrieve_figshare()
+        authors[author_name].remove_non_repository()
+        authors[author_name].custom_fields_to_dicts()
+    #author.retrieve_bibtex_from_dois()
 
     logger.info(f"1st article: {pformat(author.articles[0])}")
