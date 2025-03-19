@@ -18,6 +18,93 @@ basicConfig(level=INFO)
 logger = getLogger(__name__)
 
 
+"""
+This file contains python functions for automatically retreiving DOI metadata
+and creating bibtex references. `get_bibtex_entry(doi)` creates a bibtex entry
+for a DOI. It fixes a Data Cite author name parsing issue. Short DOIs are used
+for bibtex citation keys.
+
+Created by Daniel Himmelstein and released under CC0 1.0.
+"""
+
+import urllib.request
+
+import requests
+import bibtexparser
+from bibtexparser.bparser import BibTexParser
+from bibtexparser.bibdatabase import BibDatabase
+
+class doi2bib:
+    
+    def __init__(self):
+        self.bibtext_cache = {}
+        self.shortdoi_cache = {}
+
+    def shorten(self, doi, verbose=False):
+        """
+        Get the shortDOI for a DOI. Providing a cache dictionary will prevent
+        multiple API requests for the same DOI.
+        """
+        if doi in self.shortdoi_cache:
+            return self.shortdoi_cache[doi]
+        quoted_doi = urllib.request.quote(doi)
+        url = 'http://shortdoi.org/{}?format=json'.format(quoted_doi)
+        try:
+            response = requests.get(url).json()
+            short_doi = response['ShortDOI']
+        except Exception as e:
+            if verbose:
+                print(doi, 'failed with', e)
+            return None
+        self.shortdoi_cache[doi] = short_doi
+        return short_doi
+
+    def get_bibtext(self, doi):
+        """
+        Use DOI Content Negotioation (http://crosscite.org/cn/) to retrieve a string
+        with the bibtex entry.
+        """
+        if doi in self.bibtext_cache:
+            return self.bibtext_cache[doi]
+        url = 'https://doi.org/' + urllib.request.quote(doi)
+        header = {
+            'Accept': 'application/x-bibtex',
+        }
+        response = requests.get(url, headers=header)
+        bibtext = response.text
+        if bibtext:
+            self.bibtext_cache[doi] = bibtext
+        return bibtext
+
+    def get_bibtex_entry(self, doi):
+        """
+        Return a bibtexparser entry for a DOI
+        """
+        bibtext = self.get_bibtext(doi)
+        if not bibtext:
+            return None
+
+        short_doi = self.shorten(doi)
+        parser = BibTexParser()
+        parser.ignore_nonstandard_types = False
+        bibdb = bibtexparser.loads(bibtext, parser)
+        entry, = bibdb.entries
+        quoted_doi = urllib.request.quote(doi)
+        entry['link'] = 'https://doi.org/{}'.format(quoted_doi)
+        if 'author' in entry:
+            entry['author'] = ' and '.join(entry['author'].rstrip(';').split('; '))
+        entry['ID'] = short_doi[3:]
+        return entry
+
+    def entries_to_str(self, entries):
+        """
+        Pass a list of bibtexparser entries and return a bibtex formatted string.
+        """
+        db = BibDatabase()
+        db.entries = entries
+        return bibtexparser.dumps(db)
+
+
 class FigShare:
     def __init__(self, page_size=100):
         self.logger = getLogger("FigShare")
@@ -193,10 +280,15 @@ class BibTeXGenerator:
             self.save_cache()
             return result
 
+def doi2bibtex_test():
+    doi = "10.1109/MRA.2023.3296983"
+    doi2bibber = doi2bib()
+    bibtex = doi2bibber.get_bibtex_entry(doi)
+    print(doi2bibber.entries_to_str([bibtex]))
+    
 
 
-
-if __name__ == "__main__":
+def figshare_processing():
     authors = {}
 
     lcas_authors = [
@@ -290,3 +382,6 @@ if __name__ == "__main__":
     print(f"Number of articles published after January 1st, 2021: {len(filtered_df)}, {len(df_all)}")
 
     
+if __name__ == "__main__":
+    doi2bibtex_test()
+    #figshare_processing()
