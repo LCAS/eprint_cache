@@ -8,24 +8,12 @@ import pandas as pd
 from functools import lru_cache, wraps
 from datetime import datetime
 
-from logging import getLogger, basicConfig, INFO
+from logging import getLogger, basicConfig, INFO, DEBUG
 import os
 from pickle import load, dump
 
 from flatten_dict import flatten
 
-basicConfig(level=INFO)
-logger = getLogger(__name__)
-
-
-"""
-This file contains python functions for automatically retreiving DOI metadata
-and creating bibtex references. `get_bibtex_entry(doi)` creates a bibtex entry
-for a DOI. It fixes a Data Cite author name parsing issue. Short DOIs are used
-for bibtex citation keys.
-
-Created by Daniel Himmelstein and released under CC0 1.0.
-"""
 
 import urllib.request
 
@@ -34,46 +22,62 @@ import bibtexparser
 from bibtexparser.bparser import BibTexParser
 from bibtexparser.bibdatabase import BibDatabase
 
+import shelve
+
+
+basicConfig(level=INFO)
+logger = getLogger(__name__)
+
 class doi2bib:
     
     def __init__(self):
-        self.bibtext_cache = {}
-        self.shortdoi_cache = {}
+        self.bibtext_cache_file = "bibtext_cache"
+        self.shortdoi_cache_file = "shortdoi_cache"
+        self.logger = getLogger("doi2bib")
+        self.logger.setLevel(DEBUG)
 
-    def shorten(self, doi, verbose=False):
+
+    def shorten(self, doi):
         """
         Get the shortDOI for a DOI. Providing a cache dictionary will prevent
         multiple API requests for the same DOI.
         """
-        if doi in self.shortdoi_cache:
-            return self.shortdoi_cache[doi]
-        quoted_doi = urllib.request.quote(doi)
-        url = 'http://shortdoi.org/{}?format=json'.format(quoted_doi)
-        try:
-            response = requests.get(url).json()
-            short_doi = response['ShortDOI']
-        except Exception as e:
-            if verbose:
-                print(doi, 'failed with', e)
-            return None
-        self.shortdoi_cache[doi] = short_doi
-        return short_doi
+        with shelve.open(self.shortdoi_cache_file) as cache:
+            if doi in cache:
+                self.logger.debug(f"short doi for {doi} found in cache")
+                return cache[doi]
+            quoted_doi = urllib.request.quote(doi)
+            url = 'http://shortdoi.org/{}?format=json'.format(quoted_doi)
+            try:
+                response = requests.get(url).json()
+                short_doi = response['ShortDOI']
+            except Exception as e:
+                self.logger.warning(f"failed to get short doi for {doi}: {e}")
+                return None
+            self.logger.debug(f"short doi for {doi} is {short_doi}, caching it")
+            cache[doi] = short_doi
+            return short_doi
 
     def get_bibtext(self, doi):
         """
         Use DOI Content Negotioation (http://crosscite.org/cn/) to retrieve a string
         with the bibtex entry.
         """
-        if doi in self.bibtext_cache:
-            return self.bibtext_cache[doi]
-        url = 'https://doi.org/' + urllib.request.quote(doi)
-        header = {
-            'Accept': 'application/x-bibtex',
-        }
-        response = requests.get(url, headers=header)
-        bibtext = response.text
-        if bibtext:
-            self.bibtext_cache[doi] = bibtext
+        with shelve.open(self.bibtext_cache_file) as cache:
+            if doi in cache:
+                self.logger.debug(f"bibtex for {doi} found in cache")
+                return cache[doi]
+            url = 'https://doi.org/' + urllib.request.quote(doi)
+            header = {
+                'Accept': 'application/x-bibtex',
+            }
+            response = requests.get(url, headers=header)
+            bibtext = response.text
+            if bibtext:
+                self.logger.debug(f"bibtex for {doi} found, caching it")
+                cache[doi] = bibtext
+            else:
+                self.logger.warning(f"failed to get bibtex for {doi}")
         return bibtext
 
     def get_bibtex_entry(self, doi):
@@ -184,27 +188,27 @@ class Author:
         self.logger = getLogger("Author")
         self.name = name
         self.fs = FigShare()
-        self.articles = []
+        self.articles = {}
         self.public_html_prefix = "https://repository.lincoln.ac.uk"
+        self.df = None
 
-    def retrieve_figshare(self):
+    def _retrieve_figshare(self):
         self.logger.info(f"retrieving articles for {self.name}")
         self.articles = self.fs.articles_by_user_name(self.name)
 
         self.logger.info(f"found {len(self.articles)} articles for {self.name}")
 
-    def retrieve_details(self):
+    def _retrieve_details(self):
         for article in self.articles:
             self.logger.info(f"retrieving details for article {article['id']}")
             article['details'] = self.fs.get_article(article['id'])
 
-
-    def remove_non_repository(self):
+    def _remove_non_repository(self):
         self.logger.info(f"removing non-repository articles out of {len(self.articles)}")
         self.articles = [a for a in self.articles if a['url_public_html'].startswith(self.public_html_prefix)]
         self.logger.info(f"retained {len(self.articles)} articles")
 
-    def custom_fields_to_dicts(self):
+    def _custom_fields_to_dicts(self):
         for article in self.articles:
             if 'details' not in article:
                 continue
@@ -220,7 +224,6 @@ class Author:
                 article['details']['custom_fields'] = new_cf
 
     def retrieve_bibtex_from_dois(self):
-        from doi2bib import crossref
         for article in self.articles:
             if 'details' not in article:
                 continue
@@ -242,43 +245,42 @@ class Author:
                 article['bibtex'] = bibtex
                 self.logger.info(bibtex)
     
-    def flatten(self):
+    def _flatten(self):
         new_articles = []
         for a in self.articles:
             new_articles.append(flatten(a, reducer='path'))
         self.articles = new_articles
 
-class BibTeXGenerator:
-    
-    def __init__(self):
-        self.__cache = {}
-        self.cache_file = "figshare_cache.pkl"
-        if os.path.exists(self.cache_file):
-            try:
-                with open(self.cache_file, "rb") as f:
-                    self.__cache = load(f)
-                self.logger.info(f"Loaded cache from {self.cache_file} with {len(self.__cache)} entries")
-            except Exception as e:
-                self.logger.warning(f"Failed to load cache: {e}")
-                self.__cache = {}
-        else:
-            self.logger.info(f"No cache file found at {self.cache_file}")
-            self.__cache = {}
+    def retrieve(self):
+        self._retrieve_figshare()
+        self._remove_non_repository()
+        self._retrieve_details()
+        self._custom_fields_to_dicts()
+        self._flatten()
+        self._create_dataframe()
 
-    def _save_cache(self):
-        with open(self.cache_file,"wb") as f:
-            dump(self.__cache, f)
+    def _create_dataframe(self):
+        if len(self.articles) == 0:
+            self.logger.warning(f"no articles found for {self.name}, can't create dataframe")
+            self.df = None
+            return
+        self.df = pd.DataFrame.from_dict(self.articles)
+        # add column with author name
+        self.df['author'] = self.name
+        # add column with online date (as datetime object)
+        self.df['online_date'] = pd.to_datetime(self.df['timeline/firstOnline'], utc=True)
+        # add column with online year
+        self.df['online_year'] = self.df['online_date'].apply(
+            lambda x: x.year
+        )
+        # add column with external DOI, parsed from custom_fields
+        self.df['External DOI'] = self.df['details/custom_fields/External DOI'].apply(
+        lambda x: x[0].replace("https://doi.org/", "") 
+            if isinstance(x, list) and len(x) > 0 else x
+        )
 
-    def getBibtex(self, article_id, use_cache=True):
-        hash_key = f"getBibtex{article_id}"
-        if hash_key in self.__cache and use_cache:
-            return self.__cache[hash_key]
-        else:
-            headers = { "Authorization": "token " + self.token } if self.token else {}
-            result = get(self.base_url + url, headers=headers, params=params).json()
-            self.__cache[hash_key] = result
-            self.save_cache()
-            return result
+        return self.df
+
 
 def doi2bibtex_test():
     doi = "10.1109/MRA.2023.3296983"
@@ -313,7 +315,7 @@ def figshare_processing():
         "Sepher Maleki",
         "Junfeng Gao",
         "Tom Duckett",
-        "Mini Chakravarthini Rai",
+        "Mini Rai",
         "Amir Ghalamzan Esfahani"
     ]
 
@@ -322,37 +324,16 @@ def figshare_processing():
     for author_name in lcas_authors:
         logger.info(f"*** processing {author_name}...")
         authors[author_name] = Author(author_name)
-        authors[author_name].retrieve_figshare()
-        authors[author_name].remove_non_repository()
-        authors[author_name].retrieve_details()
-        authors[author_name].custom_fields_to_dicts()
-        authors[author_name].flatten()
-        #df = pd.DataFrame(authors[author_name].articles)
-        df = pd.DataFrame.from_dict(authors[author_name].articles)
-        df['author'] = author_name
+        authors[author_name].retrieve()
         if df_all is None:
-            df_all = df
+            df_all = authors[author_name].df
         else:
-            df_all = pd.concat([df_all, df])
+            df_all = pd.concat([df_all, authors[author_name].df])
         all_articles.extend(authors[author_name].articles)
 
-        #author.retrieve_bibtex_from_dois()
-    #print(df_all.columns)
-    #print(len(all_articles))
-    #print(pformat(all_articles[0]))
-    #df = pd.DataFrame(all_articles)
-    # Convert published_date to datetime and filter for dates after January 1st, 2021
-    df_all['online_date'] = pd.to_datetime(df_all['timeline/firstOnline'], utc=True)
-    df_all['online_year'] = df_all['online_date'].apply(
-        lambda x: x.year
-    )
-    df_all['External DOI'] = df_all['details/custom_fields/External DOI'].apply(
-        lambda x: x[0].replace("https://doi.org/", "") 
-            if isinstance(x, list) and len(x) > 0 else x
-    )
-
-
-
+    print(f"Total number of articles: {len(all_articles)}")
+    print(df_all.head())
+    print(list(df_all.columns))
     filtered_df = df_all[df_all['online_date'] > pd.Timestamp(datetime(2021, 1, 1)).tz_localize('UTC')]
     
     # Save all data to CSV
@@ -365,23 +346,23 @@ def figshare_processing():
     filtered_df.to_csv(filtered_csv_filename, index=False)
     print(f"Saved articles since 2021 to {filtered_csv_filename}")
 
-    # Create a pivot table with author as rows and count of articles as values
-    pivot_table = pd.pivot_table(filtered_df, 
-                                index='author', 
-                                values='id', 
-                                aggfunc='count')
+    # # Create a pivot table with author as rows and count of articles as values
+    # pivot_table = pd.pivot_table(filtered_df, 
+    #                             index='author', 
+    #                             values='id', 
+    #                             aggfunc='count')
     
-    # Sort by count in descending order
-    pivot_table = pivot_table.sort_values(by='id', ascending=False)
+    # # Sort by count in descending order
+    # pivot_table = pivot_table.sort_values(by='id', ascending=False)
     
-    # Rename the column to be more descriptive
-    pivot_table.rename(columns={'id': 'article_count'}, inplace=True)
+    # # Rename the column to be more descriptive
+    # pivot_table.rename(columns={'id': 'article_count'}, inplace=True)
     
-    print("Pivot table of authors and their article counts (after Jan 1, 2021):")
-    print(pivot_table)
-    print(f"Number of articles published after January 1st, 2021: {len(filtered_df)}, {len(df_all)}")
+    # print("Pivot table of authors and their article counts (after Jan 1, 2021):")
+    # print(pivot_table)
+    # print(f"Number of articles published after January 1st, 2021: {len(filtered_df)}, {len(df_all)}")
 
     
 if __name__ == "__main__":
     doi2bibtex_test()
-    #figshare_processing()
+    figshare_processing()
