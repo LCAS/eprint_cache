@@ -23,6 +23,7 @@ from bibtexparser.bparser import BibTexParser
 from bibtexparser.bibdatabase import BibDatabase
 
 import shelve
+import re
 
 
 basicConfig(level=INFO)
@@ -34,7 +35,7 @@ class doi2bib:
         self.bibtext_cache_file = "bibtext_cache"
         self.shortdoi_cache_file = "shortdoi_cache"
         self.logger = getLogger("doi2bib")
-        self.logger.setLevel(DEBUG)
+        self.logger.setLevel(INFO)
 
 
     def shorten(self, doi):
@@ -223,27 +224,28 @@ class Author:
                     new_cf[p['name']] = p['value']
                 article['details']['custom_fields'] = new_cf
 
-    def retrieve_bibtex_from_dois(self):
-        for article in self.articles:
-            if 'details' not in article:
+    def _retrieve_bibtex_from_dois(self):
+        doi2bibber = doi2bib()
+        # iteratre over all rows in the dataframe self.df
+        for index, row in self.df.iterrows():
+            doi = row['External DOI']
+            # Check if DOI is in valid format
+            if doi and isinstance(doi, str):
+                # Basic DOI validation - should start with 10. followed by numbers/dots/hyphens
+                if not doi.startswith('10.') or not len(doi.split('/', 1)) == 2:
+                    self.logger.warning(f"Invalid DOI format: {doi}, skipping")
+                    continue
+            else:
+                self.logger.debug(f"No DOI found for article, skipping")
                 continue
-            if 'custom_fields' not in article['details']:
-                continue
-            if "External DOI" not in article['details']['custom_fields']:
-                self.logger.info(f"no External DOI field")
-                continue
-            doi = article['details']['custom_fields']['External DOI']
-            #print(type(doi))
-            if len(doi) < 1:
-                self.logger.info(f"no External DOI")
-                continue
-            doi = doi[0]
-            doi = doi.replace("https://doi.org/","")
-            self.logger.info(f"retrieve for DOI {doi}")
-            success, bibtex = crossref.get_bib_from_doi(doi)
-            if success:
-                article['bibtex'] = bibtex
-                self.logger.info(bibtex)
+            try:
+                bibtex = doi2bibber.get_bibtex_entry(doi)
+                row['bibtex'] = bibtex
+                row['bibtex_str'] = doi2bibber.entries_to_str([bibtex])
+                self.logger.info(f"got bibtex for {doi}")
+
+            except Exception as e:
+                self.logger.warning(f"Failed to get bibtex for {doi}: {e}")
     
     def _flatten(self):
         new_articles = []
@@ -258,6 +260,7 @@ class Author:
         self._custom_fields_to_dicts()
         self._flatten()
         self._create_dataframe()
+        self._retrieve_bibtex_from_dois()
 
     def _create_dataframe(self):
         if len(self.articles) == 0:
@@ -275,9 +278,11 @@ class Author:
         )
         # add column with external DOI, parsed from custom_fields
         self.df['External DOI'] = self.df['details/custom_fields/External DOI'].apply(
-        lambda x: x[0].replace("https://doi.org/", "") 
-            if isinstance(x, list) and len(x) > 0 else x
+            lambda x: re.sub(r'^(?:https?://doi\.org/|doi:)', '', x[0], flags=re.IGNORECASE)
+            if isinstance(x, list) and len(x) > 0 else None
         )
+
+
 
         return self.df
 

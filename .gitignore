@@ -7,3 +7,4 @@
 figshare_cache.pkl
 figshare_articles_since_2021.csv
 figshare_articles.csv
+*.db
