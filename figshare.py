@@ -123,7 +123,7 @@ class FigShare:
             try:
                 with open(self.cache_file, "rb") as f:
                     self.__cache = load(f)
-                self.logger.info(f"Loaded cache from {self.cache_file} with {len(self.__cache)} entries")
+                self.logger.debug(f"Loaded cache from {self.cache_file} with {len(self.__cache)} entries")
             except Exception as e:
                 self.logger.warning(f"Failed to load cache: {e}")
                 self.__cache = {}
@@ -193,6 +193,21 @@ class Author:
         self.public_html_prefix = "https://repository.lincoln.ac.uk"
         self.df = None
 
+    def save(self, filename=None):
+        if filename is None:
+            filename = f"{self.name}"
+        with shelve.open(filename) as db:
+            db['articles'] = self.articles
+            db['df'] = self.df
+
+    def load(self, filename=None):
+        if filename is None:
+            filename = f"{self.name}"
+        with shelve.open(filename) as db:
+            self.articles = db['articles']
+            self.df = db['df']
+    
+
     def _retrieve_figshare(self):
         self.logger.info(f"retrieving articles for {self.name}")
         self.articles = self.fs.articles_by_user_name(self.name)
@@ -225,6 +240,9 @@ class Author:
                 article['details']['custom_fields'] = new_cf
 
     def _retrieve_bibtex_from_dois(self):
+        if self.df is None:
+            self.logger.warning(f"no dataframe found for {self.name}, can't continue")
+            return
         doi2bibber = doi2bib()
         # iteratre over all rows in the dataframe self.df
         for index, row in self.df.iterrows():
@@ -240,9 +258,13 @@ class Author:
                 continue
             try:
                 bibtex = doi2bibber.get_bibtex_entry(doi)
-                row['bibtex'] = bibtex
-                row['bibtex_str'] = doi2bibber.entries_to_str([bibtex])
-                self.logger.info(f"got bibtex for {doi}")
+                # Update the dataframe with the bibtex information
+                if bibtex is not None:
+                    self.df.at[index, 'bibtex'] = bibtex
+                    self.df.at[index, 'bibtex_str'] = doi2bibber.entries_to_str([bibtex])
+                    self.logger.info(f"got bibtex for {doi}")
+                else:
+                    self.logger.warning(f"Couldn't get bibtex for {doi}")
 
             except Exception as e:
                 self.logger.warning(f"Failed to get bibtex for {doi}: {e}")
@@ -278,7 +300,7 @@ class Author:
         )
         # add column with external DOI, parsed from custom_fields
         self.df['External DOI'] = self.df['details/custom_fields/External DOI'].apply(
-            lambda x: re.sub(r'^(?:https?://doi\.org/|doi:)', '', x[0], flags=re.IGNORECASE)
+            lambda x: re.sub(r'^(?:https?://doi\.org/|doi:)', '', x[0], flags=re.IGNORECASE).replace('doi:','')
             if isinstance(x, list) and len(x) > 0 else None
         )
 
@@ -328,8 +350,13 @@ def figshare_processing():
     df_all = None
     for author_name in lcas_authors:
         logger.info(f"*** processing {author_name}...")
+            
         authors[author_name] = Author(author_name)
-        authors[author_name].retrieve()
+        if os.path.exists(f"{author_name}.db"):
+            authors[author_name].load()
+        else:
+            authors[author_name].retrieve()
+            authors[author_name].save()
         if df_all is None:
             df_all = authors[author_name].df
         else:
@@ -338,12 +365,38 @@ def figshare_processing():
 
     print(f"Total number of articles: {len(all_articles)}")
     print(df_all.head())
+    # Remove duplicates by ID and maintain a list of all authors for each article
+    print(f"Total number of articles before deduplication: {len(df_all)}")
+
+    # Group by ID and aggregate authors into lists
+    grouped = df_all.groupby('id').agg({
+        'author': lambda x: list(set(x))  # Use set to remove duplicate authors
+    })
+
+    # Get the unique IDs
+    unique_ids = grouped.index.tolist()
+
+    # Filter the original dataframe to keep only one row per ID (the first occurrence)
+    deduplicated_df = df_all.drop_duplicates(subset=['id'], keep='first')
+
+    # Add the aggregated authors list as a new column
+    deduplicated_df = deduplicated_df.set_index('id')
+    deduplicated_df['authors'] = grouped['author']
+    deduplicated_df = deduplicated_df.reset_index()
+
+    # Convert authors list to comma-separated string for better readability
+    deduplicated_df['authors'] = deduplicated_df['authors'].apply(lambda authors: ', '.join(authors))
+
+    print(f"Total number of articles after deduplication: {len(deduplicated_df)}")
+
+    # Replace the original dataframe with the deduplicated one
+    df_all = deduplicated_df
     print(list(df_all.columns))
     filtered_df = df_all[df_all['online_date'] > pd.Timestamp(datetime(2021, 1, 1)).tz_localize('UTC')]
     
     # Save all data to CSV
     csv_filename = "figshare_articles.csv"
-    df_all.to_csv(csv_filename, index=False)
+    deduplicated_df.to_csv(csv_filename, index=False)
     print(f"Saved all articles to {csv_filename}")
 
     # Save filtered data to CSV
