@@ -43,16 +43,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements-frozen.txt
           
-      - name: Run ORCID exporter
-        run: |
-          set -e
-          python lcas-bib-export-generator.py
-
       - name: Run figshare exporter
         run: |
           set -e
           cd ./output
           python ../figshare.py  
+
+      - name: Run ORCID exporter
+        run: |
+          set -e
+          python lcas-bib-export-generator.py
 
       - if: github.event_name != 'pull_request'
         run: |
