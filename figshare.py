@@ -387,7 +387,7 @@ def figshare_processing():
             "Francesco Del Duchetto", "Charles Fox", "Leonardo Guevara",
             "Helen Harman", "Mohammed Al-Khafajiy", "Alexandr Klimchik", 
             "Riccardo Polvara", "Athanasios Polydoros", "Zied Tayeb", 
-            "Sepher Maleki", "Junfeng Gao", "Tom Duckett", "Mini Rai", 
+            "Sepehr Maleki", "Junfeng Gao", "Tom Duckett", "Mini Rai", 
             "Amir Ghalamzan Esfahani"
         ]
         logger.info(f"Using default list of {len(authors_list)} authors")
