@@ -443,6 +443,22 @@ def figshare_processing():
 
     logger.info(f"Total number of articles after deduplication: {len(deduplicated_df)}")
 
+    # export bibtex file
+    bibtex_filename = "lcas.bib"
+    # with open(bibtex_filename, 'w') as f:
+    #     for index, row in deduplicated_df.iterrows():
+    #         if 'bibtex_str' in row and isinstance(row['bibtex_str'], str):
+    #             f.write(row['bibtex_str'])
+    #             f.write("\n\n")
+    #     logger.info(f"Saved bibtex entries to {bibtex_filename}")
+    bibtex = BibDatabase()
+    bibtex.entries = [entry for entry in deduplicated_df['bibtex'].tolist() if isinstance(entry, dict)]
+    print(pformat(bibtex.entries))
+    with open(bibtex_filename, 'w') as f:
+        print(bibtexparser.dumps(bibtex))
+        f.write(bibtexparser.dumps(bibtex))
+    logger.info(f"Saved bibtex entries to {bibtex_filename}")
+
     # Save all data to CSV
     deduplicated_df.to_csv(args.output, index=False, encoding='utf-8')
     logger.info(f"Saved all articles to {args.output}")

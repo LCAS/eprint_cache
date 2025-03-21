@@ -1,6 +1,7 @@
 name: orcid-cache
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "30 2 * * 1"
   push:
