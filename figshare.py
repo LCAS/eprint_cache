@@ -248,7 +248,7 @@ class Author:
         """
         Use crossref API to guess the DOI for an article based on the title and authors
         """
-        with shelve.open("crossref_cache") as cache:
+        with shelve.open("crossref_cache.db") as cache:
             if 'title' not in article or not article['title']:
                 self.logger.warning("No title found for article, can't guess DOI")
                 return None
@@ -256,6 +256,7 @@ class Author:
             title = article['title']
             
             if title in cache:
+                self.logger.info(f"Found DOI {cache[title]} in cache for title: {title}")
                 return cache[title]
 
             # Construct query URL for Crossref API
@@ -481,7 +482,13 @@ def figshare_processing():
                 df_all = pd.concat([df_all, authors[author_name].df])
             all_articles.extend(authors[author_name].articles)
 
-            df_all.to_csv(f"{author_name}.csv", index=False, encoding='utf-8')
+            authors[author_name].df.to_csv(f"{author_name}.csv", index=False, encoding='utf-8')
+            bibtex_filename = f"{author_name}.bib"
+            bibtex = BibDatabase()
+            bibtex.entries = [entry for entry in authors[author_name].df['bibtex'].tolist() if isinstance(entry, dict)]
+            with open(bibtex_filename, 'w') as f:
+                f.write(bibtexparser.dumps(bibtex))
+            logger.info(f"Saved bibtex entries to {bibtex_filename}")
 
         else:
             logger.warning(f"No data found for {author_name}")
