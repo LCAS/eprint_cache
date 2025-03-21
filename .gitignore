@@ -9,3 +9,4 @@ figshare_articles_since_2021.csv
 figshare_articles.csv
 *.db
 output/
+figshare_articles_all.csv

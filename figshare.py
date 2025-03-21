@@ -334,7 +334,9 @@ def parse_args():
     parser.add_argument('-s', '--since', type=str, default='2021-01-01',
                         help='Process only publications since this date (YYYY-MM-DD)')
     parser.add_argument('-o', '--output', type=str, default='figshare_articles.csv',
-                        help='Output CSV filename for all publications')
+                        help='Output CSV filename for publications, without duplicates')
+    parser.add_argument('-O', '--output-all', type=str, default='figshare_articles_all.csv',
+                        help='Output CSV filename for all publications by authors (includes duplicates when multiple authors per output)')
     # parser.add_argument('-r', '--recent-output', type=str, default='figshare_articles_recent.csv',
     #                     help='Output CSV filename for publications since specified date')
     parser.add_argument('--force-refresh', action='store_true',
@@ -453,15 +455,17 @@ def figshare_processing():
     #     logger.info(f"Saved bibtex entries to {bibtex_filename}")
     bibtex = BibDatabase()
     bibtex.entries = [entry for entry in deduplicated_df['bibtex'].tolist() if isinstance(entry, dict)]
-    print(pformat(bibtex.entries))
     with open(bibtex_filename, 'w') as f:
-        print(bibtexparser.dumps(bibtex))
         f.write(bibtexparser.dumps(bibtex))
     logger.info(f"Saved bibtex entries to {bibtex_filename}")
 
     # Save all data to CSV
     deduplicated_df.to_csv(args.output, index=False, encoding='utf-8')
-    logger.info(f"Saved all articles to {args.output}")
+    logger.info(f"Saved deduplicated articles to {args.output}")
+
+    # Save all data to CSV
+    df_all.to_csv(args.output_all, index=False, encoding='utf-8')
+    logger.info(f"Saved all articles to {args.output_all}")
 
     # # Parse the since date
     # try:

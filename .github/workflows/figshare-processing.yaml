@@ -52,7 +52,7 @@ jobs:
           python ../figshare.py --force-refresh
 
 
-      - name: Nexus Repo Publish
+      - name: Nexus Repo Publish bibtex
         if: ${{ github.event_name != 'pull_request' }}
         uses: sonatype-nexus-community/nexus-repo-github-action@master
         with:
@@ -64,9 +64,34 @@ jobs:
           coordinates: directory=bibtex
           assets: filename=lcas.bib
           filename: ./output/lcas.bib
-          
 
-      - name: Upload CSV files as artifacts
+      - name: Nexus Repo Publish figshare articles without duplicates CSV
+        if: ${{ github.event_name != 'pull_request' }}
+        uses: sonatype-nexus-community/nexus-repo-github-action@master
+        with:
+          serverUrl: https://lcas.lincoln.ac.uk/repository/
+          username: ${{ secrets.LCAS_REGISTRY_PUSHER }}
+          password: ${{ secrets.LCAS_REGISTRY_TOKEN }}
+          format: raw
+          repository: misc
+          coordinates: directory=bibtex
+          assets: filename=figshare_articles.csv
+          filename: ./output/figshare_articles.csv
+
+      - name: Nexus Repo Publish all figshare articles CSV
+        if: ${{ github.event_name != 'pull_request' }}
+        uses: sonatype-nexus-community/nexus-repo-github-action@master
+        with:
+          serverUrl: https://lcas.lincoln.ac.uk/repository/
+          username: ${{ secrets.LCAS_REGISTRY_PUSHER }}
+          password: ${{ secrets.LCAS_REGISTRY_TOKEN }}
+          format: raw
+          repository: misc
+          coordinates: directory=bibtex
+          assets: filename=figshare_articles_all.csv
+          filename: ./output/figshare_articles_all.csv        
+
+      - name: Upload artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
