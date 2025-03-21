@@ -422,5 +422,5 @@ def figshare_processing():
 
     
 if __name__ == "__main__":
-    doi2bibtex_test()
+    #doi2bibtex_test()
     figshare_processing()
