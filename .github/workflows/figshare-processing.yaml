@@ -1,8 +1,8 @@
-name: update-cache
+name: figshare-cache
 
 on:
   schedule:
-    - cron: "30 2 * * 1"
+    - cron: "30 2 * * 2"
   push:
     branches:
       - main
@@ -17,6 +17,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 1
+
       - name: Use Cache in folder ./output
         uses: actions/cache@v3
         with:
@@ -48,17 +49,6 @@ jobs:
           set -e
           cd ./output
           python ../figshare.py  
-
-      - name: Run ORCID exporter
-        run: |
-          set -e
-          python lcas-bib-export-generator.py
-
-      - if: github.event_name != 'pull_request'
-        run: |
-          git add -f *.bib *.json *.html
-          git commit -m "automated commit `date`"
-          git push
 
       - name: Upload CSV files as artifacts
         if: always()
