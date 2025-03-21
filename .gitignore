@@ -10,3 +10,4 @@ figshare_articles.csv
 *.db
 output/
 figshare_articles_all.csv
+crossref_cache

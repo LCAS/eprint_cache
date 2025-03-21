@@ -243,6 +243,61 @@ class Author:
                     new_cf[p['name']] = p['value']
                 article['details']['custom_fields'] = new_cf
 
+
+    def _guess_doi(self, article):
+        """
+        Use crossref API to guess the DOI for an article based on the title and authors
+        """
+        with shelve.open("crossref_cache") as cache:
+            if 'title' not in article or not article['title']:
+                self.logger.warning("No title found for article, can't guess DOI")
+                return None
+            
+            title = article['title']
+            
+            if title in cache:
+                return cache[title]
+
+            # Construct query URL for Crossref API
+            base_url = "https://api.crossref.org/works"
+            params = {
+                "query.title": title,
+                "query.author": article['author'],
+                "rows": 1,  # Get top match only
+                "select": "DOI,title,author",
+            }
+            
+            try:
+                self.logger.debug(f"Querying Crossref for title: {title}")
+                response = requests.get(base_url, params=params)
+                response.raise_for_status()
+                data = response.json()
+                
+                if data["message"]["total-results"] == 0:
+                    self.logger.debug(f"No DOI found for: {title}")
+                    return None
+                
+                # Get the top match
+                items = data["message"]["items"]
+                if items:
+                    self.logger.debug(f"Found {pformat(items)} matches for title: {title}")
+                    doi = items[0].get("DOI")
+                    authors_string = str(items[0].get("author"))
+                    authors_last_name = article['author'].split()[-1]
+                    if doi and authors_last_name in authors_string:
+                        self.logger.info(f"Found DOI {doi} for title: {title}")
+                        cache[title] = doi
+                        return doi
+                    else:
+                        self.logger.warning(f"DOI {doi} not found with confidence for author {authors_last_name}")
+                        return None
+            
+            except Exception as e:
+                self.logger.warning(f"Error guessing DOI: {e}")
+            
+            return None
+
+
     def _retrieve_bibtex_from_dois(self):
         if self.df is None:
             self.logger.warning(f"no dataframe found for {self.name}, can't continue")
@@ -255,11 +310,18 @@ class Author:
             if doi and isinstance(doi, str):
                 # Basic DOI validation - should start with 10. followed by numbers/dots/hyphens
                 if not doi.startswith('10.') or not len(doi.split('/', 1)) == 2:
-                    self.logger.warning(f"Invalid DOI format: {doi}, skipping")
-                    continue
+                    self.logger.warning(f"Invalid DOI format: {doi}, will try to guess")
+                    doi = None
             else:
-                self.logger.debug(f"No DOI found for article, skipping")
-                continue
+                self.logger.info(f"No DOI defined in record for article, will try to guess")
+                doi = None
+            if doi is None:
+                doi = self._guess_doi(row)
+                if doi is None:
+                    self.logger.debug(f"Unable to guess DOI for article, no option left but to skip it")
+                    continue
+                self.logger.info(f"Guessed DOI for article: {doi}, updating dataframe")
+                self.df.at[index, 'External DOI'] = doi
             try:
                 bibtex = doi2bibber.get_bibtex_entry(doi)
                 # Update the dataframe with the bibtex information
@@ -418,6 +480,9 @@ def figshare_processing():
             else:
                 df_all = pd.concat([df_all, authors[author_name].df])
             all_articles.extend(authors[author_name].articles)
+
+            df_all.to_csv(f"{author_name}.csv", index=False, encoding='utf-8')
+
         else:
             logger.warning(f"No data found for {author_name}")
 
