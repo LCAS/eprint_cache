@@ -279,8 +279,8 @@ class Author:
             new_articles.append(flatten(a, reducer='path'))
         self.articles = new_articles
 
-    def retrieve(self):
-        self._retrieve_figshare()
+    def retrieve(self, use_cache=True):
+        self._retrieve_figshare(use_cache=use_cache)
         self._remove_non_repository()
         self._retrieve_details()
         self._custom_fields_to_dicts()
@@ -407,7 +407,7 @@ def figshare_processing():
             authors[author_name].load()
         else:
             logger.info(f"Retrieving data for {author_name}")
-            authors[author_name].retrieve()
+            authors[author_name].retrieve(not args.force_refresh)
             authors[author_name].save()
             
         if authors[author_name].df is not None:
