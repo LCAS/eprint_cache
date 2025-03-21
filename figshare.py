@@ -24,6 +24,8 @@ from bibtexparser.bibdatabase import BibDatabase
 
 import shelve
 import re
+import argparse
+from datetime import datetime
 
 
 basicConfig(level=INFO)
@@ -164,7 +166,7 @@ class FigShare:
             return result
 
         
-    def articles_by_user_name(self, user_name):
+    def articles_by_user_name(self, user_name, use_cache=True):
         params = self.__init_params()
         params["search_for"] = f':author: \"{user_name}\"'
         page = 1
@@ -172,7 +174,7 @@ class FigShare:
         while True:
             params["page"] = page
             self.logger.info(f"retrieving page {page} for user {user_name}")
-            current_page_articles = self.__post("/articles/search", params=params)
+            current_page_articles = self.__post("/articles/search", params=params, use_cache=use_cache)
             page += 1
             if len(current_page_articles) == 0:
                 break
@@ -181,12 +183,14 @@ class FigShare:
 
         return articles
     
-    def get_article(self, article_id):
-        return self.__get(f"/articles/{article_id}")
+    def get_article(self, article_id, use_cache=True):
+        return self.__get(f"/articles/{article_id}", use_cache=use_cache)
 
 class Author:
-    def __init__(self, name):
+    def __init__(self, name, debug=False):
         self.logger = getLogger("Author")
+        if debug:
+            self.logger.setLevel(DEBUG)
         self.name = name
         self.fs = FigShare()
         self.articles = {}
@@ -208,16 +212,16 @@ class Author:
             self.df = db['df']
     
 
-    def _retrieve_figshare(self):
+    def _retrieve_figshare(self, use_cache=True):
         self.logger.info(f"retrieving articles for {self.name}")
-        self.articles = self.fs.articles_by_user_name(self.name)
+        self.articles = self.fs.articles_by_user_name(self.name, use_cache=use_cache)
 
         self.logger.info(f"found {len(self.articles)} articles for {self.name}")
 
-    def _retrieve_details(self):
+    def _retrieve_details(self, use_cache=True):
         for article in self.articles:
             self.logger.info(f"retrieving details for article {article['id']}")
-            article['details'] = self.fs.get_article(article['id'])
+            article['details'] = self.fs.get_article(article['id'], use_cache=use_cache)
 
     def _remove_non_repository(self):
         self.logger.info(f"removing non-repository articles out of {len(self.articles)}")
@@ -317,66 +321,116 @@ def doi2bibtex_test():
     
 
 
+def parse_args():
+    """Parse command-line arguments."""
+    parser = argparse.ArgumentParser(
+        description="Process publications from FigShare repository for specified authors.",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter
+    )
+    parser.add_argument('-a', '--authors', nargs='+', 
+                        help='List of author names to process')
+    parser.add_argument('-f', '--authors-file', type=str,
+                        help='Path to file containing list of authors (one per line)')
+    parser.add_argument('-s', '--since', type=str, default='2021-01-01',
+                        help='Process only publications since this date (YYYY-MM-DD)')
+    parser.add_argument('-o', '--output', type=str, default='figshare_articles.csv',
+                        help='Output CSV filename for all publications')
+    # parser.add_argument('-r', '--recent-output', type=str, default='figshare_articles_recent.csv',
+    #                     help='Output CSV filename for publications since specified date')
+    parser.add_argument('--force-refresh', action='store_true',
+                        help='Force refresh data instead of loading from cache')
+    parser.add_argument('--debug', action='store_true',
+                        help='Enable debug logging')
+    
+    return parser.parse_args()
+
+def load_authors_from_file(filename):
+    """Load author names from a file, one per line."""
+    try:
+        with open(filename, 'r') as f:
+            return [line.strip() for line in f if line.strip()]
+    except Exception as e:
+        logger.error(f"Error loading authors from file {filename}: {e}")
+        return []
+
 def figshare_processing():
+    """
+    Process FigShare publications for specified authors.
+    
+    This function:
+    1. Retrieves publication data for each author from FigShare
+    2. Combines all publications into a single dataset
+    3. Removes duplicates while preserving author information
+    4. Filters publications by date if specified
+    5. Exports results to CSV files
+    """
+    args = parse_args()
+    
+    if args.debug:
+        logger.setLevel(DEBUG)
+    
+    # Get list of authors
+    authors_list = []
+    if args.authors:
+        authors_list.extend(args.authors)
+    if args.authors_file:
+        authors_list.extend(load_authors_from_file(args.authors_file))
+    
+    # Use default authors if none specified
+    if not authors_list:
+        authors_list = [
+            "Marc Hanheide", "Marcello Calisti", "Grzegorz Cielniak", 
+            "Simon Parsons", "Elizabeth Sklar", "Paul Baxter", 
+            "Petra Bosilj", "Heriberto Cuayahuitl", "Gautham Das", 
+            "Francesco Del Duchetto", "Charles Fox", "Leonardo Guevara",
+            "Helen Harman", "Mohammed Al-Khafajiy", "Alexandr Klimchik", 
+            "Riccardo Polvara", "Athanasios Polydoros", "Zied Tayeb", 
+            "Sepher Maleki", "Junfeng Gao", "Tom Duckett", "Mini Rai", 
+            "Amir Ghalamzan Esfahani"
+        ]
+        logger.info(f"Using default list of {len(authors_list)} authors")
+    else:
+        logger.info(f"Processing {len(authors_list)} authors from command line/file")
+
     authors = {}
-
-    lcas_authors = [
-        "Marc Hanheide",
-        "Marcello Calisti",
-        "Grzegorz Cielniak",
-        "Simon Parsons",
-        "Elizabeth Sklar",
-        "Paul Baxter",
-        "Petra Bosilj",
-        "Heriberto Cuayahuitl",
-        "Gautham Das",
-        "Francesco Del Duchetto",
-        "Charles Fox",
-        "Leonardo Guevara",
-        "Helen Harman",
-        "Mohammed Al-Khafajiy",
-        "Alexandr Klimchik",
-        "Riccardo Polvara",
-        "Athanasios Polydoros",
-        "Zied Tayeb",
-        "Sepher Maleki",
-        "Junfeng Gao",
-        "Tom Duckett",
-        "Mini Rai",
-        "Amir Ghalamzan Esfahani"
-    ]
-
     all_articles = []
     df_all = None
-    for author_name in lcas_authors:
-        logger.info(f"*** processing {author_name}...")
-            
-        authors[author_name] = Author(author_name)
-        if os.path.exists(f"{author_name}.db"):
+    
+    for author_name in authors_list:
+        logger.info(f"*** Processing {author_name}...")
+        
+        authors[author_name] = Author(author_name, debug=args.debug)
+        cache_exists = os.path.exists(f"{author_name}.db")
+        
+        if cache_exists and not args.force_refresh:
+            logger.info(f"Loading cached data for {author_name}")
             authors[author_name].load()
         else:
+            logger.info(f"Retrieving data for {author_name}")
             authors[author_name].retrieve()
             authors[author_name].save()
-        if df_all is None:
-            df_all = authors[author_name].df
+            
+        if authors[author_name].df is not None:
+            if df_all is None:
+                df_all = authors[author_name].df
+            else:
+                df_all = pd.concat([df_all, authors[author_name].df])
+            all_articles.extend(authors[author_name].articles)
         else:
-            df_all = pd.concat([df_all, authors[author_name].df])
-        all_articles.extend(authors[author_name].articles)
+            logger.warning(f"No data found for {author_name}")
 
-    print(f"Total number of articles: {len(all_articles)}")
-    print(df_all.head())
-    # Remove duplicates by ID and maintain a list of all authors for each article
-    print(f"Total number of articles before deduplication: {len(df_all)}")
+    if df_all is None or len(df_all) == 0:
+        logger.error("No publication data found. Exiting.")
+        return
+
+    logger.info(f"Total number of articles before deduplication: {len(df_all)}")
 
     # Group by ID and aggregate authors into lists
     grouped = df_all.groupby('id').agg({
         'author': lambda x: list(set(x))  # Use set to remove duplicate authors
     })
 
-    # Get the unique IDs
-    unique_ids = grouped.index.tolist()
-
-    # Filter the original dataframe to keep only one row per ID (the first occurrence)
+    # Filter the original dataframe to keep only one row per ID
     deduplicated_df = df_all.drop_duplicates(subset=['id'], keep='first')
 
     # Add the aggregated authors list as a new column
@@ -384,43 +438,25 @@ def figshare_processing():
     deduplicated_df['authors'] = grouped['author']
     deduplicated_df = deduplicated_df.reset_index()
 
-    # Convert authors list to comma-separated string for better readability
+    # Convert authors list to comma-separated string
     deduplicated_df['authors'] = deduplicated_df['authors'].apply(lambda authors: ', '.join(authors))
 
-    print(f"Total number of articles after deduplication: {len(deduplicated_df)}")
+    logger.info(f"Total number of articles after deduplication: {len(deduplicated_df)}")
 
-    # Replace the original dataframe with the deduplicated one
-    df_all = deduplicated_df
-    print(list(df_all.columns))
-    filtered_df = df_all[df_all['online_date'] > pd.Timestamp(datetime(2021, 1, 1)).tz_localize('UTC')]
-    
     # Save all data to CSV
-    csv_filename = "figshare_articles.csv"
-    deduplicated_df.to_csv(csv_filename, index=False)
-    print(f"Saved all articles to {csv_filename}")
+    deduplicated_df.to_csv(args.output, index=False, encoding='utf-8')
+    logger.info(f"Saved all articles to {args.output}")
 
-    # Save filtered data to CSV
-    filtered_csv_filename = "figshare_articles_since_2021.csv"
-    filtered_df.to_csv(filtered_csv_filename, index=False)
-    print(f"Saved articles since 2021 to {filtered_csv_filename}")
+    # # Parse the since date
+    # try:
+    #     since_date = pd.Timestamp(datetime.strptime(args.since, '%Y-%m-%d')).tz_localize('UTC')
+    #     filtered_df = deduplicated_df[deduplicated_df['online_date'] > since_date]
+    #     filtered_df.to_csv(args.recent_output, index=False, encoding='utf-8')
+    #     logger.info(f"Saved {len(filtered_df)} articles since {args.since} to {args.recent_output}")
+    # except ValueError as e:
+    #     logger.error(f"Invalid date format: {e}. Expected YYYY-MM-DD.")
 
-    # # Create a pivot table with author as rows and count of articles as values
-    # pivot_table = pd.pivot_table(filtered_df, 
-    #                             index='author', 
-    #                             values='id', 
-    #                             aggfunc='count')
-    
-    # # Sort by count in descending order
-    # pivot_table = pivot_table.sort_values(by='id', ascending=False)
-    
-    # # Rename the column to be more descriptive
-    # pivot_table.rename(columns={'id': 'article_count'}, inplace=True)
-    
-    # print("Pivot table of authors and their article counts (after Jan 1, 2021):")
-    # print(pivot_table)
-    # print(f"Number of articles published after January 1st, 2021: {len(filtered_df)}, {len(df_all)}")
+    logger.info("Processing complete")
 
-    
 if __name__ == "__main__":
-    #doi2bibtex_test()
     figshare_processing()
