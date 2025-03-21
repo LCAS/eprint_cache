@@ -2,8 +2,6 @@ name: orcid-cache
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "30 2 * * 1"
   push:
     branches:
       - main
@@ -13,6 +11,7 @@ on:
 
 jobs:
   update-cache:
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
