@@ -48,7 +48,7 @@ jobs:
           set -e
           python lcas-bib-export-generator.py
 
-      - name: Run ORCID exporter
+      - name: Run figshare exporter
         run: |
           set -e
           cd ./output
@@ -60,3 +60,10 @@ jobs:
           git commit -m "automated commit `date`"
           git push
 
+      - name: Upload CSV files as artifacts
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: csv-files
+          path: ./output/*.csv
+          retention-days: 30

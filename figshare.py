@@ -199,14 +199,14 @@ class Author:
 
     def save(self, filename=None):
         if filename is None:
-            filename = f"{self.name}"
+            filename = f"{self.name}.db"
         with shelve.open(filename) as db:
             db['articles'] = self.articles
             db['df'] = self.df
 
     def load(self, filename=None):
         if filename is None:
-            filename = f"{self.name}"
+            filename = f"{self.name}.db"
         with shelve.open(filename) as db:
             self.articles = db['articles']
             self.df = db['df']
