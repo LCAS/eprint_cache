@@ -26,6 +26,7 @@ import shelve
 import re
 import argparse
 from datetime import datetime
+from difflib import SequenceMatcher
 
 
 basicConfig(level=INFO)
@@ -254,6 +255,7 @@ class Author:
                 return None
             
             title = article['title']
+            author = article['author']
             
             if title in cache:
                 self.logger.info(f"Found DOI {cache[title]} in cache for title: {title}")
@@ -262,13 +264,15 @@ class Author:
             # Construct query URL for Crossref API
             base_url = "https://api.crossref.org/works"
             params = {
-                "query.title": title,
-                "query.author": article['author'],
-                "rows": 1,  # Get top match only
+                "query.query.bibliographic": f"{title}",
+                "query.author": f"{author}",
+                "sort": "relevance",
+                "rows": 10,  # Get top 10 matches
                 "select": "DOI,title,author",
             }
             
             try:
+                
                 self.logger.debug(f"Querying Crossref for title: {title}")
                 response = requests.get(base_url, params=params)
                 response.raise_for_status()
@@ -278,20 +282,42 @@ class Author:
                     self.logger.debug(f"No DOI found for: {title}")
                     return None
                 
-                # Get the top match
+                # Get all matches and find the best one using fuzzy matching
                 items = data["message"]["items"]
                 if items:
-                    self.logger.debug(f"Found {pformat(items)} matches for title: {title}")
-                    doi = items[0].get("DOI")
-                    authors_string = str(items[0].get("author"))
-                    authors_last_name = article['author'].split()[-1]
-                    if doi and authors_last_name in authors_string:
-                        self.logger.info(f"Found DOI {doi} for title: {title}")
-                        cache[title] = doi
-                        return doi
+                    self.logger.debug(f"Found {len(items)} potential matches for title: {title}")
+                    
+                    best_match = None
+                    best_score = 0
+                    threshold = 0.8  # Minimum similarity score to accept a match
+                    
+                    for item in items:
+                        if "title" in item and item["title"]:
+                            item_title = item["title"][0]
+                            # Calculate similarity score
+                            score = SequenceMatcher(None, title.lower(), item_title.lower()).ratio()
+                            logger.debug(f"==== '{title}' == '{item['title'][0]}'??? ==> {score:.2f}")
+                            
+                            if score > best_score:
+                                best_score = score
+                                best_match = item
+                    
+                    if best_match and best_score >= threshold:
+                        doi = best_match.get("DOI")
+                        authors_string = str(best_match.get("author", ""))
+                        authors_last_name = article['author'].split()[-1]
+                        
+                        if doi and authors_last_name in authors_string:
+                            self.logger.info(f"Found DOI {doi} for title: {title} (match score: {best_score:.2f})")
+                            cache[title] = doi
+                            return doi
+                        else:
+                            self.logger.warning(f"DOI found but author {authors_last_name} not in authors list or DOI missing")
                     else:
-                        self.logger.warning(f"DOI {doi} not found with confidence for author {authors_last_name}")
-                        return None
+                        self.logger.warning(f"No good title match found. Best score was {best_score:.2f}, below threshold {threshold}")
+                        self.logger.warning(f"  '{title}' != '{best_match['title'][0]}' (score: {best_score:.2f})")
+                    
+                    return None
             
             except Exception as e:
                 self.logger.warning(f"Error guessing DOI: {e}")
