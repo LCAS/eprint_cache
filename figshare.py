@@ -512,6 +512,18 @@ def figshare_processing():
             bibtex_filename = f"{author_name}.bib"
             bibtex = BibDatabase()
             bibtex.entries = [entry for entry in authors[author_name].df['bibtex'].tolist() if isinstance(entry, dict)]
+            # Process all entries in the bibtex database and remove any duplicates based on ID
+            unique_entries = {}
+            for entry in authors[author_name].df['bibtex'].tolist():
+                if isinstance(entry, dict) and 'ID' in entry:
+                    # Use ID as the key to avoid duplicates
+                    unique_entries[entry['ID']] = entry
+                elif entry is not None:
+                    logger.debug(f"Skipping entry without ID: {entry}")
+
+            logger.info(f"Reduced from {len(authors[author_name].df['bibtex'].dropna())} to {len(unique_entries)} unique bibtex entries")
+            # Replace the entries with the unique ones
+            bibtex.entries = list(unique_entries.values())
             with open(bibtex_filename, 'w') as f:
                 f.write(bibtexparser.dumps(bibtex))
             logger.info(f"Saved bibtex entries to {bibtex_filename}")
@@ -553,6 +565,18 @@ def figshare_processing():
     #     logger.info(f"Saved bibtex entries to {bibtex_filename}")
     bibtex = BibDatabase()
     bibtex.entries = [entry for entry in deduplicated_df['bibtex'].tolist() if isinstance(entry, dict)]
+    # Process all entries in the bibtex database and remove any duplicates based on ID
+    unique_entries = {}
+    for entry in bibtex.entries:
+        if entry and 'ID' in entry:
+            # Use ID as the key to avoid duplicates
+            unique_entries[entry['ID']] = entry
+        else:
+            logger.debug(f"Skipping entry without ID: {entry}")
+
+    logger.info(f"Reduced from {len(bibtex.entries)} to {len(unique_entries)} unique bibtex entries")
+    # Replace the entries with the unique ones
+    bibtex.entries = list(unique_entries.values())
     with open(bibtex_filename, 'w') as f:
         f.write(bibtexparser.dumps(bibtex))
     logger.info(f"Saved bibtex entries to {bibtex_filename}")
