@@ -161,7 +161,7 @@ class FigShare:
             return self.__cache[hash_key]
         else:
             headers = { "Authorization": "token " + self.token } if self.token else {}
-            result = post(self.base_url + url, headers=headers, params=params).json()
+            result = post(self.base_url + url, headers=headers, json=params).json()
             self.__cache[hash_key] = result
             self.save_cache()
             return result
