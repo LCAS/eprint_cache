@@ -4,13 +4,12 @@
 import pandas as pd
 import shelve
 import re
-import requests
 from logging import getLogger, INFO, DEBUG
 from flatten_dict import flatten
-from difflib import SequenceMatcher
 
 from figshare_api import FigShare
 from doi2bib import doi2bib
+from doi_utils import guess_doi_from_crossref
 
 
 class Author:
@@ -75,86 +74,14 @@ class Author:
         """
         Use crossref API to guess the DOI for an article based on the title and authors
         """
-        with shelve.open("crossref_cache.db") as cache:
-            if 'title' not in article or not article['title']:
-                self.logger.warning("No title found for article, can't guess DOI")
-                return None
-            
-            title = article['title']
-            author = article['author']
-            
-            if title in cache:
-                self.logger.info(f"Found DOI {cache[title]} in cache for title: {title}")
-                return cache[title]
-
-            # Construct query URL for Crossref API
-            base_url = "https://api.crossref.org/works"
-            params = {
-                "query.query.bibliographic": f"{title}",
-                "query.author": f"{author}",
-                "sort": "relevance",
-                "rows": 10,  # Get top 10 matches
-                "select": "DOI,title,author",
-            }
-            
-            try:
-                
-                self.logger.debug(f"Querying Crossref for title: {title}")
-                response = requests.get(base_url, params=params)
-                response.raise_for_status()
-                
-                # Check if response is valid and contains JSON
-                if response.ok and response.headers.get('Content-Type', '').lower().startswith('application/json') and response.text.strip():
-                    data = response.json()
-                else:
-                    self.logger.warning(f"Received empty or invalid JSON response from Crossref API (status: {response.status_code})")
-                    return None
-                
-                if data["message"]["total-results"] == 0:
-                    self.logger.debug(f"No DOI found for: {title}")
-                    return None
-                
-                # Get all matches and find the best one using fuzzy matching
-                items = data["message"]["items"]
-                if items:
-                    self.logger.debug(f"Found {len(items)} potential matches for title: {title}")
-                    
-                    best_match = None
-                    best_score = 0
-                    threshold = 0.8  # Minimum similarity score to accept a match
-                    
-                    for item in items:
-                        if "title" in item and item["title"]:
-                            item_title = item["title"][0]
-                            # Calculate similarity score
-                            score = SequenceMatcher(None, title.lower(), item_title.lower()).ratio()
-                            self.logger.debug(f"==== '{title}' == '{item['title'][0]}'??? ==> {score:.2f}")
-                            
-                            if score > best_score:
-                                best_score = score
-                                best_match = item
-                    
-                    if best_match and best_score >= threshold:
-                        doi = best_match.get("DOI")
-                        authors_string = str(best_match.get("author", ""))
-                        authors_last_name = article['author'].split()[-1]
-                        
-                        if doi and authors_last_name in authors_string:
-                            self.logger.info(f"Found DOI {doi} for title: {title} (match score: {best_score:.2f})")
-                            cache[title] = doi
-                            return doi
-                        else:
-                            self.logger.warning(f"DOI found but author {authors_last_name} not in authors list or DOI missing")
-                    else:
-                        self.logger.warning(f"No good title match found. Best score was {best_score:.2f}, below threshold {threshold}")
-                        self.logger.warning(f"  '{title}' != '{best_match['title'][0]}' (score: {best_score:.2f})")
-                    
-                    return None
-            
-            except Exception as e:
-                self.logger.warning(f"Error guessing DOI: {e}")
-            
+        if 'title' not in article or not article['title']:
+            self.logger.warning("No title found for article, can't guess DOI")
             return None
+        
+        title = article['title']
+        author = article['author']
+        
+        return guess_doi_from_crossref(title, author)
 
 
     def _retrieve_bibtex_from_dois(self):
@@ -162,7 +89,7 @@ class Author:
             self.logger.warning(f"no dataframe found for {self.name}, can't continue")
             return
         doi2bibber = doi2bib()
-        # iteratre over all rows in the dataframe self.df
+        # iterate over all rows in the dataframe self.df
         for index, row in self.df.iterrows():
             doi = row['External DOI']
             # Check if DOI is in valid format

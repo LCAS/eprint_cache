@@ -48,7 +48,7 @@ class doi2bib:
 
     def get_bibtext(self, doi):
         """
-        Use DOI Content Negotioation (http://crosscite.org/cn/) to retrieve a string
+        Use DOI Content Negotiation (http://crosscite.org/cn/) to retrieve a string
         with the bibtex entry.
         """
         with shelve.open(self.bibtext_cache_file) as cache:
