@@ -54,12 +54,12 @@ class doi2bib:
             url = 'http://shortdoi.org/{}?format=json'.format(quoted_doi)
             try:
                 response = requests.get(url)
-                # Check if response is valid JSON
-                if response.headers.get('Content-Type', '').startswith('application/json') and response.text.strip():
+                # Check if response is valid and contains JSON
+                if response.ok and response.headers.get('Content-Type', '').startswith('application/json') and response.text.strip():
                     result = response.json()
                     short_doi = result['ShortDOI']
                 else:
-                    self.logger.warning(f"Received empty or invalid JSON response for {doi} from {url}")
+                    self.logger.warning(f"Received empty or invalid JSON response for {doi} from {url} (status: {response.status_code})")
                     return None
             except Exception as e:
                 self.logger.warning(f"failed to get short doi for {doi}: {e}")
@@ -157,14 +157,14 @@ class FigShare:
         else:
             headers = { "Authorization": "token " + self.token } if self.token else {}
             response = get(self.base_url + url, headers=headers, params=params)
-            # Check if response is valid JSON
-            if response.headers.get('Content-Type', '').startswith('application/json') and response.text.strip():
+            # Check if response is valid and contains JSON
+            if response.ok and response.headers.get('Content-Type', '').startswith('application/json') and response.text.strip():
                 result = response.json()
                 self.__cache[hash_key] = result
                 self.save_cache()
                 return result
             else:
-                self.logger.warning(f"Received empty or invalid JSON response for GET {self.base_url + url}")
+                self.logger.warning(f"Received empty or invalid JSON response for GET {self.base_url + url} (status: {response.status_code})")
                 return {}
 
     def __post(self, url, params=None, use_cache=True):
@@ -174,14 +174,14 @@ class FigShare:
         else:
             headers = { "Authorization": "token " + self.token } if self.token else {}
             response = post(self.base_url + url, headers=headers, json=params)
-            # Check if response is valid JSON
-            if response.headers.get('Content-Type', '').startswith('application/json') and response.text.strip():
+            # Check if response is valid and contains JSON
+            if response.ok and response.headers.get('Content-Type', '').startswith('application/json') and response.text.strip():
                 result = response.json()
                 self.__cache[hash_key] = result
                 self.save_cache()
                 return result
             else:
-                self.logger.warning(f"Received empty or invalid JSON response for POST {self.base_url + url}")
+                self.logger.warning(f"Received empty or invalid JSON response for POST {self.base_url + url} (status: {response.status_code})")
                 return []
 
         
