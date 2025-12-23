@@ -154,6 +154,17 @@ class FigShare:
             "page_size": self.page_size
         }
 
+    def __handle_403_error(self, url, method="GET"):
+        """Handle 403 Forbidden errors with helpful messages"""
+        if not self.token:
+            self.logger.error(f"403 Forbidden for {method} {self.base_url + url}: "
+                            f"Authentication required. Set FIGSHARE_TOKEN environment variable. "
+                            f"See README.md for instructions.")
+        else:
+            self.logger.error(f"403 Forbidden for {method} {self.base_url + url}: "
+                            f"Token may be invalid or lack permissions. "
+                            f"Check token in Figshare account settings.")
+
     def __get(self, url, params=None, use_cache=True):
         hash_key = f"GET{url}?{params}"
         if hash_key in self.__cache and use_cache:
@@ -164,14 +175,7 @@ class FigShare:
             
             # Handle 403 Forbidden errors with helpful message
             if response.status_code == 403:
-                if not self.token:
-                    self.logger.error(f"403 Forbidden for GET {self.base_url + url}: "
-                                    f"Authentication required. Set FIGSHARE_TOKEN environment variable. "
-                                    f"See README.md for instructions.")
-                else:
-                    self.logger.error(f"403 Forbidden for GET {self.base_url + url}: "
-                                    f"Token may be invalid or lack permissions. "
-                                    f"Response: {response.text[:200]}")
+                self.__handle_403_error(url, "GET")
                 return {}
             
             # Check if response is valid and contains JSON
@@ -194,14 +198,7 @@ class FigShare:
             
             # Handle 403 Forbidden errors with helpful message
             if response.status_code == 403:
-                if not self.token:
-                    self.logger.error(f"403 Forbidden for POST {self.base_url + url}: "
-                                    f"Authentication required. Set FIGSHARE_TOKEN environment variable. "
-                                    f"See README.md for instructions.")
-                else:
-                    self.logger.error(f"403 Forbidden for POST {self.base_url + url}: "
-                                    f"Token may be invalid or lack permissions. "
-                                    f"Response: {response.text[:200]}")
+                self.__handle_403_error(url, "POST")
                 return []
             
             # Check if response is valid and contains JSON
