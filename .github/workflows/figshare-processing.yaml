@@ -29,7 +29,8 @@ jobs:
           fetch-depth: 1
 
       - name: Use Cache in folder ./output
-        uses: actions/cache@v5
+        id: cache-restore-output
+        uses: actions/cache/restore@v5
         with:
           path: ./output
           key: cache-files
@@ -67,6 +68,12 @@ jobs:
             echo "Running without cache (default behavior)"
             python ../figshare.py
           fi
+
+      - name: Save Cache from folder ./output
+        uses: actions/cache/save@v5
+        with:
+          path: ./output
+          key: ${{ steps.cache-restore-output.outputs.cache-primary-key || 'cache-files' }}
 
       - name: Generate publication statistics
         run: |
