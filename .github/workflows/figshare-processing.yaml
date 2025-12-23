@@ -70,7 +70,7 @@ jobs:
             python ../figshare_fetch.py --use-author-cache
           else
             echo "Running figshare_fetch.py without cache (default behavior)"
-            python ../figshare_fetch.py --rate-limit-delay 3
+            python ../figshare_fetch.py --rate-limit-delay 1 --max-retries 30
           fi
       
       - name: Run figshare bibtex (Step 2 - Generate bibtex from CSV)

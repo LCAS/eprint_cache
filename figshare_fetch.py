@@ -97,7 +97,10 @@ def figshare_fetch():
 
     authors = {}
     df_all = None
+    authors_to_process = []  # Track authors that need detail retrieval
     
+    # First pass: Initialize authors and retrieve basic figshare data
+    logger.info("=== Phase 1: Retrieving basic article data from Figshare ===")
     for author_name in authors_list:
         logger.info(f"*** Processing {author_name}...")
         
@@ -108,17 +111,26 @@ def figshare_fetch():
             logger.info(f"Loading cached data for {author_name}")
             authors[author_name].load()
         else:
-            logger.info(f"Retrieving data for {author_name}")
-            # Call retrieve WITHOUT bibtex generation
+            logger.info(f"Retrieving basic data for {author_name}")
             authors[author_name]._retrieve_figshare(use_cache=args.use_author_cache)
             authors[author_name]._remove_non_repository()
+            authors_to_process.append(author_name)
+    
+    # Second pass: Retrieve details for all articles (this is where rate limiting matters)
+    if authors_to_process:
+        logger.info("=== Phase 2: Retrieving detailed article information ===")
+        for author_name in authors_to_process:
+            logger.info(f"*** Retrieving details for {author_name}...")
             authors[author_name]._retrieve_details(use_cache=True)
             authors[author_name]._custom_fields_to_dicts()
             authors[author_name]._flatten()
             authors[author_name]._create_dataframe()
             # Note: NOT calling _retrieve_bibtex_from_dois() here - that's for script 2
             authors[author_name].save()
-            
+    
+    # Third pass: Aggregate dataframes and save individual CSVs
+    logger.info("=== Phase 3: Aggregating and saving results ===")
+    for author_name in authors_list:
         if authors[author_name].df is not None:
             if df_all is None:
                 df_all = authors[author_name].df
