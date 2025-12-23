@@ -53,8 +53,14 @@ class doi2bib:
             quoted_doi = urllib.request.quote(doi)
             url = 'http://shortdoi.org/{}?format=json'.format(quoted_doi)
             try:
-                response = requests.get(url).json()
-                short_doi = response['ShortDOI']
+                response = requests.get(url)
+                # Check if response is valid JSON
+                if response.headers.get('Content-Type', '').startswith('application/json') and response.text.strip():
+                    result = response.json()
+                    short_doi = result['ShortDOI']
+                else:
+                    self.logger.warning(f"Received empty or invalid JSON response for {doi} from {url}")
+                    return None
             except Exception as e:
                 self.logger.warning(f"failed to get short doi for {doi}: {e}")
                 return None
@@ -150,10 +156,16 @@ class FigShare:
             return self.__cache[hash_key]
         else:
             headers = { "Authorization": "token " + self.token } if self.token else {}
-            result = get(self.base_url + url, headers=headers, params=params).json()
-            self.__cache[hash_key] = result
-            self.save_cache()
-            return result
+            response = get(self.base_url + url, headers=headers, params=params)
+            # Check if response is valid JSON
+            if response.headers.get('Content-Type', '').startswith('application/json') and response.text.strip():
+                result = response.json()
+                self.__cache[hash_key] = result
+                self.save_cache()
+                return result
+            else:
+                self.logger.warning(f"Received empty or invalid JSON response for GET {self.base_url + url}")
+                return {}
 
     def __post(self, url, params=None, use_cache=True):
         hash_key = f"POST{url}?{params}"
@@ -161,10 +173,16 @@ class FigShare:
             return self.__cache[hash_key]
         else:
             headers = { "Authorization": "token " + self.token } if self.token else {}
-            result = post(self.base_url + url, headers=headers, json=params).json()
-            self.__cache[hash_key] = result
-            self.save_cache()
-            return result
+            response = post(self.base_url + url, headers=headers, json=params)
+            # Check if response is valid JSON
+            if response.headers.get('Content-Type', '').startswith('application/json') and response.text.strip():
+                result = response.json()
+                self.__cache[hash_key] = result
+                self.save_cache()
+                return result
+            else:
+                self.logger.warning(f"Received empty or invalid JSON response for POST {self.base_url + url}")
+                return []
 
         
     def articles_by_user_name(self, user_name, use_cache=True):
