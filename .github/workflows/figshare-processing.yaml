@@ -118,6 +118,6 @@ jobs:
         with:
           name: outputs
           path: |
-            ./output/*.csv 
+            ./output/*.csv
             ./output/*.bib
           retention-days: 30
