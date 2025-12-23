@@ -55,7 +55,7 @@ class doi2bib:
             try:
                 response = requests.get(url)
                 # Check if response is valid and contains JSON
-                if response.ok and response.headers.get('Content-Type', '').startswith('application/json') and response.text.strip():
+                if response.ok and response.headers.get('Content-Type', '').lower().startswith('application/json') and response.text.strip():
                     result = response.json()
                     short_doi = result['ShortDOI']
                 else:
@@ -158,7 +158,7 @@ class FigShare:
             headers = { "Authorization": "token " + self.token } if self.token else {}
             response = get(self.base_url + url, headers=headers, params=params)
             # Check if response is valid and contains JSON
-            if response.ok and response.headers.get('Content-Type', '').startswith('application/json') and response.text.strip():
+            if response.ok and response.headers.get('Content-Type', '').lower().startswith('application/json') and response.text.strip():
                 result = response.json()
                 self.__cache[hash_key] = result
                 self.save_cache()
@@ -175,7 +175,7 @@ class FigShare:
             headers = { "Authorization": "token " + self.token } if self.token else {}
             response = post(self.base_url + url, headers=headers, json=params)
             # Check if response is valid and contains JSON
-            if response.ok and response.headers.get('Content-Type', '').startswith('application/json') and response.text.strip():
+            if response.ok and response.headers.get('Content-Type', '').lower().startswith('application/json') and response.text.strip():
                 result = response.json()
                 self.__cache[hash_key] = result
                 self.save_cache()
@@ -294,7 +294,13 @@ class Author:
                 self.logger.debug(f"Querying Crossref for title: {title}")
                 response = requests.get(base_url, params=params)
                 response.raise_for_status()
-                data = response.json()
+                
+                # Check if response is valid and contains JSON
+                if response.ok and response.headers.get('Content-Type', '').lower().startswith('application/json') and response.text.strip():
+                    data = response.json()
+                else:
+                    self.logger.warning(f"Received empty or invalid JSON response from Crossref API (status: {response.status_code})")
+                    return None
                 
                 if data["message"]["total-results"] == 0:
                     self.logger.debug(f"No DOI found for: {title}")
