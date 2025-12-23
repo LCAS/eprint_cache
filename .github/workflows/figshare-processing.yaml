@@ -3,8 +3,8 @@ name: figshare-cache
 on:
   workflow_dispatch:
     inputs:
-      force_refresh:
-        description: 'Force refresh data (ignore cache)'
+      use_author_cache:
+        description: 'Use cached author data (instead of refreshing)'
         required: false
         default: 'false'
         type: choice
@@ -60,14 +60,17 @@ jobs:
         run: |
           set -e
           cd ./output
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.force_refresh }}" = "true" ]; then
-            echo "Running with --force-refresh (manually triggered)"
-            python ../figshare.py --force-refresh
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.use_author_cache }}" = "true" ]; then
+            echo "Running with --use-author-cache (manually triggered)"
+            python ../figshare.py --use-author-cache
           else
-            echo "Running with cache (default behavior)"
+            echo "Running without cache (default behavior)"
             python ../figshare.py
           fi
 
+      - name: Generate publication statistics
+        run: |
+          python ../generate_stats.py --all-csv figshare_articles_all.csv --dedup-csv figshare_articles.csv >> $GITHUB_STEP_SUMMARY
 
       - name: Nexus Repo Publish bibtex
         if: ${{ github.event_name != 'pull_request' }}

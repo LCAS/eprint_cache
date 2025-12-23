@@ -481,9 +481,9 @@ def parse_args():
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
     parser.add_argument('-a', '--authors', nargs='+', 
-                        help='List of author names to process')
+                        help='List of author names to process (uses default list if not specified)')
     parser.add_argument('-f', '--authors-file', type=str,
-                        help='Path to file containing list of authors (one per line)')
+                        help='Path to file containing list of authors, one per line (uses default list if not specified)')
     parser.add_argument('-s', '--since', type=str, default='2021-01-01',
                         help='Process only publications since this date (YYYY-MM-DD)')
     parser.add_argument('-o', '--output', type=str, default='figshare_articles.csv',
@@ -492,8 +492,8 @@ def parse_args():
                         help='Output CSV filename for all publications by authors (includes duplicates when multiple authors per output)')
     # parser.add_argument('-r', '--recent-output', type=str, default='figshare_articles_recent.csv',
     #                     help='Output CSV filename for publications since specified date')
-    parser.add_argument('--force-refresh', action='store_true',
-                        help='Force refresh data instead of loading from cache')
+    parser.add_argument('--use-author-cache', action='store_true',
+                        help='Use cached author data instead of refreshing from API')
     parser.add_argument('--rate-limit-delay', type=float, default=1.0,
                         help='Delay in seconds between Figshare API requests (default: 1.0)')
     parser.add_argument('--debug', action='store_true',
@@ -559,12 +559,12 @@ def figshare_processing():
         authors[author_name] = Author(author_name, debug=args.debug, rate_limit_delay=args.rate_limit_delay)
         cache_exists = os.path.exists(f"{author_name}.db")
         
-        if cache_exists and not args.force_refresh:
+        if cache_exists and args.use_author_cache:
             logger.info(f"Loading cached data for {author_name}")
             authors[author_name].load()
         else:
             logger.info(f"Retrieving data for {author_name}")
-            authors[author_name].retrieve(not args.force_refresh)
+            authors[author_name].retrieve(args.use_author_cache)
             authors[author_name].save()
             
         if authors[author_name].df is not None:
