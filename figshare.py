@@ -454,7 +454,7 @@ class Author:
     def retrieve(self, use_cache=True):
         self._retrieve_figshare(use_cache=use_cache)
         self._remove_non_repository()
-        self._retrieve_details()
+        self._retrieve_details(use_cache=True)
         self._custom_fields_to_dicts()
         self._flatten()
         self._create_dataframe()
@@ -515,8 +515,8 @@ def parse_args():
                         help='Use cached author data instead of refreshing from API')
     parser.add_argument('--rate-limit-delay', type=float, default=1.0,
                         help='Delay in seconds between Figshare API requests (default: 1.0)')
-    parser.add_argument('--max-retries', type=int, default=5,
-                        help='Maximum number of retry attempts for 403 errors (default: 5)')
+    parser.add_argument('--max-retries', type=int, default=1,
+                        help='Maximum number of retry attempts for 403 errors (default: 1)')
     parser.add_argument('--debug', action='store_true',
                         help='Enable debug logging')
     
