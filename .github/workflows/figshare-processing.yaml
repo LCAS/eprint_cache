@@ -70,7 +70,7 @@ jobs:
             python ../figshare.py --use-author-cache
           else
             echo "Running without cache (default behavior)"
-            python ../figshare.py
+            python ../figshare.py --rate-limit-delay 3
           fi
 
       - name: Save Cache from folder ./output

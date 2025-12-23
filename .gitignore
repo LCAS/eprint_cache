@@ -10,3 +10,5 @@ output/
 *.db
 *.csv
 *.bib
+*.db-wal
+*.db-shm
