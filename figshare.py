@@ -124,9 +124,9 @@ class FigShare:
         self.logger = getLogger("FigShare")
         self.token = os.getenv('FIGSHARE_TOKEN')
         if self.token:
-            self.logger.info("Using authenticated requests with FIGSHARE_TOKEN")
+            self.logger.info("Figshare API: Using authenticated requests")
         else:
-            self.logger.warning("No FIGSHARE_TOKEN found - using anonymous requests (may hit rate limits or receive 403 errors)")
+            self.logger.warning("Figshare API: No authentication token found - using anonymous requests (may hit rate limits or receive 403 errors)")
         self.page_size = page_size
         self.base_url = "https://api.figshare.com/v2"
 
