@@ -139,7 +139,7 @@ class FigShare:
         with shelve.open(self.cache_file) as cache:
             self.logger.info(f"Figshare API: Using cache file {self.cache_file} with {len(cache.keys())} entries")
             for key in list(cache.keys()):
-                self.logger.info(f"  existing cache key: {key}")
+                self.logger.debug(f"  existing cache key: {key}")
 
 
     def __init_params(self):
