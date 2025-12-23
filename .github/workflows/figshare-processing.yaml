@@ -46,6 +46,8 @@ jobs:
           pip install -r requirements-frozen.txt
           
       - name: Run figshare exporter
+        env:
+          FIGSHARE_TOKEN: ${{ secrets.FIGSHARE_TOKEN }}
         run: |
           set -e
           cd ./output

@@ -123,6 +123,10 @@ class FigShare:
     def __init__(self, page_size=100):
         self.logger = getLogger("FigShare")
         self.token = os.getenv('FIGSHARE_TOKEN')
+        if self.token:
+            self.logger.info("Using authenticated requests with FIGSHARE_TOKEN")
+        else:
+            self.logger.warning("No FIGSHARE_TOKEN found - using anonymous requests (may hit rate limits or receive 403 errors)")
         self.page_size = page_size
         self.base_url = "https://api.figshare.com/v2"
 
@@ -157,6 +161,19 @@ class FigShare:
         else:
             headers = { "Authorization": "token " + self.token } if self.token else {}
             response = get(self.base_url + url, headers=headers, params=params)
+            
+            # Handle 403 Forbidden errors with helpful message
+            if response.status_code == 403:
+                if not self.token:
+                    self.logger.error(f"403 Forbidden for GET {self.base_url + url}: "
+                                    f"Authentication required. Set FIGSHARE_TOKEN environment variable. "
+                                    f"See README.md for instructions.")
+                else:
+                    self.logger.error(f"403 Forbidden for GET {self.base_url + url}: "
+                                    f"Token may be invalid or lack permissions. "
+                                    f"Response: {response.text[:200]}")
+                return {}
+            
             # Check if response is valid and contains JSON
             if response.ok and response.headers.get('Content-Type', '').lower().startswith('application/json') and response.text.strip():
                 result = response.json()
@@ -174,6 +191,19 @@ class FigShare:
         else:
             headers = { "Authorization": "token " + self.token } if self.token else {}
             response = post(self.base_url + url, headers=headers, json=params)
+            
+            # Handle 403 Forbidden errors with helpful message
+            if response.status_code == 403:
+                if not self.token:
+                    self.logger.error(f"403 Forbidden for POST {self.base_url + url}: "
+                                    f"Authentication required. Set FIGSHARE_TOKEN environment variable. "
+                                    f"See README.md for instructions.")
+                else:
+                    self.logger.error(f"403 Forbidden for POST {self.base_url + url}: "
+                                    f"Token may be invalid or lack permissions. "
+                                    f"Response: {response.text[:200]}")
+                return []
+            
             # Check if response is valid and contains JSON
             if response.ok and response.headers.get('Content-Type', '').lower().startswith('application/json') and response.text.strip():
                 result = response.json()
