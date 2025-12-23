@@ -136,6 +136,11 @@ class FigShare:
         # Use shelve for persistent caching
         self.cache_file = "figshare_cache.db"
 
+        with shelve.open(self.cache_file) as cache:
+            self.logger.info(f"Figshare API: Using cache file {self.cache_file} with {len(cache.keys())} entries")
+            for key in list(cache.keys()):
+                self.logger.info(f"  existing cache key: {key}")
+
 
     def __init_params(self):
         return {
@@ -156,7 +161,7 @@ class FigShare:
             self.logger.error(f"Response text: {response_text}")
 
     def __get(self, url, params=None, use_cache=True):
-        hash_key = f"GET{url}?{params}"
+        hash_key = f"GET{url}{'?' + str(params) if params else ''}"
         
         with shelve.open(self.cache_file) as cache:
             if hash_key in cache and use_cache:
@@ -200,7 +205,7 @@ class FigShare:
                 return {}
 
     def __post(self, url, params=None, use_cache=True):
-        hash_key = f"POST{url}?{params}"
+        hash_key = f"POST{url}{'?' + str(params) if params else ''}"
         
         with shelve.open(self.cache_file) as cache:
             if hash_key in cache and use_cache:
