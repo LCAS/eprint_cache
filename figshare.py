@@ -27,6 +27,7 @@ import re
 import argparse
 from datetime import datetime
 from difflib import SequenceMatcher
+import time
 
 
 basicConfig(level=INFO)
@@ -120,7 +121,7 @@ class doi2bib:
 
 
 class FigShare:
-    def __init__(self, page_size=100):
+    def __init__(self, page_size=100, rate_limit_delay=1.0):
         self.logger = getLogger("FigShare")
         self.token = os.getenv('FIGSHARE_TOKEN')
         if self.token:
@@ -128,7 +129,11 @@ class FigShare:
         else:
             self.logger.warning("Figshare API: No authentication token found - using anonymous requests (may hit rate limits or receive 403 errors)")
         self.page_size = page_size
+        self.rate_limit_delay = rate_limit_delay
         self.base_url = "https://api.figshare.com/v2"
+        
+        if self.rate_limit_delay > 0:
+            self.logger.info(f"Rate limiting enabled: {self.rate_limit_delay} second delay between API requests")
 
         # if cache file exist, load it
         self.cache_file = "figshare_cache.pkl"
@@ -173,6 +178,10 @@ class FigShare:
             headers = { "Authorization": "token " + self.token } if self.token else {}
             response = get(self.base_url + url, headers=headers, params=params)
             
+            # Rate limiting: sleep after each API request
+            if self.rate_limit_delay > 0:
+                time.sleep(self.rate_limit_delay)
+            
             # Handle 403 Forbidden errors with helpful message
             if response.status_code == 403:
                 self.__handle_403_error(url, "GET")
@@ -195,6 +204,10 @@ class FigShare:
         else:
             headers = { "Authorization": "token " + self.token } if self.token else {}
             response = post(self.base_url + url, headers=headers, json=params)
+            
+            # Rate limiting: sleep after each API request
+            if self.rate_limit_delay > 0:
+                time.sleep(self.rate_limit_delay)
             
             # Handle 403 Forbidden errors with helpful message
             if response.status_code == 403:
@@ -233,12 +246,12 @@ class FigShare:
         return self.__get(f"/articles/{article_id}", use_cache=use_cache)
 
 class Author:
-    def __init__(self, name, debug=False):
+    def __init__(self, name, debug=False, rate_limit_delay=1.0):
         self.logger = getLogger("Author")
         if debug:
             self.logger.setLevel(DEBUG)
         self.name = name
-        self.fs = FigShare()
+        self.fs = FigShare(rate_limit_delay=rate_limit_delay)
         self.articles = {}
         self.public_html_prefix = "https://repository.lincoln.ac.uk"
         self.df = None
@@ -481,6 +494,8 @@ def parse_args():
     #                     help='Output CSV filename for publications since specified date')
     parser.add_argument('--force-refresh', action='store_true',
                         help='Force refresh data instead of loading from cache')
+    parser.add_argument('--rate-limit-delay', type=float, default=1.0,
+                        help='Delay in seconds between Figshare API requests (default: 1.0)')
     parser.add_argument('--debug', action='store_true',
                         help='Enable debug logging')
     
@@ -541,7 +556,7 @@ def figshare_processing():
     for author_name in authors_list:
         logger.info(f"*** Processing {author_name}...")
         
-        authors[author_name] = Author(author_name, debug=args.debug)
+        authors[author_name] = Author(author_name, debug=args.debug, rate_limit_delay=args.rate_limit_delay)
         cache_exists = os.path.exists(f"{author_name}.db")
         
         if cache_exists and not args.force_refresh:

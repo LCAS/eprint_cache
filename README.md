@@ -64,6 +64,9 @@ python figshare.py --authors-file staff.json
 # Force refresh (ignore cache)
 python figshare.py --force-refresh
 
+# Adjust rate limiting (default is 1 second delay between requests)
+python figshare.py --rate-limit-delay 2.0
+
 # Enable debug logging
 python figshare.py --debug
 
@@ -79,6 +82,7 @@ python figshare.py --output my_articles.csv --output-all my_articles_all.csv
 - `-o, --output`: Output CSV filename for deduplicated publications, default: figshare_articles.csv
 - `-O, --output-all`: Output CSV filename for all publications (with duplicates), default: figshare_articles_all.csv
 - `--force-refresh`: Force refresh data instead of loading from cache
+- `--rate-limit-delay`: Delay in seconds between Figshare API requests, default: 1.0
 - `--debug`: Enable debug logging
 
 ## Output Files
@@ -104,19 +108,34 @@ The application uses several cache files to minimize API calls:
 ## GitHub Actions Workflow
 
 The workflow runs automatically:
-- Weekly on Tuesdays at 02:30 UTC
-- On push to main branch
-- On pull requests
-- Can be manually triggered via workflow_dispatch
+- Weekly on Tuesdays at 02:30 UTC (uses cache by default)
+- On push to main branch (uses cache by default)
+- On pull requests (uses cache by default)
+- Can be manually triggered via workflow_dispatch with optional force refresh
+
+### Manual Workflow Trigger
+
+When manually triggering the workflow:
+1. Go to Actions → figshare-cache workflow
+2. Click "Run workflow"
+3. Choose whether to force refresh:
+   - **false** (default): Uses cached data, faster and respects rate limits
+   - **true**: Ignores cache and fetches fresh data from Figshare API
+
+**Note**: Force refresh should only be used when you need to ensure the latest data, as it makes many API requests and takes longer to complete.
 
 ### Workflow Steps
 
 1. Checkout repository
 2. Restore cache
 3. Install Python dependencies
-4. Run Figshare exporter
+4. Run Figshare exporter (with or without --force-refresh based on trigger)
 5. Publish results to Nexus repository
 6. Upload artifacts
+
+### Rate Limiting
+
+The script includes built-in rate limiting with a 1-second delay between API requests to avoid hitting Figshare API rate limits. This helps ensure reliable operation even with authenticated requests.
 
 ## Troubleshooting
 
