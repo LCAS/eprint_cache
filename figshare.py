@@ -5,12 +5,9 @@ from requests import get, post
 from json import loads
 from pprint import pformat
 import pandas as pd
-from functools import lru_cache, wraps
-from datetime import datetime
 
 from logging import getLogger, basicConfig, INFO, DEBUG
 import os
-from pickle import load, dump
 
 from flatten_dict import flatten
 
@@ -135,23 +132,8 @@ class FigShare:
         if self.rate_limit_delay > 0:
             self.logger.info(f"Rate limiting enabled: {self.rate_limit_delay} second delay between API requests")
 
-        # if cache file exist, load it
-        self.cache_file = "figshare_cache.pkl"
-        if os.path.exists(self.cache_file):
-            try:
-                with open(self.cache_file, "rb") as f:
-                    self.__cache = load(f)
-                self.logger.debug(f"Loaded cache from {self.cache_file} with {len(self.__cache)} entries")
-            except Exception as e:
-                self.logger.warning(f"Failed to load cache: {e}")
-                self.__cache = {}
-        else:
-            self.logger.info(f"No cache file found at {self.cache_file}")
-            self.__cache = {}
-
-    def save_cache(self):
-        with open(self.cache_file,"wb") as f:
-            dump(self.__cache, f)
+        # Use shelve for persistent caching
+        self.cache_file = "figshare_cache.db"
 
 
     def __init_params(self):
@@ -172,9 +154,12 @@ class FigShare:
 
     def __get(self, url, params=None, use_cache=True):
         hash_key = f"GET{url}?{params}"
-        if hash_key in self.__cache and use_cache:
-            return self.__cache[hash_key]
-        else:
+        
+        with shelve.open(self.cache_file) as cache:
+            if hash_key in cache and use_cache:
+                self.logger.info(f"Cache hit for GET {url}")
+                return cache[hash_key]
+            
             headers = { "Authorization": "token " + self.token } if self.token else {}
             response = get(self.base_url + url, headers=headers, params=params)
             
@@ -190,8 +175,8 @@ class FigShare:
             # Check if response is valid and contains JSON
             if response.ok and response.headers.get('Content-Type', '').lower().startswith('application/json') and response.text.strip():
                 result = response.json()
-                self.__cache[hash_key] = result
-                self.save_cache()
+                cache[hash_key] = result
+                self.logger.debug(f"Cached result for GET {url}")
                 return result
             else:
                 self.logger.warning(f"Received empty or invalid JSON response for GET {self.base_url + url} (status: {response.status_code})")
@@ -199,9 +184,12 @@ class FigShare:
 
     def __post(self, url, params=None, use_cache=True):
         hash_key = f"POST{url}?{params}"
-        if hash_key in self.__cache and use_cache:
-            return self.__cache[hash_key]
-        else:
+        
+        with shelve.open(self.cache_file) as cache:
+            if hash_key in cache and use_cache:
+                self.logger.debug(f"Cache hit for POST {url}")
+                return cache[hash_key]
+            
             headers = { "Authorization": "token " + self.token } if self.token else {}
             response = post(self.base_url + url, headers=headers, json=params)
             
@@ -217,8 +205,8 @@ class FigShare:
             # Check if response is valid and contains JSON
             if response.ok and response.headers.get('Content-Type', '').lower().startswith('application/json') and response.text.strip():
                 result = response.json()
-                self.__cache[hash_key] = result
-                self.save_cache()
+                cache[hash_key] = result
+                self.logger.debug(f"Cached result for POST {url}")
                 return result
             else:
                 self.logger.warning(f"Received empty or invalid JSON response for POST {self.base_url + url} (status: {response.status_code})")
