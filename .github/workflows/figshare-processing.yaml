@@ -2,8 +2,17 @@ name: figshare-cache
 
 on:
   workflow_dispatch:
+    inputs:
+      use_author_cache:
+        description: 'Use cached author data (instead of refreshing)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
   schedule:
-    - cron: "30 2 * * 2"
+    - cron: "30 */4 * * *"
   push:
     branches:
       - main
@@ -20,13 +29,18 @@ jobs:
           fetch-depth: 1
 
       - name: Use Cache in folder ./output
-        uses: actions/cache@v3
+        id: cache-restore-output
+        uses: actions/cache/restore@v5
         with:
           path: ./output
-          key: cache-files
+          key: cache-files-${{ github.run_id }}
+          restore-keys: |
+            cache-files-
 
       - name: Create output directory if it doesn't exist
-        run: mkdir -p output
+        run: |
+          mkdir -p output
+          find ./output 
 
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
 
@@ -46,11 +60,30 @@ jobs:
           pip install -r requirements-frozen.txt
           
       - name: Run figshare exporter
+        env:
+          FIGSHARE_TOKEN: ${{ secrets.FIGSHARE_TOKEN }}
         run: |
           set -e
           cd ./output
-          python ../figshare.py --force-refresh
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.use_author_cache }}" = "true" ]; then
+            echo "Running with --use-author-cache (manually triggered)"
+            python ../figshare.py --use-author-cache
+          else
+            echo "Running without cache (default behavior)"
+            python ../figshare.py
+          fi
 
+      - name: Save Cache from folder ./output
+        uses: actions/cache/save@v5
+        if: always()
+        with:
+          path: ./output
+          key: ${{ steps.cache-restore-output.outputs.cache-primary-key || 'cache-files' }}
+
+      - name: Generate publication statistics
+        run: |
+          cd ./output
+          python ../generate_stats.py --all-csv figshare_articles_all.csv --dedup-csv figshare_articles.csv >> $GITHUB_STEP_SUMMARY
 
       - name: Nexus Repo Publish bibtex
         if: ${{ github.event_name != 'pull_request' }}
@@ -97,6 +130,6 @@ jobs:
         with:
           name: outputs
           path: |
-            ./output/*.csv 
+            ./output/*.csv
             ./output/*.bib
           retention-days: 30

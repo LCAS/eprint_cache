@@ -5,12 +5,9 @@ from requests import get, post
 from json import loads
 from pprint import pformat
 import pandas as pd
-from functools import lru_cache, wraps
-from datetime import datetime
 
 from logging import getLogger, basicConfig, INFO, DEBUG
 import os
-from pickle import load, dump
 
 from flatten_dict import flatten
 
@@ -27,6 +24,7 @@ import re
 import argparse
 from datetime import datetime
 from difflib import SequenceMatcher
+import time
 
 
 basicConfig(level=INFO)
@@ -120,29 +118,28 @@ class doi2bib:
 
 
 class FigShare:
-    def __init__(self, page_size=100):
+    def __init__(self, page_size=100, rate_limit_delay=1.0, max_retries=5):
         self.logger = getLogger("FigShare")
         self.token = os.getenv('FIGSHARE_TOKEN')
-        self.page_size = page_size
-        self.base_url = "https://api.figshare.com/v2"
-
-        # if cache file exist, load it
-        self.cache_file = "figshare_cache.pkl"
-        if os.path.exists(self.cache_file):
-            try:
-                with open(self.cache_file, "rb") as f:
-                    self.__cache = load(f)
-                self.logger.debug(f"Loaded cache from {self.cache_file} with {len(self.__cache)} entries")
-            except Exception as e:
-                self.logger.warning(f"Failed to load cache: {e}")
-                self.__cache = {}
+        if self.token:
+            self.logger.info("Figshare API: Using authenticated requests")
         else:
-            self.logger.info(f"No cache file found at {self.cache_file}")
-            self.__cache = {}
+            self.logger.warning("Figshare API: No authentication token found - using anonymous requests (may hit rate limits or receive 403 errors)")
+        self.page_size = page_size
+        self.rate_limit_delay = rate_limit_delay
+        self.max_retries = max_retries
+        self.base_url = "https://api.figshare.com/v2"
+        
+        if self.rate_limit_delay > 0:
+            self.logger.info(f"Rate limiting enabled: {self.rate_limit_delay} second delay between API requests")
 
-    def save_cache(self):
-        with open(self.cache_file,"wb") as f:
-            dump(self.__cache, f)
+        # Use shelve for persistent caching
+        self.cache_file = "figshare_cache.db"
+
+        with shelve.open(self.cache_file) as cache:
+            self.logger.info(f"Figshare API: Using cache file {self.cache_file} with {len(cache.keys())} entries")
+            for key in list(cache.keys()):
+                self.logger.debug(f"  existing cache key: {key}")
 
 
     def __init_params(self):
@@ -150,35 +147,102 @@ class FigShare:
             "page_size": self.page_size
         }
 
-    def __get(self, url, params=None, use_cache=True):
-        hash_key = f"GET{url}?{params}"
-        if hash_key in self.__cache and use_cache:
-            return self.__cache[hash_key]
+    def __handle_403_error(self, url, method="GET", response_text=""):
+        """Handle 403 Forbidden errors with helpful messages"""
+        if not self.token:
+            self.logger.error(f"403 Forbidden for {method} {self.base_url + url}: "
+                            f"Authentication required. Set FIGSHARE_TOKEN environment variable. "
+                            f"See README.md for instructions.")
         else:
+            self.logger.error(f"403 Forbidden for {method} {self.base_url + url}: "
+                            f"Token may be invalid or lack permissions. "
+                            f"Check token in Figshare account settings.")
+        if response_text:
+            self.logger.error(f"Response text: {response_text}")
+
+    def __get(self, url, params=None, use_cache=True):
+        hash_key = f"GET{url}{'?' + str(params) if params else ''}"
+        
+        with shelve.open(self.cache_file) as cache:
+            if hash_key in cache and use_cache:
+                self.logger.info(f"Cache hit for GET {url}")
+                return cache[hash_key]
+            
             headers = { "Authorization": "token " + self.token } if self.token else {}
-            response = get(self.base_url + url, headers=headers, params=params)
+            
+            # Retry logic for 403 errors
+            for attempt in range(self.max_retries):
+                response = get(self.base_url + url, headers=headers, params=params)
+                
+                # Handle 403 Forbidden errors with retry logic
+                if response.status_code == 403:
+                    if attempt < self.max_retries - 1:
+                        # Exponential backoff: 1s, 2s, 4s, 8s, 16s
+                        wait_time = 2 ** attempt
+                        self.logger.warning(f"403 Forbidden for GET {url} (attempt {attempt + 1}/{self.max_retries}), retrying in {wait_time}s...")
+                        time.sleep(wait_time)
+                        continue
+                    else:
+                        # Final attempt failed, log error and return
+                        self.__handle_403_error(url, "GET", response.text)
+                        return {}
+                
+                # Success - break out of retry loop
+                break
+
+            # Rate limiting: sleep after each API request
+            if self.rate_limit_delay > 0:
+                time.sleep(self.rate_limit_delay)
+            
             # Check if response is valid and contains JSON
             if response.ok and response.headers.get('Content-Type', '').lower().startswith('application/json') and response.text.strip():
                 result = response.json()
-                self.__cache[hash_key] = result
-                self.save_cache()
+                cache[hash_key] = result
+                self.logger.debug(f"Cached result for GET {url}")
                 return result
             else:
                 self.logger.warning(f"Received empty or invalid JSON response for GET {self.base_url + url} (status: {response.status_code})")
                 return {}
 
     def __post(self, url, params=None, use_cache=True):
-        hash_key = f"POST{url}?{params}"
-        if hash_key in self.__cache and use_cache:
-            return self.__cache[hash_key]
-        else:
+        hash_key = f"POST{url}{'?' + str(params) if params else ''}"
+        
+        with shelve.open(self.cache_file) as cache:
+            if hash_key in cache and use_cache:
+                self.logger.debug(f"Cache hit for POST {url}")
+                return cache[hash_key]
+            
             headers = { "Authorization": "token " + self.token } if self.token else {}
-            response = post(self.base_url + url, headers=headers, json=params)
+            
+            # Retry logic for 403 errors
+            for attempt in range(self.max_retries):
+                response = post(self.base_url + url, headers=headers, json=params)
+                
+                # Handle 403 Forbidden errors with retry logic
+                if response.status_code == 403:
+                    if attempt < self.max_retries - 1:
+                        # Exponential backoff: 1s, 2s, 4s, 8s, 16s
+                        wait_time = 2 ** attempt
+                        self.logger.warning(f"403 Forbidden for POST {url} (attempt {attempt + 1}/{self.max_retries}), retrying in {wait_time}s...")
+                        time.sleep(wait_time)
+                        continue
+                    else:
+                        # Final attempt failed, log error and return
+                        self.__handle_403_error(url, "POST", response.text)
+                        return []
+                
+                # Success - break out of retry loop
+                break
+            
+            # Rate limiting: sleep after each API request
+            if self.rate_limit_delay > 0:
+                time.sleep(self.rate_limit_delay)
+            
             # Check if response is valid and contains JSON
             if response.ok and response.headers.get('Content-Type', '').lower().startswith('application/json') and response.text.strip():
                 result = response.json()
-                self.__cache[hash_key] = result
-                self.save_cache()
+                cache[hash_key] = result
+                self.logger.debug(f"Cached result for POST {url}")
                 return result
             else:
                 self.logger.warning(f"Received empty or invalid JSON response for POST {self.base_url + url} (status: {response.status_code})")
@@ -206,12 +270,12 @@ class FigShare:
         return self.__get(f"/articles/{article_id}", use_cache=use_cache)
 
 class Author:
-    def __init__(self, name, debug=False):
+    def __init__(self, name, debug=False, rate_limit_delay=1.0, max_retries=5):
         self.logger = getLogger("Author")
         if debug:
             self.logger.setLevel(DEBUG)
         self.name = name
-        self.fs = FigShare()
+        self.fs = FigShare(rate_limit_delay=rate_limit_delay, max_retries=max_retries)
         self.articles = {}
         self.public_html_prefix = "https://repository.lincoln.ac.uk"
         self.df = None
@@ -395,7 +459,7 @@ class Author:
     def retrieve(self, use_cache=True):
         self._retrieve_figshare(use_cache=use_cache)
         self._remove_non_repository()
-        self._retrieve_details()
+        self._retrieve_details(use_cache=True)
         self._custom_fields_to_dicts()
         self._flatten()
         self._create_dataframe()
@@ -441,9 +505,9 @@ def parse_args():
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
     parser.add_argument('-a', '--authors', nargs='+', 
-                        help='List of author names to process')
+                        help='List of author names to process (uses default list if not specified)')
     parser.add_argument('-f', '--authors-file', type=str,
-                        help='Path to file containing list of authors (one per line)')
+                        help='Path to file containing list of authors, one per line (uses default list if not specified)')
     parser.add_argument('-s', '--since', type=str, default='2021-01-01',
                         help='Process only publications since this date (YYYY-MM-DD)')
     parser.add_argument('-o', '--output', type=str, default='figshare_articles.csv',
@@ -452,8 +516,12 @@ def parse_args():
                         help='Output CSV filename for all publications by authors (includes duplicates when multiple authors per output)')
     # parser.add_argument('-r', '--recent-output', type=str, default='figshare_articles_recent.csv',
     #                     help='Output CSV filename for publications since specified date')
-    parser.add_argument('--force-refresh', action='store_true',
-                        help='Force refresh data instead of loading from cache')
+    parser.add_argument('--use-author-cache', action='store_true',
+                        help='Use cached author data instead of refreshing from API')
+    parser.add_argument('--rate-limit-delay', type=float, default=1.0,
+                        help='Delay in seconds between Figshare API requests (default: 1.0)')
+    parser.add_argument('--max-retries', type=int, default=1,
+                        help='Maximum number of retry attempts for 403 errors (default: 1)')
     parser.add_argument('--debug', action='store_true',
                         help='Enable debug logging')
     
@@ -514,15 +582,15 @@ def figshare_processing():
     for author_name in authors_list:
         logger.info(f"*** Processing {author_name}...")
         
-        authors[author_name] = Author(author_name, debug=args.debug)
+        authors[author_name] = Author(author_name, debug=args.debug, rate_limit_delay=args.rate_limit_delay, max_retries=args.max_retries)
         cache_exists = os.path.exists(f"{author_name}.db")
         
-        if cache_exists and not args.force_refresh:
+        if cache_exists and args.use_author_cache:
             logger.info(f"Loading cached data for {author_name}")
             authors[author_name].load()
         else:
             logger.info(f"Retrieving data for {author_name}")
-            authors[author_name].retrieve(not args.force_refresh)
+            authors[author_name].retrieve(args.use_author_cache)
             authors[author_name].save()
             
         if authors[author_name].df is not None:
