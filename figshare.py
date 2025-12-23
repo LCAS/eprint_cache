@@ -80,6 +80,9 @@ class doi2bib:
                 'Accept': 'application/x-bibtex',
             }
             response = requests.get(url, headers=header)
+            if not response.ok:
+                self.logger.warning(f"failed to get bibtex for {doi}, status code {response.status_code}")
+                return ""
             bibtext = response.text
             if bibtext:
                 self.logger.debug(f"bibtex for {doi} found, caching it")
