@@ -118,7 +118,7 @@ class doi2bib:
 
 
 class FigShare:
-    def __init__(self, page_size=100, rate_limit_delay=1.0):
+    def __init__(self, page_size=100, rate_limit_delay=1.0, max_retries=5):
         self.logger = getLogger("FigShare")
         self.token = os.getenv('FIGSHARE_TOKEN')
         if self.token:
@@ -127,6 +127,7 @@ class FigShare:
             self.logger.warning("Figshare API: No authentication token found - using anonymous requests (may hit rate limits or receive 403 errors)")
         self.page_size = page_size
         self.rate_limit_delay = rate_limit_delay
+        self.max_retries = max_retries
         self.base_url = "https://api.figshare.com/v2"
         
         if self.rate_limit_delay > 0:
@@ -141,7 +142,7 @@ class FigShare:
             "page_size": self.page_size
         }
 
-    def __handle_403_error(self, url, method="GET"):
+    def __handle_403_error(self, url, method="GET", response_text=""):
         """Handle 403 Forbidden errors with helpful messages"""
         if not self.token:
             self.logger.error(f"403 Forbidden for {method} {self.base_url + url}: "
@@ -151,6 +152,8 @@ class FigShare:
             self.logger.error(f"403 Forbidden for {method} {self.base_url + url}: "
                             f"Token may be invalid or lack permissions. "
                             f"Check token in Figshare account settings.")
+        if response_text:
+            self.logger.error(f"Response text: {response_text}")
 
     def __get(self, url, params=None, use_cache=True):
         hash_key = f"GET{url}?{params}"
@@ -161,16 +164,30 @@ class FigShare:
                 return cache[hash_key]
             
             headers = { "Authorization": "token " + self.token } if self.token else {}
-            response = get(self.base_url + url, headers=headers, params=params)
             
+            # Retry logic for 403 errors
+            for attempt in range(self.max_retries):
+                response = get(self.base_url + url, headers=headers, params=params)
+                
+                # Handle 403 Forbidden errors with retry logic
+                if response.status_code == 403:
+                    if attempt < self.max_retries - 1:
+                        # Exponential backoff: 1s, 2s, 4s, 8s, 16s
+                        wait_time = 2 ** attempt
+                        self.logger.warning(f"403 Forbidden for GET {url} (attempt {attempt + 1}/{self.max_retries}), retrying in {wait_time}s...")
+                        time.sleep(wait_time)
+                        continue
+                    else:
+                        # Final attempt failed, log error and return
+                        self.__handle_403_error(url, "GET", response.text)
+                        return {}
+                
+                # Success - break out of retry loop
+                break
+
             # Rate limiting: sleep after each API request
             if self.rate_limit_delay > 0:
                 time.sleep(self.rate_limit_delay)
-            
-            # Handle 403 Forbidden errors with helpful message
-            if response.status_code == 403:
-                self.__handle_403_error(url, "GET")
-                return {}
             
             # Check if response is valid and contains JSON
             if response.ok and response.headers.get('Content-Type', '').lower().startswith('application/json') and response.text.strip():
@@ -191,16 +208,30 @@ class FigShare:
                 return cache[hash_key]
             
             headers = { "Authorization": "token " + self.token } if self.token else {}
-            response = post(self.base_url + url, headers=headers, json=params)
+            
+            # Retry logic for 403 errors
+            for attempt in range(self.max_retries):
+                response = post(self.base_url + url, headers=headers, json=params)
+                
+                # Handle 403 Forbidden errors with retry logic
+                if response.status_code == 403:
+                    if attempt < self.max_retries - 1:
+                        # Exponential backoff: 1s, 2s, 4s, 8s, 16s
+                        wait_time = 2 ** attempt
+                        self.logger.warning(f"403 Forbidden for POST {url} (attempt {attempt + 1}/{self.max_retries}), retrying in {wait_time}s...")
+                        time.sleep(wait_time)
+                        continue
+                    else:
+                        # Final attempt failed, log error and return
+                        self.__handle_403_error(url, "POST", response.text)
+                        return []
+                
+                # Success - break out of retry loop
+                break
             
             # Rate limiting: sleep after each API request
             if self.rate_limit_delay > 0:
                 time.sleep(self.rate_limit_delay)
-            
-            # Handle 403 Forbidden errors with helpful message
-            if response.status_code == 403:
-                self.__handle_403_error(url, "POST")
-                return []
             
             # Check if response is valid and contains JSON
             if response.ok and response.headers.get('Content-Type', '').lower().startswith('application/json') and response.text.strip():
@@ -234,12 +265,12 @@ class FigShare:
         return self.__get(f"/articles/{article_id}", use_cache=use_cache)
 
 class Author:
-    def __init__(self, name, debug=False, rate_limit_delay=1.0):
+    def __init__(self, name, debug=False, rate_limit_delay=1.0, max_retries=5):
         self.logger = getLogger("Author")
         if debug:
             self.logger.setLevel(DEBUG)
         self.name = name
-        self.fs = FigShare(rate_limit_delay=rate_limit_delay)
+        self.fs = FigShare(rate_limit_delay=rate_limit_delay, max_retries=max_retries)
         self.articles = {}
         self.public_html_prefix = "https://repository.lincoln.ac.uk"
         self.df = None
@@ -484,6 +515,8 @@ def parse_args():
                         help='Use cached author data instead of refreshing from API')
     parser.add_argument('--rate-limit-delay', type=float, default=1.0,
                         help='Delay in seconds between Figshare API requests (default: 1.0)')
+    parser.add_argument('--max-retries', type=int, default=5,
+                        help='Maximum number of retry attempts for 403 errors (default: 5)')
     parser.add_argument('--debug', action='store_true',
                         help='Enable debug logging')
     
@@ -544,7 +577,7 @@ def figshare_processing():
     for author_name in authors_list:
         logger.info(f"*** Processing {author_name}...")
         
-        authors[author_name] = Author(author_name, debug=args.debug, rate_limit_delay=args.rate_limit_delay)
+        authors[author_name] = Author(author_name, debug=args.debug, rate_limit_delay=args.rate_limit_delay, max_retries=args.max_retries)
         cache_exists = os.path.exists(f"{author_name}.db")
         
         if cache_exists and args.use_author_cache:
