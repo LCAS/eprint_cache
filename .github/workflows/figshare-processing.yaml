@@ -12,7 +12,7 @@ on:
           - 'true'
           - 'false'
   schedule:
-    - cron: "30 2 * * 2"
+    - cron: "30 */4 * * *"
   push:
     branches:
       - main
