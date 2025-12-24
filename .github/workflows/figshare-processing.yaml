@@ -59,19 +59,26 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements-frozen.txt
           
-      - name: Run figshare exporter
+      - name: Run figshare fetch (Step 1 - Retrieve articles and create CSV)
         env:
           FIGSHARE_TOKEN: ${{ secrets.FIGSHARE_TOKEN }}
         run: |
           set -e
           cd ./output
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.use_author_cache }}" = "true" ]; then
-            echo "Running with --use-author-cache (manually triggered)"
-            python ../figshare.py --use-author-cache
+            echo "Running figshare_fetch.py with --use-author-cache (manually triggered)"
+            python ../figshare_fetch.py --use-author-cache
           else
-            echo "Running without cache (default behavior)"
-            python ../figshare.py --rate-limit-delay 3
+            echo "Running figshare_fetch.py without cache (default behavior)"
+            python ../figshare_fetch.py --rate-limit-delay 1 --max-retries 30
           fi
+      
+      - name: Run figshare bibtex (Step 2 - Generate bibtex from CSV)
+        run: |
+          set -e
+          cd ./output
+          echo "Running figshare_bibtex.py to generate bibtex from CSV"
+          python ../figshare_bibtex.py
 
       - name: Save Cache from folder ./output
         uses: actions/cache/save@v5
