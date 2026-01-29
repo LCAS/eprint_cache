@@ -35,7 +35,7 @@ def guess_doi_from_crossref(title, author):
         # Construct query URL for Crossref API
         base_url = "https://api.crossref.org/works"
         params = {
-            "query.query.bibliographic": f"{title}",
+            "query.bibliographic": f"{title}",
             "query.author": f"{author}",
             "sort": "relevance",
             "rows": 10,  # Get top 10 matches

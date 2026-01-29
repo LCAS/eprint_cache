@@ -1,4 +1,4 @@
-name: figshare-cache
+name: uoa11-figshare-cache
 
 on:
   workflow_dispatch:
@@ -11,14 +11,18 @@ on:
         options:
           - 'true'
           - 'false'
-  schedule:
-    - cron: "30 */12 * * *"
-  push:
-    branches:
-      - main
+  # schedule:
+  #   - cron: "30 */12 * * *"
+  # push:
+  #   branches:
+  #     - main
   pull_request:
     branches:
       - main
+
+concurrency:
+  group: uoa11-figshare-processing-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   update-cache:
@@ -33,9 +37,9 @@ jobs:
         uses: actions/cache/restore@v5
         with:
           path: ./output
-          key: cache-files-${{ github.run_id }}
+          key: uoa11-cache-files-${{ github.run_id }}
           restore-keys: |
-            cache-files-
+            uoa11-cache-files-
 
       - name: Create output directory if it doesn't exist
         run: |
@@ -67,10 +71,10 @@ jobs:
           cd ./output
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.use_author_cache }}" = "true" ]; then
             echo "Running figshare_fetch.py with --use-author-cache (manually triggered)"
-            python ../figshare_fetch.py --use-author-cache
+            python ../figshare_fetch.py -f ../uoa11-authors.txt --use-author-cache --max-retries 30 --rate-limit-delay 0.1 -o uoa11-figshare_articles.csv -O uoa11-figshare_articles_all.csv
           else
             echo "Running figshare_fetch.py without cache (default behavior)"
-            python ../figshare_fetch.py --rate-limit-delay 1 --max-retries 30
+            python ../figshare_fetch.py -f ../uoa11-authors.txt --rate-limit-delay 0.1 --max-retries 30 -o uoa11-figshare_articles.csv -O uoa11-figshare_articles_all.csv
           fi
       
       - name: Run figshare bibtex (Step 2 - Generate bibtex from CSV)
@@ -78,18 +82,19 @@ jobs:
           set -e
           cd ./output
           echo "Running figshare_bibtex.py to generate bibtex from CSV"
-          python ../figshare_bibtex.py
+          python ../figshare_bibtex.py -i uoa11-figshare_articles.csv -o uoa11.bib
 
       - name: Save Cache from folder ./output
+        if: always()
         uses: actions/cache/save@v5
         with:
           path: ./output
-          key: ${{ steps.cache-restore-output.outputs.cache-primary-key || 'cache-files' }}
+          key: ${{ steps.cache-restore-output.outputs.cache-primary-key || 'uoa11-cache-files' }}
 
       - name: Generate publication statistics
         run: |
           cd ./output
-          python ../generate_stats.py --all-csv figshare_articles_all.csv --dedup-csv figshare_articles.csv >> $GITHUB_STEP_SUMMARY
+          python ../generate_stats.py --all-csv uoa11-figshare_articles_all.csv --dedup-csv uoa11-figshare_articles.csv >> $GITHUB_STEP_SUMMARY
 
       - name: Nexus Repo Publish bibtex
         if: ${{ github.event_name != 'pull_request' }}
@@ -101,8 +106,8 @@ jobs:
           format: raw
           repository: misc
           coordinates: directory=bibtex
-          assets: filename=lcas.bib
-          filename: ./output/lcas.bib
+          assets: filename=uoa11.bib
+          filename: ./output/uoa11.bib
 
       - name: Nexus Repo Publish figshare articles without duplicates CSV
         if: ${{ github.event_name != 'pull_request' }}
@@ -114,8 +119,8 @@ jobs:
           format: raw
           repository: misc
           coordinates: directory=bibtex
-          assets: filename=figshare_articles.csv
-          filename: ./output/figshare_articles.csv
+          assets: filename=uoa11-figshare_articles.csv
+          filename: ./output/uoa11-figshare_articles.csv
 
       - name: Nexus Repo Publish all figshare articles CSV
         if: ${{ github.event_name != 'pull_request' }}
@@ -127,8 +132,8 @@ jobs:
           format: raw
           repository: misc
           coordinates: directory=bibtex
-          assets: filename=figshare_articles_all.csv
-          filename: ./output/figshare_articles_all.csv        
+          assets: filename=uoa11-figshare_articles_all.csv
+          filename: ./output/uoa11-figshare_articles_all.csv        
 
       - name: Upload artifacts
         if: always()
