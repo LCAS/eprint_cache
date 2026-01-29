@@ -64,6 +64,7 @@ class doi2bib:
                 self.logger.warning(f"failed to get bibtex for {doi}, status code {response.status_code}")
                 return ""
             bibtext = response.text
+
             if bibtext:
                 self.logger.debug(f"bibtex for {doi} found, caching it")
                 cache[doi] = bibtext
@@ -84,6 +85,17 @@ class doi2bib:
         parser.ignore_nonstandard_types = False
         bibdb = bibtexparser.loads(bibtext, parser)
         entry, = bibdb.entries
+        
+        # Correct @inbook entries that should be @inproceedings
+        # Conference papers often have booktitle but no chapter field
+        if entry.get('ENTRYTYPE', '').lower() == 'inbook':
+            has_booktitle = 'booktitle' in entry
+            has_chapter = 'chapter' in entry
+            # If it has a booktitle but no chapter, it's likely a proceedings paper
+            if has_booktitle and not has_chapter:
+                self.logger.info(f"Converting @inbook to @inproceedings for {doi}")
+                entry['ENTRYTYPE'] = 'inproceedings'
+        
         quoted_doi = urllib.request.quote(doi)
         entry['link'] = 'https://doi.org/{}'.format(quoted_doi)
         if 'author' in entry:
