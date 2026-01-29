@@ -1,4 +1,4 @@
-name: figshare-cache
+name: uoa11-figshare-cache
 
 on:
   workflow_dispatch:
