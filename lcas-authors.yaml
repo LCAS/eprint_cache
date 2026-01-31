@@ -1,0 +1,37 @@
+# the institution ID is used to ensure only authors from a specific institution are included
+
+filters:
+  is_active: true
+  is_public: true
+  # filter by group ID (set to None to disable)
+  group_id: 51958
+  instituion_id: 1068
+
+authors:
+  - name: "Marc Hanheide"
+    orcid: "0000-0001-7728-1849"
+    user_id: 17159320
+  - name: "Riccardo Polvara"
+    user_id: 17165437
+  - name: "Marcello Calisti"
+  - name: "Grzegorz Cielniak"
+  - name: "Simon Parsons"
+  - name: "Elizabeth Sklar"
+  - name: "Paul Baxter"
+  - name: "Petra Bosilj"
+  - name: "Heriberto Cuayahuitl"
+  - name: "Gautham Das"
+  - name: "Francesco Del Duchetto"
+  - name: "Charles Fox"
+  - name: "Leonardo Guevara"
+  - name: "Helen Harman"
+  - name: "Mohammed Al-Khafajiy"
+  - name: "Alexandr Klimchik"
+  - name: "Athanasios Polydoros"
+  - name: "Zied Tayeb"
+  - name: "Sepehr Maleki"
+  - name: "Junfeng Gao"
+  - name: "Tom Duckett"
+  - name: "Mini Rai"
+  - name: "Amir Ghalamzan Esfahani"
+

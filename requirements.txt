@@ -5,6 +5,7 @@ flatten-dict
 networkx
 numpy
 pandas
+PyYAML
 requests
 pip
 aiohttp

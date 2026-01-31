@@ -1,0 +1,46 @@
+# the institution ID is used to ensure only authors from a specific institution are included
+
+filters:
+  is_active: true
+  is_public: true
+  # filter by group ID (set to None to disable)
+  instituion_id: 1068
+
+authors:
+  - name: "Paul Baxter"
+  - name: "Leonardo Guevara"
+  - name: "Miao Yu"
+  - name: "Francesco Del Duchetto"
+  - name: "Alexandr Klimchik"
+  - name: "Abimbola Sangodoyin"
+  - name: "Athanasios Polydoros"
+  - name: "Heriberto Cuayahuitl"
+  - name: "Fiona Strens"
+  - name: "Gautham Das"
+  - name: "Olivier Szymanezyk"
+  - name: "John Atanbori"
+  - name: "Hamna Aslam"
+  - name: "Themis Papaioannou"
+  - name: "Bashir Al-Diri"
+  - name: "Khaled Bachour"
+  - name: "Riccardo Polvara"
+  - name: "Ionut Moraru"
+  - name: "Renata Ntelia"
+  - name: "Charles Fox"
+  - name: "Simon Parsons"
+  - name: "Mohammed Al-Khafajiy"
+  - name: "James Brown"
+    orcid: "0000-0001-7636-4554"
+  - name: "Mark Doughty"
+  - name: "Christos Frantzidis"
+  - name: "Wenting Duan"
+  - name: "Yvonne James"
+  - name: "Kabiru Maiyama"
+  - name: "Mamatha Thota"
+  - name: "Patrick Dickinson"
+  - name: "Helen Harman"
+  - name: "Marc Hanheide"
+    orcid: "0000-0001-7728-1849"
+  - name: "Elizabeth Sklar"
+  - name: "Grzegorz Cielniak"
+  - name: "James Brown" 

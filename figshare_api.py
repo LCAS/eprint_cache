@@ -139,8 +139,80 @@ class FigShare:
                 self.logger.warning(f"Received empty or invalid JSON response for POST {self.base_url + url} (status: {response.status_code})")
                 return []
 
+    def articles_by_author(self, author_name, user_id=None, institution_id=None, use_cache=True):
+        """Search for articles by author name with optional institution filtering.
         
+        Uses the Figshare search API with the :author: search operator and optional
+        institution parameter. Note: Figshare's search API does not support searching
+        by author_id directly, so we use the author name for search and apply
+        institution filtering to narrow results.
+        
+        Args:
+            author_name: The author's full name to search for (required)
+            user_id: Figshare user ID (optional, used only for logging/reference)
+            institution_id: Institution ID to filter articles (optional, recommended
+                          for more precise results when available)
+            use_cache: Whether to use cached results (default: True)
+        
+        Returns:
+            List of article dictionaries matching the search criteria. Each article
+            contains metadata like id, title, authors, DOI, etc.
+        
+        Example:
+            articles = fs.articles_by_author(
+                "Marc Hanheide", 
+                user_id=17159320,
+                institution_id=1068
+            )
+        """
+        params = self.__init_params()
+        
+        # Use :author: search operator with author name
+        # This is the only reliable way to search by author in Figshare API
+        params["search_for"] = f':author: "{author_name}"'
+        
+        # Add institution filter as direct parameter if provided
+        # This significantly narrows results when multiple authors share the same name
+        if institution_id:
+            params["institution"] = institution_id
+            self.logger.info(f"Filtering by institution_id: {institution_id}")
+        
+        # Paginate through all results
+        page = 1
+        articles = []
+        while True:
+            params["page"] = page
+            if user_id:
+                self.logger.info(f"retrieving page {page} for {author_name} (user_id: {user_id})")
+            else:
+                self.logger.info(f"retrieving page {page} for {author_name}")
+            current_page_articles = self.__post("/articles/search", params=params, use_cache=use_cache)
+            page += 1
+            if len(current_page_articles) == 0:
+                break
+            articles += current_page_articles
+        
+        if user_id:
+            self.logger.info(f"found {len(articles)} articles for {author_name} (user_id: {user_id})")
+        else:
+            self.logger.info(f"found {len(articles)} articles for {author_name}")
+
+        return articles
+    
     def articles_by_user_name(self, user_name, use_cache=True):
+        """Search for articles by author name without additional filtering.
+        
+        This is a simpler version of articles_by_author() without institution
+        filtering or user_id tracking. Use articles_by_author() for more precise
+        searches when institution_id is available.
+        
+        Args:
+            user_name: The author's full name to search for
+            use_cache: Whether to use cached results (default: True)
+        
+        Returns:
+            List of article dictionaries matching the author name
+        """
         params = self.__init_params()
         params["search_for"] = f':author: \"{user_name}\"'
         page = 1
@@ -159,3 +231,17 @@ class FigShare:
     
     def get_article(self, article_id, use_cache=True):
         return self.__get(f"/articles/{article_id}", use_cache=use_cache)
+    
+    def search_authors(self, params, use_cache=True):
+        """Search for authors using the Figshare account API.
+        
+        Args:
+            params: Dictionary with search parameters (search, orcid, is_active, 
+                   is_public, group_id, institution_id)
+            use_cache: Whether to use cached results
+        
+        Returns:
+            List of author dictionaries matching the search criteria
+        """
+        self.logger.info(f"Searching for authors with params: {params}")
+        return self.__post("/account/authors/search", params=params, use_cache=use_cache)

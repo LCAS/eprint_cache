@@ -71,10 +71,10 @@ jobs:
           cd ./output
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.use_author_cache }}" = "true" ]; then
             echo "Running figshare_fetch.py with --use-author-cache (manually triggered)"
-            python ../figshare_fetch.py -f ../uoa11-authors.txt --use-author-cache --max-retries 30 --rate-limit-delay 0.1 -o uoa11-figshare_articles.csv -O uoa11-figshare_articles_all.csv
+            python ../figshare_fetch.py -c ../uoa11-authors.yaml --use-author-cache --max-retries 30 --rate-limit-delay 0.1 -o uoa11-figshare_articles.csv -O uoa11-figshare_articles_all.csv
           else
             echo "Running figshare_fetch.py without cache (default behavior)"
-            python ../figshare_fetch.py -f ../uoa11-authors.txt --rate-limit-delay 0.1 --max-retries 30 -o uoa11-figshare_articles.csv -O uoa11-figshare_articles_all.csv
+            python ../figshare_fetch.py -c ../uoa11-authors.yaml --rate-limit-delay 0.1 --max-retries 30 -o uoa11-figshare_articles.csv -O uoa11-figshare_articles_all.csv
           fi
       
       - name: Run figshare bibtex (Step 2 - Generate bibtex from CSV)

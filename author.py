@@ -13,17 +13,42 @@ from doi_utils import guess_doi_from_crossref
 
 
 class Author:
-    def __init__(self, name, debug=False, rate_limit_delay=1.0, max_retries=5):
+    """Represents an author and manages their Figshare article collection.
+    
+    This class handles retrieving, processing, and caching article metadata for
+    a specific author from the Figshare repository.
+    """
+    
+    def __init__(self, name, user_id=None, institution_id=None, orcid=None, debug=False, rate_limit_delay=1.0, max_retries=5):
+        """Initialize an Author instance.
+        
+        Args:
+            name: Author's full name (required)
+            user_id: Figshare user ID (optional, improves search accuracy)
+            institution_id: Institution ID for filtering articles (optional, recommended)
+            orcid: Author's ORCID identifier (optional, for reference)
+            debug: Enable debug logging (default: False)
+            rate_limit_delay: Delay in seconds between API requests (default: 1.0)
+            max_retries: Maximum retry attempts for failed API calls (default: 5)
+        """
         self.logger = getLogger("Author")
         if debug:
             self.logger.setLevel(DEBUG)
         self.name = name
+        self.user_id = user_id
+        self.institution_id = institution_id
+        self.orcid = orcid
         self.fs = FigShare(rate_limit_delay=rate_limit_delay, max_retries=max_retries)
         self.articles = {}
         self.public_html_prefix = "https://repository.lincoln.ac.uk"
         self.df = None
 
     def save(self, filename=None):
+        """Save author's articles and dataframe to a persistent cache file.
+        
+        Args:
+            filename: Path to cache file (default: '{author_name}.db')
+        """
         if filename is None:
             filename = f"{self.name}.db"
         with shelve.open(filename) as db:
@@ -31,6 +56,11 @@ class Author:
             db['df'] = self.df
 
     def load(self, filename=None):
+        """Load author's articles and dataframe from a persistent cache file.
+        
+        Args:
+            filename: Path to cache file (default: '{author_name}.db')
+        """
         if filename is None:
             filename = f"{self.name}.db"
         with shelve.open(filename) as db:
@@ -39,12 +69,47 @@ class Author:
     
 
     def _retrieve_figshare(self, use_cache=True):
+        """Retrieve articles for this author from Figshare.
+        
+        Uses the most precise search method available based on the author metadata:
+        - If user_id and/or institution_id are available, uses articles_by_author()
+          with filtering for more accurate results
+        - Otherwise, falls back to simple name-based search
+        
+        Args:
+            use_cache: Whether to use cached API results (default: True)
+        """
         self.logger.info(f"retrieving articles for {self.name}")
-        self.articles = self.fs.articles_by_user_name(self.name, use_cache=use_cache)
+        
+        # Use enhanced search with user_id tracking and institution filtering when available
+        if self.user_id or self.institution_id:
+            if self.user_id and self.institution_id:
+                self.logger.info(f"Using enhanced search for user_id {self.user_id} with institution_id {self.institution_id}")
+            elif self.user_id:
+                self.logger.info(f"Using enhanced search for user_id {self.user_id}")
+            else:
+                self.logger.info(f"Using enhanced search with institution_id {self.institution_id}")
+            
+            self.articles = self.fs.articles_by_author(
+                self.name,
+                user_id=self.user_id,
+                institution_id=self.institution_id,
+                use_cache=use_cache
+            )
+        else:
+            self.logger.info(f"Using basic name search (no user_id or institution_id available)") 
+            self.articles = self.fs.articles_by_user_name(self.name, use_cache=use_cache)
 
         self.logger.info(f"found {len(self.articles)} articles for {self.name}")
 
     def _retrieve_details(self, use_cache=True):
+        """Retrieve detailed metadata for each article.
+        
+        Fetches full article details including custom fields, tags, categories, etc.
+        
+        Args:
+            use_cache: Whether to use cached API results (default: True)
+        """
         for article in self.articles:
             self.logger.info(f"retrieving details for article {article['id']}")
             article['details'] = self.fs.get_article(article['id'], use_cache=use_cache)
