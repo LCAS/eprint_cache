@@ -4,7 +4,7 @@ filters:
   is_active: true
   is_public: true
   # filter by group ID (set to None to disable)
-  group_id: 51958
+  #group_id: 51958
   instituion_id: 1068
 
 authors:
