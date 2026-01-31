@@ -1,8 +1,8 @@
 # the institution ID is used to ensure only authors from a specific institution are included
 
 filters:
-  is_active: true
-  is_public: true
+  # is_active: true
+  # is_public: true
   # filter by group ID (set to None to disable)
   instituion_id: 1068
 
