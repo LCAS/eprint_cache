@@ -13,9 +13,11 @@ This script:
 import pandas as pd
 import os
 import argparse
+import yaml
 from logging import getLogger, basicConfig, INFO, DEBUG
 
 from author import Author
+from figshare_api import FigShare
 
 basicConfig(level=INFO)
 logger = getLogger(__name__)
@@ -24,13 +26,11 @@ logger = getLogger(__name__)
 def parse_args():
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
-        description="Fetch publications from FigShare repository for specified authors and create CSV files.",
+        description="Fetch publications from FigShare repository for authors specified in YAML file and create CSV files.",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
-    parser.add_argument('-a', '--authors', nargs='+', 
-                        help='List of author names to process (uses default list if not specified)')
-    parser.add_argument('-f', '--authors-file', type=str,
-                        help='Path to file containing list of authors, one per line (uses default list if not specified)')
+    parser.add_argument('-c', '--config', type=str, required=True,
+                        help='Path to YAML configuration file containing authors and filters (required)')
     parser.add_argument('-o', '--output', type=str, default='figshare_articles.csv',
                         help='Output CSV filename for publications, without duplicates')
     parser.add_argument('-O', '--output-all', type=str, default='figshare_articles_all.csv',
@@ -47,64 +47,183 @@ def parse_args():
     return parser.parse_args()
 
 
-def load_authors_from_file(filename):
-    """Load author names from a file, one per line."""
+def load_yaml_config(filename):
+    """Load YAML configuration file containing authors and filters."""
     try:
         with open(filename, 'r') as f:
-            return [line.strip() for line in f if line.strip()]
+            config = yaml.safe_load(f)
+            if not config:
+                logger.error(f"Empty YAML configuration file: {filename}")
+                return None
+            if 'authors' not in config:
+                logger.error(f"YAML file must contain 'authors' section")
+                return None
+            return config
+    except FileNotFoundError:
+        logger.error(f"Configuration file not found: {filename}")
+        return None
+    except yaml.YAMLError as e:
+        logger.error(f"Error parsing YAML file {filename}: {e}")
+        return None
     except Exception as e:
-        logger.error(f"Error loading authors from file {filename}: {e}")
-        return []
+        logger.error(f"Error loading configuration from file {filename}: {e}")
+        return None
+
+
+def search_author(fs, name=None, orcid=None, user_id=None, filters=None):
+    """Search for an author using Figshare API.
+    
+    Args:
+        fs: FigShare API instance
+        name: Author name (optional if user_id or orcid provided)
+        orcid: Author ORCID (optional)
+        user_id: Author user_id (optional, takes precedence)
+        filters: Dictionary of filter criteria (is_active, is_public, group_id, institution_id)
+    
+    Returns:
+        Dictionary with 'id', 'full_name', 'orcid_id', or None if not found
+    """
+    # If user_id is provided, we don't need to search
+    if user_id:
+        logger.info(f"Using provided user_id: {user_id} for {name}")
+        return {'id': user_id, 'full_name': name, 'orcid_id': orcid}
+    
+    # Build search parameters
+    search_params = {}
+    
+    # Add search criteria (orcid takes precedence over name)
+    if orcid:
+        search_params['orcid'] = orcid
+        logger.info(f"Searching for author by ORCID: {orcid}")
+    elif name:
+        search_params['search_for'] = name
+        logger.info(f"Searching for author by name: {name}")
+    else:
+        logger.error("At least one of name, orcid, or user_id must be provided")
+        return None
+    
+    # Add optional filters
+    if filters:
+        if 'is_active' in filters and filters['is_active'] is not None:
+            search_params['is_active'] = filters['is_active']
+        if 'is_public' in filters and filters['is_public'] is not None:
+            search_params['is_public'] = filters['is_public']
+        if 'group_id' in filters and filters['group_id'] is not None:
+            search_params['group_id'] = filters['group_id']
+        # Handle both 'institution_id' (correct spelling) and 'instituion_id' (typo in YAML)
+        institution_id = filters.get('institution_id') or filters.get('instituion_id')
+        if institution_id is not None:
+            search_params['institution_id'] = institution_id
+    
+    # Search for authors
+    results = fs.search_authors(search_params)
+    
+    if not results:
+        logger.error(f"No author found for {name if name else orcid}")
+        return None
+    
+    if len(results) > 1:
+        logger.warning(f"Multiple authors found ({len(results)}) for {name if name else orcid}. Using first result: {results[0].get('full_name', 'Unknown')}")
+    else:
+        logger.info(f"Found author: {results[0].get('full_name', 'Unknown')} (id: {results[0].get('id', 'Unknown')})")
+    
+    return results[0]
 
 
 def figshare_fetch():
     """
-    Fetch FigShare publications for specified authors and create CSV files.
+    Fetch FigShare publications for authors specified in YAML configuration and create CSV files.
     
     This function:
-    1. Retrieves publication data for each author from FigShare
-    2. Combines all publications into a single dataset
-    3. Removes duplicates while preserving author information
-    4. Exports results to CSV files (without bibtex generation)
+    1. Loads author configuration from YAML file
+    2. Searches for authors using Figshare API with optional filters
+    3. Retrieves publication data for each author from FigShare
+    4. Combines all publications into a single dataset
+    5. Removes duplicates while preserving author information
+    6. Exports results to CSV files (without bibtex generation)
     """
     args = parse_args()
     
     if args.debug:
         logger.setLevel(DEBUG)
     
-    # Get list of authors
-    authors_list = []
-    if args.authors:
-        authors_list.extend(args.authors)
-    if args.authors_file:
-        authors_list.extend(load_authors_from_file(args.authors_file))
+    # Load YAML configuration
+    config = load_yaml_config(args.config)
+    if not config:
+        logger.error("Failed to load configuration file. Exiting.")
+        return
     
-    # Use default authors if none specified
+    authors_config = config.get('authors', [])
+    filters = config.get('filters', {})
+    
+    if not authors_config:
+        logger.error("No authors defined in configuration file. Exiting.")
+        return
+    
+    logger.info(f"Loaded configuration with {len(authors_config)} authors")
+    if filters:
+        logger.info(f"Applied filters: {filters}")
+    
+    # Initialize FigShare API
+    fs = FigShare(rate_limit_delay=args.rate_limit_delay, max_retries=args.max_retries)
+    
+    # Resolve authors using Figshare API
+    authors_list = []
+    for author_config in authors_config:
+        name = author_config.get('name')
+        if not name:
+            logger.warning("Author entry missing 'name' field, skipping")
+            continue
+        
+        orcid = author_config.get('orcid')
+        user_id = author_config.get('user_id')
+        
+        # Search for author
+        author_info = search_author(fs, name=name, orcid=orcid, user_id=user_id, filters=filters)
+        
+        if author_info:
+            # Use the resolved name from Figshare or fall back to config name
+            resolved_name = author_info.get('full_name', name)
+            # Store author metadata for precise article searching
+            author_metadata = {
+                'name': resolved_name,
+                'user_id': author_info.get('id'),
+                'institution_id': author_info.get('institution_id'),
+                'orcid': author_info.get('orcid_id')
+            }
+            authors_list.append(author_metadata)
+            logger.info(f"Resolved author: {resolved_name} (id: {author_info.get('id')})")
+        else:
+            logger.warning(f"Could not resolve author: {name}, skipping")
+    
     if not authors_list:
-        authors_list = [
-            "Marc Hanheide", "Marcello Calisti", "Grzegorz Cielniak", 
-            "Simon Parsons", "Elizabeth Sklar", "Paul Baxter", 
-            "Petra Bosilj", "Heriberto Cuayahuitl", "Gautham Das", 
-            "Francesco Del Duchetto", "Charles Fox", "Leonardo Guevara",
-            "Helen Harman", "Mohammed Al-Khafajiy", "Alexandr Klimchik", 
-            "Riccardo Polvara", "Athanasios Polydoros", "Zied Tayeb", 
-            "Sepehr Maleki", "Junfeng Gao", "Tom Duckett", "Mini Rai", 
-            "Amir Ghalamzan Esfahani"
-        ]
-        logger.info(f"Using default list of {len(authors_list)} authors")
-    else:
-        logger.info(f"Processing {len(authors_list)} authors from command line/file")
+        logger.error("No authors could be resolved. Exiting.")
+        return
+    
+    logger.info(f"Processing {len(authors_list)} resolved authors")
 
     authors = {}
     df_all = None
     authors_to_process = []  # Track authors that need detail retrieval
     
+    # Get institution_id from filters for article search
+    institution_id = filters.get('institution_id') or filters.get('instituion_id')
+    
     # First pass: Initialize authors and retrieve basic figshare data
     logger.info("=== Phase 1: Retrieving basic article data from Figshare ===")
-    for author_name in authors_list:
+    for author_metadata in authors_list:
+        author_name = author_metadata['name']
         logger.info(f"*** Processing {author_name}...")
         
-        authors[author_name] = Author(author_name, debug=args.debug, rate_limit_delay=args.rate_limit_delay, max_retries=args.max_retries)
+        authors[author_name] = Author(
+            author_metadata['name'],
+            user_id=author_metadata['user_id'],
+            institution_id=institution_id,
+            orcid=author_metadata['orcid'],
+            debug=args.debug,
+            rate_limit_delay=args.rate_limit_delay,
+            max_retries=args.max_retries
+        )
         cache_exists = os.path.exists(f"{author_name}.db")
         
         if cache_exists and args.use_author_cache:
@@ -130,7 +249,8 @@ def figshare_fetch():
     
     # Third pass: Aggregate dataframes and save individual CSVs
     logger.info("=== Phase 3: Aggregating and saving results ===")
-    for author_name in authors_list:
+    for author_metadata in authors_list:
+        author_name = author_metadata["name"]
         if authors[author_name].df is not None:
             if df_all is None:
                 df_all = authors[author_name].df
