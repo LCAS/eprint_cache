@@ -115,6 +115,8 @@ class Author:
             # Remove any keys containing slashes to avoid conflicts during flattening
             # These keys can conflict with nested paths created by the 'path' reducer
             keys_to_remove = [k for k in article.keys() if '/' in k]
+            if keys_to_remove:
+                self.logger.debug(f"Removing keys with slashes from article {article['id']}: {keys_to_remove}")
             for k in keys_to_remove:
                 del article[k]
             article['details'] = self.fs.get_article(article['id'], use_cache=use_cache)
