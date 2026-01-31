@@ -190,7 +190,10 @@ class Author:
         self.logger.info(f"flattening article dicts for {self.name}")
         new_articles = []
         for a in self.articles:
-            new_articles.append(flatten(a, reducer='path'))
+            try:
+                new_articles.append(flatten(a, reducer='path'))
+            except Exception as e:
+                self.logger.warning(f"Failed to flatten article {a}: {e}")
         self.articles = new_articles
 
     def retrieve(self, use_cache=True):
@@ -210,18 +213,27 @@ class Author:
         self.df = pd.DataFrame.from_dict(self.articles)
         # add column with author name
         self.df['author'] = self.name
+        
         # add column with online date (as datetime object)
-        self.df['online_date'] = pd.to_datetime(self.df['timeline/firstOnline'], utc=True)
+        if 'timeline/firstOnline' in self.df.columns:
+            self.df['online_date'] = pd.to_datetime(self.df['timeline/firstOnline'], utc=True)
+        else:
+            self.logger.warning(f"'timeline/firstOnline' field not found, setting online_date to NaT")
+            self.df['online_date'] = pd.NaT
+        
         # add column with online year
         self.df['online_year'] = self.df['online_date'].apply(
-            lambda x: x.year
+            lambda x: x.year if pd.notna(x) else None
         )
+        
         # add column with external DOI, parsed from custom_fields
-        self.df['External DOI'] = self.df['details/custom_fields/External DOI'].apply(
-            lambda x: re.sub(r'^(?:https?://doi\.org/|doi:)', '', x[0], flags=re.IGNORECASE).replace('doi:','')
-            if isinstance(x, list) and len(x) > 0 else None
-        )
-
-
+        if 'details/custom_fields/External DOI' in self.df.columns:
+            self.df['External DOI'] = self.df['details/custom_fields/External DOI'].apply(
+                lambda x: re.sub(r'^(?:https?://doi\.org/|doi:)', '', x[0], flags=re.IGNORECASE).replace('doi:','')
+                if isinstance(x, list) and len(x) > 0 else None
+            )
+        else:
+            self.logger.warning(f"'details/custom_fields/External DOI' field not found, setting External DOI to None")
+            self.df['External DOI'] = None
 
         return self.df
