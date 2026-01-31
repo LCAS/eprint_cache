@@ -249,7 +249,8 @@ def figshare_fetch():
     
     # Third pass: Aggregate dataframes and save individual CSVs
     logger.info("=== Phase 3: Aggregating and saving results ===")
-    for author_name in authors_list:
+    for author_metadata in authors_list:
+        author_name = author_metadata["name"]
         if authors[author_name].df is not None:
             if df_all is None:
                 df_all = authors[author_name].df
