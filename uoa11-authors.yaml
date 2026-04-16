@@ -7,39 +7,86 @@ filters:
   instituion_id: 1068
 
 authors:
+  # Set with_uol: false for authors no longer employed by the institution.
   - name: "Paul Baxter"
+    with_uol: true
   - name: "Leonardo Guevara"
+    with_uol: true
   - name: "Miao Yu"
+    with_uol: true
   - name: "Francesco Del Duchetto"
+    with_uol: true
   - name: "Alexandr Klimchik"
+    with_uol: true
   - name: "Abimbola Sangodoyin"
+    with_uol: true
   - name: "Athanasios Polydoros"
+    with_uol: true
   - name: "Heriberto Cuayahuitl"
+    with_uol: true
   - name: "Fiona Strens"
+    with_uol: true
   - name: "Gautham Das"
+    with_uol: true
   - name: "Olivier Szymanezyk"
+    with_uol: true
   - name: "John Atanbori"
+    with_uol: true
   - name: "Hamna Aslam"
+    with_uol: true
   - name: "Themis Papaioannou"
+    with_uol: true
   - name: "Bashir Al-Diri"
+    with_uol: true
   - name: "Khaled Bachour"
+    with_uol: true
   - name: "Riccardo Polvara"
+    with_uol: true
   - name: "Ionut Moraru"
+    with_uol: true
   - name: "Renata Ntelia"
+    with_uol: true
   - name: "Charles Fox"
+    with_uol: true
   - name: "Simon Parsons"
+    with_uol: true
   - name: "Mohammed Al-Khafajiy"
-  - name: "James Brown"
+    with_uol: true
+  - name: "James M Brown"
     orcid: "0000-0001-7636-4554"
+    with_uol: true
   - name: "Mark Doughty"
+    with_uol: true
   - name: "Christos Frantzidis"
+    with_uol: true
   - name: "Wenting Duan"
+    with_uol: true
   - name: "Yvonne James"
+    with_uol: true
   - name: "Kabiru Maiyama"
+    with_uol: true
   - name: "Mamatha Thota"
+    with_uol: true
   - name: "Patrick Dickinson"
+    with_uol: true
   - name: "Helen Harman"
+    with_uol: true
   - name: "Marc Hanheide"
     orcid: "0000-0001-7728-1849"
+    with_uol: true
   - name: "Elizabeth Sklar"
+    with_uol: true
   - name: "Grzegorz Cielniak"
+    with_uol: true
+  - name: "Farhan Riaz"
+    with_uol: true
+  - name: "Petra Bosilj"
+    with_uol: false
+  - name: "Xujiong Ye"
+    with_uol: false
+  - name: "Lei Zhang"
+    with_uol: false
+  - name: "Saeid Pourroostaei Ardakani"
+    with_uol: false
+  - name: "Stefanos Kollias"
+    with_uol: false

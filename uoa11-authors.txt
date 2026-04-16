@@ -20,7 +20,7 @@ Renata Ntelia
 Charles Fox
 Simon Parsons
 Mohammed Al-Khafajiy
-James Brown
+James M Brown
 Mark Doughty
 Christos Frantzidis
 Wenting Duan
@@ -32,4 +32,9 @@ Helen Harman
 Marc Hanheide
 Elizabeth Sklar
 Grzegorz Cielniak
-
+Farhan Riaz
+Petra Bosilj
+Xujiong Ye
+Lei Zhang
+Saeid Pourroostaei Ardakani
+Stefanos Kollias
