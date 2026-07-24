@@ -101,7 +101,7 @@ jobs:
         env:
           NEXUS_USER: ${{ secrets.LCAS_REGISTRY_PUSHER }}
           NEXUS_PASS: ${{ secrets.LCAS_REGISTRY_TOKEN }}
-          NEXUS_BASE_URL: https://lcas.lincoln.ac.uk/repository/repository/misc/
+          NEXUS_BASE_URL: https://lcas.lincoln.ac.uk/repository/repository/misc/bibtex/
         run: |
           set -euo pipefail
 
