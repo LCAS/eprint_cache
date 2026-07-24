@@ -96,44 +96,30 @@ jobs:
           cd ./output
           python ../generate_stats.py --all-csv figshare_articles_all.csv --dedup-csv figshare_articles.csv >> $GITHUB_STEP_SUMMARY
 
-      - name: Nexus Repo Publish bibtex
+      - name: Publish outputs to Nexus via HTTP PUT
         if: ${{ github.event_name != 'pull_request' }}
-        uses: sonatype-nexus-community/nexus-repo-github-action@master
-        with:
-          serverUrl: https://lcas.lincoln.ac.uk/repository/
-          username: ${{ secrets.LCAS_REGISTRY_PUSHER }}
-          password: ${{ secrets.LCAS_REGISTRY_TOKEN }}
-          format: raw
-          repository: misc
-          coordinates: directory=bibtex
-          assets: filename=lcas.bib
-          filename: ./output/lcas.bib
+        env:
+          NEXUS_USER: ${{ secrets.LCAS_REGISTRY_PUSHER }}
+          NEXUS_PASS: ${{ secrets.LCAS_REGISTRY_TOKEN }}
+          NEXUS_BASE_URL: https://lcas.lincoln.ac.uk/repository/misc/bibtex
+        run: |
+          set -euo pipefail
 
-      - name: Nexus Repo Publish figshare articles without duplicates CSV
-        if: ${{ github.event_name != 'pull_request' }}
-        uses: sonatype-nexus-community/nexus-repo-github-action@master
-        with:
-          serverUrl: https://lcas.lincoln.ac.uk/repository/
-          username: ${{ secrets.LCAS_REGISTRY_PUSHER }}
-          password: ${{ secrets.LCAS_REGISTRY_TOKEN }}
-          format: raw
-          repository: misc
-          coordinates: directory=bibtex
-          assets: filename=figshare_articles.csv
-          filename: ./output/figshare_articles.csv
+          for file in lcas.bib figshare_articles.csv figshare_articles_all.csv; do
+            local_path="./output/${file}"
+            target_url="${NEXUS_BASE_URL}/${file}"
 
-      - name: Nexus Repo Publish all figshare articles CSV
-        if: ${{ github.event_name != 'pull_request' }}
-        uses: sonatype-nexus-community/nexus-repo-github-action@master
-        with:
-          serverUrl: https://lcas.lincoln.ac.uk/repository/
-          username: ${{ secrets.LCAS_REGISTRY_PUSHER }}
-          password: ${{ secrets.LCAS_REGISTRY_TOKEN }}
-          format: raw
-          repository: misc
-          coordinates: directory=bibtex
-          assets: filename=figshare_articles_all.csv
-          filename: ./output/figshare_articles_all.csv        
+            if [ ! -f "$local_path" ]; then
+              echo "Expected file not found: $local_path"
+              exit 1
+            fi
+
+            echo "Uploading ${local_path} -> ${target_url}"
+            curl --fail --show-error --silent \
+              -u "${NEXUS_USER}:${NEXUS_PASS}" \
+              --upload-file "$local_path" \
+              "$target_url"
+          done
 
       - name: Upload artifacts
         if: always()
