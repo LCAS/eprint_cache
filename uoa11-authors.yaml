@@ -110,4 +110,6 @@ authors:
     with_uol: false
   - name: "Simon Smith"
     with_uol: true
+  - name: "Stefan Sarkadi"
+    with_uol: true
   
